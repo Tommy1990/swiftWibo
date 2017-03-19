@@ -8,10 +8,11 @@
 
 import UIKit
 
-class EPBaseNavigationController: UINavigationController {
+class EPBaseNavigationController: UINavigationController,UIGestureRecognizerDelegate {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
 
         // Do any additional setup after loading the view.
     }
@@ -21,15 +22,20 @@ class EPBaseNavigationController: UINavigationController {
         // Dispose of any resources that can be recreated.
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    override func pushViewController(_ viewController: UIViewController, animated: Bool) {
+        
+        let count = viewControllers.count
+        
+        if count > 0{
+            viewController.navigationItem.leftBarButtonItem = UIBarButtonItem(title: "返回", imageName: "navigationbar_back_withtext", target: self, action: #selector(back))
+            viewController.view.backgroundColor = UIColor.white
+            //隐藏tabbar
+            viewController.hidesBottomBarWhenPushed = true
+        }
+        super.pushViewController(viewController, animated: true)
     }
-    */
-
+    
+    @objc private func back(){
+        let _ = self.popViewController(animated: true)
+    }
 }
