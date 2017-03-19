@@ -12,7 +12,7 @@ class EPBaseNavigationController: UINavigationController,UIGestureRecognizerDele
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        self.interactivePopGestureRecognizer?.delegate = self
 
         // Do any additional setup after loading the view.
     }
@@ -37,5 +37,11 @@ class EPBaseNavigationController: UINavigationController,UIGestureRecognizerDele
     
     @objc private func back(){
         let _ = self.popViewController(animated: true)
+    }
+    
+    ///边缘点击代理方法
+    func gestureRecognizerShouldBegin(_ gestureRecognizer: UIGestureRecognizer) -> Bool {
+        let count = childViewControllers.count
+        return count > 1
     }
 }
