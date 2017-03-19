@@ -12,7 +12,6 @@
 		7157B29DB624918C8233FFCB /* Pods_SwiftWiboUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B66EB86B1E7A055CE796995 /* Pods_SwiftWiboUITests.framework */; };
 		A756B6691E7E9A9F00F76A2D /* Masonry.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A756B6681E7E9A9F00F76A2D /* Masonry.framework */; };
 		A756B67D1E7E9D5800F76A2D /* .gitkeep in Resources */ = {isa = PBXBuildFile; fileRef = A756B66C1E7E9D5800F76A2D /* .gitkeep */; };
-		A756B67E1E7E9D5800F76A2D /* .gitkeep in Resources */ = {isa = PBXBuildFile; fileRef = A756B66E1E7E9D5800F76A2D /* .gitkeep */; };
 		A756B6851E7E9D5800F76A2D /* .gitkeep in Resources */ = {isa = PBXBuildFile; fileRef = A756B67C1E7E9D5800F76A2D /* .gitkeep */; };
 		A756B6871E7EA0B100F76A2D /* EPMMainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A756B6861E7EA0B100F76A2D /* EPMMainTabBarController.swift */; };
 		A756B6891E7EA0ED00F76A2D /* EPMBaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A756B6881E7EA0ED00F76A2D /* EPMBaseViewController.swift */; };
@@ -20,6 +19,8 @@
 		A756B68D1E7EA13400F76A2D /* EPMProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A756B68C1E7EA13400F76A2D /* EPMProfileViewController.swift */; };
 		A756B68F1E7EA14700F76A2D /* EPMDiscoverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A756B68E1E7EA14700F76A2D /* EPMDiscoverViewController.swift */; };
 		A756B6911E7EA15A00F76A2D /* EPMHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A756B6901E7EA15A00F76A2D /* EPMHomeViewController.swift */; };
+		A756B6931E7EA9A300F76A2D /* EPBaseNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A756B6921E7EA9A300F76A2D /* EPBaseNavigationController.swift */; };
+		A756B6961E7EABF900F76A2D /* UIBarButtonItem+Extenssion.swift in Sources */ = {isa = PBXBuildFile; fileRef = A756B6951E7EABF900F76A2D /* UIBarButtonItem+Extenssion.swift */; };
 		A7BC68D61E7E979500DFDCEC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7BC68D51E7E979500DFDCEC /* AppDelegate.swift */; };
 		A7BC68DE1E7E979500DFDCEC /* SwiftWibo.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A7BC68DC1E7E979500DFDCEC /* SwiftWibo.xcdatamodeld */; };
 		A7BC68E01E7E979500DFDCEC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A7BC68DF1E7E979500DFDCEC /* Assets.xcassets */; };
@@ -55,7 +56,6 @@
 		9D7F195A2B54F350A1413A8A /* Pods_SwiftWiboTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SwiftWiboTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A756B6681E7E9A9F00F76A2D /* Masonry.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Masonry.framework; path = "../../Library/Developer/Xcode/DerivedData/SwiftWibo-hgascnrjlfotggavhgktlnwqtebb/Build/Products/Debug-iphonesimulator/Masonry/Masonry.framework"; sourceTree = "<group>"; };
 		A756B66C1E7E9D5800F76A2D /* .gitkeep */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitkeep; sourceTree = "<group>"; };
-		A756B66E1E7E9D5800F76A2D /* .gitkeep */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitkeep; sourceTree = "<group>"; };
 		A756B67C1E7E9D5800F76A2D /* .gitkeep */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitkeep; sourceTree = "<group>"; };
 		A756B6861E7EA0B100F76A2D /* EPMMainTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EPMMainTabBarController.swift; sourceTree = "<group>"; };
 		A756B6881E7EA0ED00F76A2D /* EPMBaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EPMBaseViewController.swift; sourceTree = "<group>"; };
@@ -63,6 +63,8 @@
 		A756B68C1E7EA13400F76A2D /* EPMProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EPMProfileViewController.swift; sourceTree = "<group>"; };
 		A756B68E1E7EA14700F76A2D /* EPMDiscoverViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EPMDiscoverViewController.swift; sourceTree = "<group>"; };
 		A756B6901E7EA15A00F76A2D /* EPMHomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EPMHomeViewController.swift; sourceTree = "<group>"; };
+		A756B6921E7EA9A300F76A2D /* EPBaseNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EPBaseNavigationController.swift; sourceTree = "<group>"; };
+		A756B6951E7EABF900F76A2D /* UIBarButtonItem+Extenssion.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIBarButtonItem+Extenssion.swift"; sourceTree = "<group>"; };
 		A7BC68D21E7E979500DFDCEC /* SwiftWibo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftWibo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A7BC68D51E7E979500DFDCEC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A7BC68DD1E7E979500DFDCEC /* SwiftWibo.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = SwiftWibo.xcdatamodel; sourceTree = "<group>"; };
@@ -155,7 +157,7 @@
 		A756B66D1E7E9D5800F76A2D /* Tools */ = {
 			isa = PBXGroup;
 			children = (
-				A756B66E1E7E9D5800F76A2D /* .gitkeep */,
+				A756B6941E7EAB9B00F76A2D /* extenssion */,
 			);
 			path = Tools;
 			sourceTree = "<group>";
@@ -193,6 +195,7 @@
 			children = (
 				A756B6861E7EA0B100F76A2D /* EPMMainTabBarController.swift */,
 				A756B6881E7EA0ED00F76A2D /* EPMBaseViewController.swift */,
+				A756B6921E7EA9A300F76A2D /* EPBaseNavigationController.swift */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -219,6 +222,14 @@
 				A756B67C1E7E9D5800F76A2D /* .gitkeep */,
 			);
 			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		A756B6941E7EAB9B00F76A2D /* extenssion */ = {
+			isa = PBXGroup;
+			children = (
+				A756B6951E7EABF900F76A2D /* UIBarButtonItem+Extenssion.swift */,
+			);
+			path = extenssion;
 			sourceTree = "<group>";
 		};
 		A7BC68C91E7E979500DFDCEC = {
@@ -396,7 +407,6 @@
 				A7BC68E31E7E979500DFDCEC /* LaunchScreen.storyboard in Resources */,
 				A756B6851E7E9D5800F76A2D /* .gitkeep in Resources */,
 				A7BC68E01E7E979500DFDCEC /* Assets.xcassets in Resources */,
-				A756B67E1E7E9D5800F76A2D /* .gitkeep in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -559,11 +569,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A756B6931E7EA9A300F76A2D /* EPBaseNavigationController.swift in Sources */,
 				A756B6911E7EA15A00F76A2D /* EPMHomeViewController.swift in Sources */,
 				A7BC68D61E7E979500DFDCEC /* AppDelegate.swift in Sources */,
 				A7BC68DE1E7E979500DFDCEC /* SwiftWibo.xcdatamodeld in Sources */,
 				A756B68F1E7EA14700F76A2D /* EPMDiscoverViewController.swift in Sources */,
 				A756B68B1E7EA11B00F76A2D /* EPMMessageViewController.swift in Sources */,
+				A756B6961E7EABF900F76A2D /* UIBarButtonItem+Extenssion.swift in Sources */,
 				A756B6891E7EA0ED00F76A2D /* EPMBaseViewController.swift in Sources */,
 				A756B6871E7EA0B100F76A2D /* EPMMainTabBarController.swift in Sources */,
 				A756B68D1E7EA13400F76A2D /* EPMProfileViewController.swift in Sources */,
@@ -717,6 +729,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "$PRODUCT_NAME/SwiftWibo-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -731,6 +744,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "$PRODUCT_NAME/SwiftWibo-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
