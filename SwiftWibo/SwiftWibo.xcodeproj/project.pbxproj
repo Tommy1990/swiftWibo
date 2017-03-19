@@ -12,8 +12,6 @@
 		7157B29DB624918C8233FFCB /* Pods_SwiftWiboUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B66EB86B1E7A055CE796995 /* Pods_SwiftWiboUITests.framework */; };
 		A756B6691E7E9A9F00F76A2D /* Masonry.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A756B6681E7E9A9F00F76A2D /* Masonry.framework */; };
 		A7BC68D61E7E979500DFDCEC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7BC68D51E7E979500DFDCEC /* AppDelegate.swift */; };
-		A7BC68D81E7E979500DFDCEC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7BC68D71E7E979500DFDCEC /* ViewController.swift */; };
-		A7BC68DB1E7E979500DFDCEC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A7BC68D91E7E979500DFDCEC /* Main.storyboard */; };
 		A7BC68DE1E7E979500DFDCEC /* SwiftWibo.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A7BC68DC1E7E979500DFDCEC /* SwiftWibo.xcdatamodeld */; };
 		A7BC68E01E7E979500DFDCEC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A7BC68DF1E7E979500DFDCEC /* Assets.xcassets */; };
 		A7BC68E31E7E979500DFDCEC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A7BC68E11E7E979500DFDCEC /* LaunchScreen.storyboard */; };
@@ -49,8 +47,6 @@
 		A756B6681E7E9A9F00F76A2D /* Masonry.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Masonry.framework; path = "../../Library/Developer/Xcode/DerivedData/SwiftWibo-hgascnrjlfotggavhgktlnwqtebb/Build/Products/Debug-iphonesimulator/Masonry/Masonry.framework"; sourceTree = "<group>"; };
 		A7BC68D21E7E979500DFDCEC /* SwiftWibo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftWibo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A7BC68D51E7E979500DFDCEC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		A7BC68D71E7E979500DFDCEC /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		A7BC68DA1E7E979500DFDCEC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		A7BC68DD1E7E979500DFDCEC /* SwiftWibo.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = SwiftWibo.xcdatamodel; sourceTree = "<group>"; };
 		A7BC68DF1E7E979500DFDCEC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A7BC68E21E7E979500DFDCEC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -146,8 +142,6 @@
 			children = (
 				A7BC68D51E7E979500DFDCEC /* AppDelegate.swift */,
 				A7BC69061E7E985200DFDCEC /* SwiftWibo-Bridging-Header.h */,
-				A7BC68D71E7E979500DFDCEC /* ViewController.swift */,
-				A7BC68D91E7E979500DFDCEC /* Main.storyboard */,
 				A7BC68DF1E7E979500DFDCEC /* Assets.xcassets */,
 				A7BC68E11E7E979500DFDCEC /* LaunchScreen.storyboard */,
 				A7BC68E41E7E979500DFDCEC /* Info.plist */,
@@ -292,7 +286,6 @@
 			files = (
 				A7BC68E31E7E979500DFDCEC /* LaunchScreen.storyboard in Resources */,
 				A7BC68E01E7E979500DFDCEC /* Assets.xcassets in Resources */,
-				A7BC68DB1E7E979500DFDCEC /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -455,7 +448,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A7BC68D81E7E979500DFDCEC /* ViewController.swift in Sources */,
 				A7BC68D61E7E979500DFDCEC /* AppDelegate.swift in Sources */,
 				A7BC68DE1E7E979500DFDCEC /* SwiftWibo.xcdatamodeld in Sources */,
 			);
@@ -493,14 +485,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		A7BC68D91E7E979500DFDCEC /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				A7BC68DA1E7E979500DFDCEC /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		A7BC68E11E7E979500DFDCEC /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
