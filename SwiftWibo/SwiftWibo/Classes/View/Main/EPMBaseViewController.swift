@@ -8,54 +8,79 @@
 
 import UIKit
 
-class EPMBaseViewController: UIViewController {
+class EPMBaseViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        addControllers()
-        
-        
-        
+
+        // Uncomment the following line to preserve selection between presentations
+        // self.clearsSelectionOnViewWillAppear = false
+
+        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
+        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
     }
 
-    
-    
-    
-    private func addControllers(){
-        
-        addChildController(VC: EPMHomeViewController(), title: "首页", imageName: "tabbar_home")
-        
-        addChildController(VC: EPMMessageViewController(), title: "消息", imageName: "tabbar_message_center")
-        
-        addChildController(VC: EPMDiscoverViewController(), title: "发现", imageName: "tabbar_discover")
-        
-        addChildController(VC: EPMProfileViewController(), title: "我的", imageName: "tabbar_profile")
-        
-    }
-    
-    private func addChildController(VC:UIViewController ,title:String,imageName:String){
-        VC.tabBarItem.title = title
-        VC.navigationController?.title = title
-        //图片
-        VC.tabBarItem.image = UIImage(named: imageName)
-        
-        VC.tabBarItem.selectedImage = UIImage(named: imageName + "_selected")?.withRenderingMode(.alwaysOriginal)
-        VC.tabBarItem.setTitleTextAttributes([NSForegroundColorAttributeName:UIColor.orange], for: .selected)
-        VC.tabBarItem.badgeValue = "10"
-        VC.tabBarItem.badgeColor = UIColor.purple
-//        VC.tabBarItem.badgeValue = nil
-        let nav = EPBaseNavigationController()
-        
-        addChildViewController(nav)
-        
-        
-    }
-    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
+
+    // MARK: - Table view data source
+
+    override func numberOfSections(in tableView: UITableView) -> Int {
+        // #warning Incomplete implementation, return the number of sections
+        return 0
+    }
+
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        // #warning Incomplete implementation, return the number of rows
+        return 0
+    }
+
+    /*
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
+
+        // Configure the cell...
+
+        return cell
+    }
+    */
+
+    /*
+    // Override to support conditional editing of the table view.
+    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        // Return false if you do not want the specified item to be editable.
+        return true
+    }
+    */
+
+    /*
+    // Override to support editing the table view.
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            // Delete the row from the data source
+            tableView.deleteRows(at: [indexPath], with: .fade)
+        } else if editingStyle == .insert {
+            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
+        }    
+    }
+    */
+
+    /*
+    // Override to support rearranging the table view.
+    override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
+
+    }
+    */
+
+    /*
+    // Override to support conditional rearranging of the table view.
+    override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
+        // Return false if you do not want the item to be re-orderable.
+        return true
+    }
+    */
 
     /*
     // MARK: - Navigation

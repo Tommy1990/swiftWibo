@@ -14,13 +14,15 @@
 		A756B67D1E7E9D5800F76A2D /* .gitkeep in Resources */ = {isa = PBXBuildFile; fileRef = A756B66C1E7E9D5800F76A2D /* .gitkeep */; };
 		A756B6851E7E9D5800F76A2D /* .gitkeep in Resources */ = {isa = PBXBuildFile; fileRef = A756B67C1E7E9D5800F76A2D /* .gitkeep */; };
 		A756B6871E7EA0B100F76A2D /* EPMMainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A756B6861E7EA0B100F76A2D /* EPMMainTabBarController.swift */; };
-		A756B6891E7EA0ED00F76A2D /* EPMBaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A756B6881E7EA0ED00F76A2D /* EPMBaseViewController.swift */; };
 		A756B68B1E7EA11B00F76A2D /* EPMMessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A756B68A1E7EA11B00F76A2D /* EPMMessageViewController.swift */; };
 		A756B68D1E7EA13400F76A2D /* EPMProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A756B68C1E7EA13400F76A2D /* EPMProfileViewController.swift */; };
 		A756B68F1E7EA14700F76A2D /* EPMDiscoverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A756B68E1E7EA14700F76A2D /* EPMDiscoverViewController.swift */; };
 		A756B6911E7EA15A00F76A2D /* EPMHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A756B6901E7EA15A00F76A2D /* EPMHomeViewController.swift */; };
 		A756B6931E7EA9A300F76A2D /* EPBaseNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A756B6921E7EA9A300F76A2D /* EPBaseNavigationController.swift */; };
 		A756B6961E7EABF900F76A2D /* UIBarButtonItem+Extenssion.swift in Sources */ = {isa = PBXBuildFile; fileRef = A756B6951E7EABF900F76A2D /* UIBarButtonItem+Extenssion.swift */; };
+		A756B6991E7EAEDB00F76A2D /* EPMTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = A756B6981E7EAEDB00F76A2D /* EPMTabBar.swift */; };
+		A756B69B1E7EB7CE00F76A2D /* EPMBaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A756B69A1E7EB7CE00F76A2D /* EPMBaseViewController.swift */; };
+		A756B69E1E7EBA9200F76A2D /* EPMTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A756B69D1E7EBA9200F76A2D /* EPMTestViewController.swift */; };
 		A7BC68D61E7E979500DFDCEC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7BC68D51E7E979500DFDCEC /* AppDelegate.swift */; };
 		A7BC68DE1E7E979500DFDCEC /* SwiftWibo.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A7BC68DC1E7E979500DFDCEC /* SwiftWibo.xcdatamodeld */; };
 		A7BC68E01E7E979500DFDCEC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A7BC68DF1E7E979500DFDCEC /* Assets.xcassets */; };
@@ -58,13 +60,15 @@
 		A756B66C1E7E9D5800F76A2D /* .gitkeep */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitkeep; sourceTree = "<group>"; };
 		A756B67C1E7E9D5800F76A2D /* .gitkeep */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitkeep; sourceTree = "<group>"; };
 		A756B6861E7EA0B100F76A2D /* EPMMainTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EPMMainTabBarController.swift; sourceTree = "<group>"; };
-		A756B6881E7EA0ED00F76A2D /* EPMBaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EPMBaseViewController.swift; sourceTree = "<group>"; };
 		A756B68A1E7EA11B00F76A2D /* EPMMessageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EPMMessageViewController.swift; sourceTree = "<group>"; };
 		A756B68C1E7EA13400F76A2D /* EPMProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EPMProfileViewController.swift; sourceTree = "<group>"; };
 		A756B68E1E7EA14700F76A2D /* EPMDiscoverViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EPMDiscoverViewController.swift; sourceTree = "<group>"; };
 		A756B6901E7EA15A00F76A2D /* EPMHomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EPMHomeViewController.swift; sourceTree = "<group>"; };
 		A756B6921E7EA9A300F76A2D /* EPBaseNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EPBaseNavigationController.swift; sourceTree = "<group>"; };
 		A756B6951E7EABF900F76A2D /* UIBarButtonItem+Extenssion.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIBarButtonItem+Extenssion.swift"; sourceTree = "<group>"; };
+		A756B6981E7EAEDB00F76A2D /* EPMTabBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EPMTabBar.swift; sourceTree = "<group>"; };
+		A756B69A1E7EB7CE00F76A2D /* EPMBaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EPMBaseViewController.swift; sourceTree = "<group>"; };
+		A756B69D1E7EBA9200F76A2D /* EPMTestViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EPMTestViewController.swift; sourceTree = "<group>"; };
 		A7BC68D21E7E979500DFDCEC /* SwiftWibo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftWibo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A7BC68D51E7E979500DFDCEC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A7BC68DD1E7E979500DFDCEC /* SwiftWibo.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = SwiftWibo.xcdatamodel; sourceTree = "<group>"; };
@@ -165,6 +169,7 @@
 		A756B66F1E7E9D5800F76A2D /* View */ = {
 			isa = PBXGroup;
 			children = (
+				A756B69C1E7EBA6800F76A2D /* Other */,
 				A756B6771E7E9D5800F76A2D /* Message */,
 				A756B6791E7E9D5800F76A2D /* Profile */,
 				A756B6711E7E9D5800F76A2D /* Discover */,
@@ -193,8 +198,9 @@
 		A756B6751E7E9D5800F76A2D /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				A756B6971E7EAEB100F76A2D /* View */,
 				A756B6861E7EA0B100F76A2D /* EPMMainTabBarController.swift */,
-				A756B6881E7EA0ED00F76A2D /* EPMBaseViewController.swift */,
+				A756B69A1E7EB7CE00F76A2D /* EPMBaseViewController.swift */,
 				A756B6921E7EA9A300F76A2D /* EPBaseNavigationController.swift */,
 			);
 			path = Main;
@@ -230,6 +236,22 @@
 				A756B6951E7EABF900F76A2D /* UIBarButtonItem+Extenssion.swift */,
 			);
 			path = extenssion;
+			sourceTree = "<group>";
+		};
+		A756B6971E7EAEB100F76A2D /* View */ = {
+			isa = PBXGroup;
+			children = (
+				A756B6981E7EAEDB00F76A2D /* EPMTabBar.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		A756B69C1E7EBA6800F76A2D /* Other */ = {
+			isa = PBXGroup;
+			children = (
+				A756B69D1E7EBA9200F76A2D /* EPMTestViewController.swift */,
+			);
+			path = Other;
 			sourceTree = "<group>";
 		};
 		A7BC68C91E7E979500DFDCEC = {
@@ -571,12 +593,14 @@
 			files = (
 				A756B6931E7EA9A300F76A2D /* EPBaseNavigationController.swift in Sources */,
 				A756B6911E7EA15A00F76A2D /* EPMHomeViewController.swift in Sources */,
+				A756B69B1E7EB7CE00F76A2D /* EPMBaseViewController.swift in Sources */,
 				A7BC68D61E7E979500DFDCEC /* AppDelegate.swift in Sources */,
 				A7BC68DE1E7E979500DFDCEC /* SwiftWibo.xcdatamodeld in Sources */,
 				A756B68F1E7EA14700F76A2D /* EPMDiscoverViewController.swift in Sources */,
 				A756B68B1E7EA11B00F76A2D /* EPMMessageViewController.swift in Sources */,
+				A756B69E1E7EBA9200F76A2D /* EPMTestViewController.swift in Sources */,
+				A756B6991E7EAEDB00F76A2D /* EPMTabBar.swift in Sources */,
 				A756B6961E7EABF900F76A2D /* UIBarButtonItem+Extenssion.swift in Sources */,
-				A756B6891E7EA0ED00F76A2D /* EPMBaseViewController.swift in Sources */,
 				A756B6871E7EA0B100F76A2D /* EPMMainTabBarController.swift in Sources */,
 				A756B68D1E7EA13400F76A2D /* EPMProfileViewController.swift in Sources */,
 			);

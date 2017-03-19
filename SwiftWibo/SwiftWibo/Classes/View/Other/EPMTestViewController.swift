@@ -1,5 +1,5 @@
 //
-//  EPMHomeViewController.swift
+//  EPMTestViewController.swift
 //  SwiftWibo
 //
 //  Created by 马继鵬 on 17/3/19.
@@ -8,20 +8,14 @@
 
 import UIKit
 
-class EPMHomeViewController: EPMBaseViewController {
+class EPMTestViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        self.view.backgroundColor = UIColor.red
         // Do any additional setup after loading the view.
-        let barBtn: UIBarButtonItem = UIBarButtonItem(imageName: "navigationbar_pop", target: self, action: #selector(push))
-        navigationItem.rightBarButtonItem = barBtn
     }
-    @objc private func push(){
-        
-        let VC = EPMTestViewController()
-        navigationController?.pushViewController(VC, animated: true)
-    }
+
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

@@ -21,7 +21,7 @@ extension UIBarButtonItem{
         
         if let t = target , let s = action{
             
-            btn.addTarget(t, action: s, for: .touchUpOutside)
+            btn.addTarget(t, action: s, for: .touchUpInside)
         }
         btn.sizeToFit()
         self.init()

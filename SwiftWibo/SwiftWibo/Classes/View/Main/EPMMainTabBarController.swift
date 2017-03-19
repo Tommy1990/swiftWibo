@@ -12,24 +12,53 @@ class EPMMainTabBarController: UITabBarController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        addchildViewControllers()
+        
+        //添加tabBar
+        let epmTabBar = EPMTabBar()
+        
+        self.setValue(epmTabBar, forKey: "tabBar")
+        
+        epmTabBar.clickClosure = {[weak self](tabBar:EPMTabBar) in
+                print("按钮被点击了\(self)")
+        }
+        
+     
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
+   
+    private func addchildViewControllers(){
+        
+        addChildController(VC: EPMHomeViewController(), title: "首页", imageName: "tabbar_home")
+        
+        addChildController(VC: EPMMessageViewController(), title: "消息", imageName: "tabbar_message_center")
+        
+        addChildController(VC: EPMDiscoverViewController(), title: "发现", imageName: "tabbar_discover")
+        
+        addChildController(VC: EPMProfileViewController(), title: "我的", imageName: "tabbar_profile")
         
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    private func addChildController(VC:UIViewController ,title:String,imageName:String){
+        VC.tabBarItem.title = title
+        VC.navigationItem.title = title
+        
+        //图片
+        VC.tabBarItem.image = UIImage(named: imageName)
+        
+        VC.tabBarItem.selectedImage = UIImage(named: imageName + "_selected")?.withRenderingMode(.alwaysOriginal)
+        VC.tabBarItem.setTitleTextAttributes([NSForegroundColorAttributeName:UIColor.orange], for: .selected)
+        VC.tabBarItem.badgeValue = "10"
+        VC.tabBarItem.badgeColor = UIColor.purple
+        VC.tabBarItem.badgeValue = nil
+        let nav = EPBaseNavigationController(rootViewController: VC)
+        
+        addChildViewController(nav)
+        
+        
     }
-    */
+
+
+    
 
 }
