@@ -8,11 +8,16 @@
 
 import UIKit
 import SnapKit
+protocol EPMVistorDelegate:NSObjectProtocol {
+     func userLogingClick(visitorView:EPMVistorView)
+     func userRegisterClick(visitorView:EPMVistorView)
+}
 
 class EPMVistorView: UIView {
-
+    weak var delegate:EPMVistorDelegate?
    override init(frame: CGRect) {
     super.init(frame:frame)
+    
     setupUI()
     }
     
@@ -61,8 +66,17 @@ class EPMVistorView: UIView {
             make.centerY.equalTo(loadBtn)
             make.width.equalTo(100)
         }
-        
-        
+    
+        //添加点击事件
+        loadBtn.addTarget(self, action: #selector(loadBtnClick), for: .touchUpInside)
+        registerBtn.addTarget(self, action: #selector(registerBtnClick), for: .touchUpInside)
+    }
+    //方法实现
+    @objc private func loadBtnClick() {
+        delegate?.userLogingClick(visitorView: self)
+    }
+    @objc private func registerBtnClick() {
+        delegate?.userRegisterClick(visitorView: self)
         
     }
     
