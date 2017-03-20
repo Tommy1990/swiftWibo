@@ -8,6 +8,6 @@
 
 #ifndef SwiftWibo_Bridging_Header_h
 #define SwiftWibo_Bridging_Header_h
-#import <Masonry/Masonry.h>
 
+#import <Masonry/Masonry.h>
 #endif /* SwiftWibo_Bridging_Header_h */

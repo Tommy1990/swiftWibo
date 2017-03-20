@@ -28,6 +28,7 @@ extension UIButton{
         self.titleLabel?.font = UIFont.systemFont(ofSize: fontSize)
         self.setImage(UIImage.init(named:imageName!), for: .normal)
         self.setBackgroundImage(UIImage(named:backImage), for: .normal)
+        self.sizeToFit()
     }
     
 }

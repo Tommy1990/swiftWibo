@@ -27,6 +27,40 @@ class EPMVistorView: UIView {
         addSubview(desLabel)
         addSubview(loadBtn)
         addSubview(registerBtn)
+        ///位置约束
+        cycleView.snp.makeConstraints { (make) in
+            make.centerX.equalTo(self).offset(0)
+            make.centerY.equalTo(self).offset(-70)
+        }
+        cycleView.sizeToFit()
+        coverView.snp.makeConstraints { (make) in
+            make.center.equalTo(cycleView)
+        }
+        coverView.sizeToFit()
+        bigHomeView.snp.makeConstraints { (make) in
+            make.center.equalTo(cycleView)
+        }
+        bigHomeView.sizeToFit()
+        desLabel.snp.makeConstraints { (make) in
+            make.leading.equalTo(cycleView)
+            make.top.equalTo(cycleView.snp.bottom).offset(17)
+        }
+        //文字不限行
+        desLabel.numberOfLines = 0
+        //设置文字最大行宽
+        desLabel.preferredMaxLayoutWidth = self.bounds.size.width*0.7
+        
+        loadBtn.snp.makeConstraints { (make) in
+            make.leading.equalTo(desLabel)
+            make.top.equalTo(desLabel.snp.bottom).offset(17)
+            make.width.equalTo(100)
+        }
+        
+        registerBtn.snp.makeConstraints { (make) in
+            make.trailing.equalTo(desLabel)
+            make.centerY.equalTo(loadBtn)
+            make.width.equalTo(100)
+        }
         
         
         
