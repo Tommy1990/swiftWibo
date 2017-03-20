@@ -16,6 +16,7 @@ target 'SwiftWibo' do
     inherit! :search_paths
     # Pods for testing
   end
-pod 'Masonry'
+#pod 'Masonry'
+pod 'SnapKit'
 
 end

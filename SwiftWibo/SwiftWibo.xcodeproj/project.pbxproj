@@ -23,6 +23,8 @@
 		A756B6991E7EAEDB00F76A2D /* EPMTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = A756B6981E7EAEDB00F76A2D /* EPMTabBar.swift */; };
 		A756B69B1E7EB7CE00F76A2D /* EPMBaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A756B69A1E7EB7CE00F76A2D /* EPMBaseViewController.swift */; };
 		A756B69E1E7EBA9200F76A2D /* EPMTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A756B69D1E7EBA9200F76A2D /* EPMTestViewController.swift */; };
+		A78F5BD11E7F93F700FE9AAA /* UIView+Extenssion.swift in Sources */ = {isa = PBXBuildFile; fileRef = A78F5BD01E7F93F700FE9AAA /* UIView+Extenssion.swift */; };
+		A78F5BD61E7F9A9300FE9AAA /* EPMVistorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A78F5BD51E7F9A9300FE9AAA /* EPMVistorView.swift */; };
 		A7BC68D61E7E979500DFDCEC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7BC68D51E7E979500DFDCEC /* AppDelegate.swift */; };
 		A7BC68DE1E7E979500DFDCEC /* SwiftWibo.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A7BC68DC1E7E979500DFDCEC /* SwiftWibo.xcdatamodeld */; };
 		A7BC68E01E7E979500DFDCEC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A7BC68DF1E7E979500DFDCEC /* Assets.xcassets */; };
@@ -69,6 +71,8 @@
 		A756B6981E7EAEDB00F76A2D /* EPMTabBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EPMTabBar.swift; sourceTree = "<group>"; };
 		A756B69A1E7EB7CE00F76A2D /* EPMBaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EPMBaseViewController.swift; sourceTree = "<group>"; };
 		A756B69D1E7EBA9200F76A2D /* EPMTestViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EPMTestViewController.swift; sourceTree = "<group>"; };
+		A78F5BD01E7F93F700FE9AAA /* UIView+Extenssion.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Extenssion.swift"; sourceTree = "<group>"; };
+		A78F5BD51E7F9A9300FE9AAA /* EPMVistorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EPMVistorView.swift; sourceTree = "<group>"; };
 		A7BC68D21E7E979500DFDCEC /* SwiftWibo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftWibo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A7BC68D51E7E979500DFDCEC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A7BC68DD1E7E979500DFDCEC /* SwiftWibo.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = SwiftWibo.xcdatamodel; sourceTree = "<group>"; };
@@ -234,6 +238,7 @@
 			isa = PBXGroup;
 			children = (
 				A756B6951E7EABF900F76A2D /* UIBarButtonItem+Extenssion.swift */,
+				A78F5BD01E7F93F700FE9AAA /* UIView+Extenssion.swift */,
 			);
 			path = extenssion;
 			sourceTree = "<group>";
@@ -242,6 +247,7 @@
 			isa = PBXGroup;
 			children = (
 				A756B6981E7EAEDB00F76A2D /* EPMTabBar.swift */,
+				A78F5BD51E7F9A9300FE9AAA /* EPMVistorView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -597,11 +603,13 @@
 				A7BC68D61E7E979500DFDCEC /* AppDelegate.swift in Sources */,
 				A7BC68DE1E7E979500DFDCEC /* SwiftWibo.xcdatamodeld in Sources */,
 				A756B68F1E7EA14700F76A2D /* EPMDiscoverViewController.swift in Sources */,
+				A78F5BD11E7F93F700FE9AAA /* UIView+Extenssion.swift in Sources */,
 				A756B68B1E7EA11B00F76A2D /* EPMMessageViewController.swift in Sources */,
 				A756B69E1E7EBA9200F76A2D /* EPMTestViewController.swift in Sources */,
 				A756B6991E7EAEDB00F76A2D /* EPMTabBar.swift in Sources */,
 				A756B6961E7EABF900F76A2D /* UIBarButtonItem+Extenssion.swift in Sources */,
 				A756B6871E7EA0B100F76A2D /* EPMMainTabBarController.swift in Sources */,
+				A78F5BD61E7F9A9300FE9AAA /* EPMVistorView.swift in Sources */,
 				A756B68D1E7EA13400F76A2D /* EPMProfileViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -14,6 +14,7 @@ extension UIBarButtonItem{
     convenience init(title: String? = nil , imageName: String ,target: Any?,action:Selector?) {
         
         let btn:UIButton = UIButton()
+        btn.setTitle(title, for: .normal)
         btn.setTitleColor(UIColor.darkGray, for: .normal)
         btn.setImage(UIImage(named:imageName), for: .normal)
         btn.titleLabel?.font = UIFont.systemFont(ofSize: 15)
