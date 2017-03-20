@@ -14,6 +14,9 @@ class EPMDiscoverViewController: EPMBaseViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        if !userLogIn{
+            visitorView.resetUI(title: "关注一些人,回到这里看看有什么惊喜哟", imageName: "visitordiscover_image_message")
+        }
     }
 
     override func didReceiveMemoryWarning() {

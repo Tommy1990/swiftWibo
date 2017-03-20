@@ -17,7 +17,7 @@ class EPMVistorView: UIView {
     weak var delegate:EPMVistorDelegate?
    override init(frame: CGRect) {
     super.init(frame:frame)
-    
+    backgroundColor = UIColor.init(white: 237.0/255.0, alpha: 1.0)
     setupUI()
     }
     
@@ -34,10 +34,11 @@ class EPMVistorView: UIView {
     }
     
     private func startAnimation() {
-        let animation = CABasicAnimation(keyPath: "transform.rotatio")
+        let animation = CABasicAnimation(keyPath: "transform.rotation")
+        
         animation.toValue = 2*M_PI
         animation.duration = 15
-        animation.repeatCount = 0
+        animation.repeatCount = MAXFLOAT
         animation.isRemovedOnCompletion = false
         cycleView.layer.add(animation, forKey: nil)
     }
@@ -68,7 +69,7 @@ class EPMVistorView: UIView {
         }
         bigHomeView.sizeToFit()
         desLabel.snp.makeConstraints { (make) in
-            make.leading.equalTo(cycleView)
+            make.centerX.equalTo(cycleView)
             make.top.equalTo(cycleView.snp.bottom).offset(17)
         }
         //文字不限行

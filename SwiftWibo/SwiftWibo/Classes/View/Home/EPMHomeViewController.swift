@@ -16,6 +16,11 @@ class EPMHomeViewController: EPMBaseViewController {
         // Do any additional setup after loading the view.
         let barBtn: UIBarButtonItem = UIBarButtonItem(imageName: "navigationbar_pop", target: self, action: #selector(push))
         navigationItem.rightBarButtonItem = barBtn
+        
+        if !userLogIn {
+            visitorView.resetUI(title: "关注一些人,回到这里看看有什么惊喜哟", imageName: "visitordiscover_feed_image_smallicon",isHome: true)
+        }
+        
     }
     @objc private func push(){
         

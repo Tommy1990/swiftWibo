@@ -14,6 +14,9 @@ class EPMProfileViewController: EPMBaseViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        if !userLogIn{
+            visitorView.resetUI(title: "登录后,你的微薄和相册以及个人资料会显示到这里名战士给别人", imageName: "visitordiscover_image_profile")
+        }
     }
 
     override func didReceiveMemoryWarning() {
