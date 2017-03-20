@@ -21,6 +21,27 @@ class EPMVistorView: UIView {
     setupUI()
     }
     
+    func resetUI(title:String,imageName:String,isHome:Bool = false)
+    {
+       
+        cycleView.image = UIImage(named: imageName)
+        bigHomeView.isHidden = !isHome
+        coverView.isHidden = !isHome
+        desLabel.text = title
+        if isHome {
+            startAnimation()
+        }
+    }
+    
+    private func startAnimation() {
+        let animation = CABasicAnimation(keyPath: "transform.rotatio")
+        animation.toValue = 2*M_PI
+        animation.duration = 15
+        animation.repeatCount = 0
+        animation.isRemovedOnCompletion = false
+        cycleView.layer.add(animation, forKey: nil)
+    }
+    
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
