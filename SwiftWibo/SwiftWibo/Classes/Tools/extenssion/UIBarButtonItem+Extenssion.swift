@@ -11,14 +11,17 @@ import UIKit
 extension UIBarButtonItem{
     
     
-    convenience init(title: String? = nil , imageName: String ,target: Any?,action:Selector?) {
+    convenience init(title: String? = nil , imageName: String? ,target: Any?,action:Selector?) {
         
         let btn:UIButton = UIButton()
         btn.setTitle(title, for: .normal)
         btn.setTitleColor(UIColor.darkGray, for: .normal)
-        btn.setImage(UIImage(named:imageName), for: .normal)
+        if let imageStr:String = imageName{
+        btn.setImage(UIImage(named:imageStr), for: .normal)
+          btn.setImage(UIImage(named:imageStr+"_highlighted"), for: .highlighted)
+        }
         btn.titleLabel?.font = UIFont.systemFont(ofSize: 15)
-        btn.setImage(UIImage(named:imageName+"_highlighted"), for: .highlighted)
+       
         
         if let t = target , let s = action{
             
