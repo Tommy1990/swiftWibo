@@ -22,7 +22,12 @@ class EPMBaseViewController: UITableViewController,EPMVistorDelegate {
     
     func userLogingClick(visitorView: EPMVistorView) {
         
-        print("\(visitorView)点击登录按钮")
+        let controller: EPMOAuthViewController = EPMOAuthViewController()
+        let nav = UINavigationController(rootViewController: controller)
+        //跳转到 导航控制器
+        self.present(nav, animated: true, completion: nil)
+        
+        
     }
     func userRegisterClick(visitorView: EPMVistorView) {
         print("\(visitorView)点击了注册按钮")
