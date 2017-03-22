@@ -27,6 +27,7 @@
 		A78F5CEB1E829D3A00FE9AAA /* EPMNetworkingTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = A78F5CEA1E829D3A00FE9AAA /* EPMNetworkingTool.swift */; };
 		A78F5CED1E82A3C200FE9AAA /* EPMUserAccountModelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A78F5CEC1E82A3C200FE9AAA /* EPMUserAccountModelView.swift */; };
 		A78F5CF01E82A52100FE9AAA /* EPMOAuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A78F5CEF1E82A52100FE9AAA /* EPMOAuthViewController.swift */; };
+		A78F5CF21E82D60D00FE9AAA /* commen.swift in Sources */ = {isa = PBXBuildFile; fileRef = A78F5CF11E82D60D00FE9AAA /* commen.swift */; };
 		A7BC68D61E7E979500DFDCEC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7BC68D51E7E979500DFDCEC /* AppDelegate.swift */; };
 		A7BC68DE1E7E979500DFDCEC /* SwiftWibo.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A7BC68DC1E7E979500DFDCEC /* SwiftWibo.xcdatamodeld */; };
 		A7BC68E01E7E979500DFDCEC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A7BC68DF1E7E979500DFDCEC /* Assets.xcassets */; };
@@ -77,6 +78,7 @@
 		A78F5CEA1E829D3A00FE9AAA /* EPMNetworkingTool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EPMNetworkingTool.swift; path = extenssion/EPMNetworkingTool.swift; sourceTree = "<group>"; };
 		A78F5CEC1E82A3C200FE9AAA /* EPMUserAccountModelView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EPMUserAccountModelView.swift; sourceTree = "<group>"; };
 		A78F5CEF1E82A52100FE9AAA /* EPMOAuthViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EPMOAuthViewController.swift; sourceTree = "<group>"; };
+		A78F5CF11E82D60D00FE9AAA /* commen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = commen.swift; sourceTree = "<group>"; };
 		A7BC68D21E7E979500DFDCEC /* SwiftWibo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftWibo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A7BC68D51E7E979500DFDCEC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A7BC68DD1E7E979500DFDCEC /* SwiftWibo.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = SwiftWibo.xcdatamodel; sourceTree = "<group>"; };
@@ -170,6 +172,7 @@
 			isa = PBXGroup;
 			children = (
 				A78F5CEA1E829D3A00FE9AAA /* EPMNetworkingTool.swift */,
+				A78F5CF11E82D60D00FE9AAA /* commen.swift */,
 				A756B6941E7EAB9B00F76A2D /* extenssion */,
 			);
 			path = Tools;
@@ -612,6 +615,7 @@
 			files = (
 				A756B6931E7EA9A300F76A2D /* EPBaseNavigationController.swift in Sources */,
 				A756B6911E7EA15A00F76A2D /* EPMHomeViewController.swift in Sources */,
+				A78F5CF21E82D60D00FE9AAA /* commen.swift in Sources */,
 				A78F5CED1E82A3C200FE9AAA /* EPMUserAccountModelView.swift in Sources */,
 				A756B69B1E7EB7CE00F76A2D /* EPMBaseViewController.swift in Sources */,
 				A78F5CF01E82A52100FE9AAA /* EPMOAuthViewController.swift in Sources */,
