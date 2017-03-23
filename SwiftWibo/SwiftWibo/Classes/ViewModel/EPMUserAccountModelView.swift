@@ -8,6 +8,10 @@
 
 import UIKit
 
+//定义公共地址
+private let accountPath = (NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true).last! as NSString).appendingPathComponent("account.plist")
+
+
 class EPMUserAccountModelView: NSObject {
  
     //请求用户授权
@@ -50,18 +54,35 @@ class EPMUserAccountModelView: NSObject {
                 //将字典中的数据存储到用户信息列表中
                 userInfo[key] = value
             }
+            //字典数据转模型
+            let userAccount = EPMUserInfoModel(dict: userInfo)
             
             
-            
-            
+            //存储数据
+            self.userSaveAcoount(account: userAccount)
+            //加载数据成功
             loadUserFinished(true)
             
         }
-        
-        
-        
     }
     
     
+    //归档方法
+    private func userSaveAcoount(account: EPMUserInfoModel){
+        
+        NSKeyedArchiver.archiveRootObject(account, toFile: accountPath)
+        
+    }
+    //解档方法
+    
+    private func loadUserAccount() -> EPMUserInfoModel?{
+        
+        let account  = NSKeyedUnarchiver.unarchiveObject(withFile: accountPath)
+        
+        if let acc = account as? EPMUserInfoModel {
+            return acc
+        }
+        return nil
+    }
     
 }
