@@ -14,6 +14,21 @@ private let accountPath = (NSSearchPathForDirectoriesInDomains(.documentDirector
 
 class EPMUserAccountModelView: NSObject {
  
+    //单例封装
+    static let shared : EPMUserAccountModelView = EPMUserAccountModelView()
+    //私有化init方法形成绝对私有
+    private override init()
+    {
+        super.init()
+        
+    }
+    
+    
+    
+    
+    
+    
+    
     //请求用户授权
     func loadAccesToken(code: String ,finisedClouser: @escaping ((Bool)->())) {
         //请求地址
