@@ -20,14 +20,31 @@ class EPMUserAccountModelView: NSObject {
     private override init()
     {
         super.init()
+        self.account = self.loadUserAccount()
+    }
+    
+    //设置对外接口
+    var account:EPMUserInfoModel?
+    //判断登录接口
+    var userLogin : Bool{
+        if account?.access_token != nil && isExpire == false{
+         return true
+        }
+        //默认为未登录
+        return false
+    }
+    //判断是否过期
+    var isExpire: Bool{
+        if account?.expires_date?.compare(Date()) == .orderedDescending{
+            return false
+        }
+        return true
         
     }
     
-    
-    
-    
-    
-    
+    var headIconUrl:URL?{
+        return  URL(string:account?.avatar_large ?? "")
+    }
     
     //请求用户授权
     func loadAccesToken(code: String ,finisedClouser: @escaping ((Bool)->())) {
@@ -52,18 +69,18 @@ class EPMUserAccountModelView: NSObject {
     }
     
     //获得token
-    func loadUserInfo(_ dict: [String: Any], loadUserFinished: @escaping ((Bool)->())){
-        let urlString = "https://api.weibo.com/oauth2/get_token_info"
+   private func loadUserInfo(_ dict: [String: Any], loadUserFinished: @escaping ((Bool)->())){
+        let urlString = "https://api.weibo.com/2/users/show.json"
         let token = dict["access_token"]
         let uid = dict["uid"]
         let para = [ "access_token" : token,
                      "uid" : uid]
-        EPMNetworkingTool.shearedTool.request(method: .POST, urlString: urlString, paramter: para) { (res, error) in
+        EPMNetworkingTool.shearedTool.request(method: .POST, urlString: urlString, paramter: para) { (result, error) in
             if (error != nil){
                 loadUserFinished(false)
                 return
             }
-            var userInfo = res as! [String:Any]
+            var userInfo = result as! [String:Any]
             
             for (key,value) in dict {
                 //将字典中的数据存储到用户信息列表中
@@ -71,7 +88,8 @@ class EPMUserAccountModelView: NSObject {
             }
             //字典数据转模型
             let userAccount = EPMUserInfoModel(dict: userInfo)
-            
+            //初始化对象赋值
+            self.account = userAccount
             
             //存储数据
             self.userSaveAcoount(account: userAccount)
@@ -86,7 +104,7 @@ class EPMUserAccountModelView: NSObject {
     private func userSaveAcoount(account: EPMUserInfoModel){
         
         NSKeyedArchiver.archiveRootObject(account, toFile: accountPath)
-        
+       
     }
     //解档方法
     

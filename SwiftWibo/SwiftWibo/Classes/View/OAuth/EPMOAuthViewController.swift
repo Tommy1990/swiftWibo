@@ -51,9 +51,10 @@ class EPMOAuthViewController: UIViewController {
     private func loadOAuthPage()
     {
         let urlString = "https://api.weibo.com/oauth2/authorize?"+"client_id=" + client_id + "&redirect_uri=" + redirect_uri
-        let url:URL? = URL(fileURLWithPath: urlString)
+        
+        let url = URL(string: urlString)
         //验证是否为空
-        guard let u = url else {
+        guard let u = url else{
             return
         }
        let request = URLRequest(url: u)
@@ -105,9 +106,18 @@ extension EPMOAuthViewController: UIWebViewDelegate{
             
             let code = quary.substring(from: flag.endIndex)
           
-            
-            
-            
+            EPMUserAccountModelView.shared.loadAccesToken(code: code, finisedClouser: { (succes) in
+                if !succes {
+                    SVProgressHUD.show(withStatus: "世界上最遥远的地方是没有网络")
+                    return
+                }
+                
+                
+                
+                
+               UIApplication.shared.keyWindow?.rootViewController = EPMWelcomViewController()
+                
+            })
             //获取结果后不再继续展示其余的结果
             return false
         }

@@ -10,7 +10,7 @@ import UIKit
 
 class EPMUserInfoModel: NSObject,NSCoding {
 
-    var acces_token :String?
+    var access_token :String?
     
     var expires_in : TimeInterval = 0 {
         didSet{
@@ -37,7 +37,7 @@ class EPMUserInfoModel: NSObject,NSCoding {
     //实现NSCoding协议
     //编码
     func encode(with aCoder: NSCoder) {
-        aCoder.encode(acces_token, forKey: "acces_token")
+        aCoder.encode(access_token, forKey: "access_token")
         aCoder.encode(expires_date, forKey: "expires_date")
         aCoder.encode(uid, forKey: "uid")
         aCoder.encode(name, forKey: "name")
@@ -45,7 +45,7 @@ class EPMUserInfoModel: NSObject,NSCoding {
     }
     //解码
     required init?(coder aDecoder: NSCoder) {
-        acces_token = aDecoder.decodeObject(forKey: "acces_token") as? String
+        access_token = aDecoder.decodeObject(forKey: "access_token") as? String
         expires_date = aDecoder.decodeObject(forKey: "expires_date") as? Date
         uid = aDecoder.decodeObject(forKey: "uid") as? String
         name = aDecoder.decodeObject(forKey: "name") as? String

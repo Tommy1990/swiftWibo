@@ -10,11 +10,12 @@ import UIKit
 
 class EPMBaseViewController: UITableViewController,EPMVistorDelegate {
     
-    var userLogIn = false
+    let userLogIn = EPMUserAccountModelView.shared.userLogin
    lazy var visitorView = EPMVistorView(frame: UIScreen.main.bounds)
     override func loadView() {
         if userLogIn{
             super.loadView()
+            return
         }
         self.view = visitorView
         visitorView.delegate = self

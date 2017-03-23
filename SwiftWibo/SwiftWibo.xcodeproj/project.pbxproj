@@ -10,7 +10,6 @@
 		2330EF4862FE12080437592F /* Pods_SwiftWibo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CC0CA27DF69F3B5E5896E15D /* Pods_SwiftWibo.framework */; };
 		38F7EAFF7B4B9300993BA9F9 /* Pods_SwiftWiboTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D7F195A2B54F350A1413A8A /* Pods_SwiftWiboTests.framework */; };
 		7157B29DB624918C8233FFCB /* Pods_SwiftWiboUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B66EB86B1E7A055CE796995 /* Pods_SwiftWiboUITests.framework */; };
-		A756B6691E7E9A9F00F76A2D /* Masonry.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A756B6681E7E9A9F00F76A2D /* Masonry.framework */; };
 		A756B6871E7EA0B100F76A2D /* EPMMainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A756B6861E7EA0B100F76A2D /* EPMMainTabBarController.swift */; };
 		A756B68B1E7EA11B00F76A2D /* EPMMessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A756B68A1E7EA11B00F76A2D /* EPMMessageViewController.swift */; };
 		A756B68D1E7EA13400F76A2D /* EPMProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A756B68C1E7EA13400F76A2D /* EPMProfileViewController.swift */; };
@@ -28,6 +27,7 @@
 		A78F5CF01E82A52100FE9AAA /* EPMOAuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A78F5CEF1E82A52100FE9AAA /* EPMOAuthViewController.swift */; };
 		A78F5CF21E82D60D00FE9AAA /* commen.swift in Sources */ = {isa = PBXBuildFile; fileRef = A78F5CF11E82D60D00FE9AAA /* commen.swift */; };
 		A78F5CF41E83679B00FE9AAA /* EPMUserInfoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A78F5CF31E83679B00FE9AAA /* EPMUserInfoModel.swift */; };
+		A78F5CF61E839FAA00FE9AAA /* EPMWelcomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A78F5CF51E839FAA00FE9AAA /* EPMWelcomViewController.swift */; };
 		A7BC68D61E7E979500DFDCEC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7BC68D51E7E979500DFDCEC /* AppDelegate.swift */; };
 		A7BC68DE1E7E979500DFDCEC /* SwiftWibo.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A7BC68DC1E7E979500DFDCEC /* SwiftWibo.xcdatamodeld */; };
 		A7BC68E01E7E979500DFDCEC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A7BC68DF1E7E979500DFDCEC /* Assets.xcassets */; };
@@ -79,6 +79,7 @@
 		A78F5CEF1E82A52100FE9AAA /* EPMOAuthViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EPMOAuthViewController.swift; sourceTree = "<group>"; };
 		A78F5CF11E82D60D00FE9AAA /* commen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = commen.swift; sourceTree = "<group>"; };
 		A78F5CF31E83679B00FE9AAA /* EPMUserInfoModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EPMUserInfoModel.swift; sourceTree = "<group>"; };
+		A78F5CF51E839FAA00FE9AAA /* EPMWelcomViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EPMWelcomViewController.swift; sourceTree = "<group>"; };
 		A7BC68D21E7E979500DFDCEC /* SwiftWibo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftWibo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A7BC68D51E7E979500DFDCEC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A7BC68DD1E7E979500DFDCEC /* SwiftWibo.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = SwiftWibo.xcdatamodel; sourceTree = "<group>"; };
@@ -101,7 +102,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A756B6691E7E9A9F00F76A2D /* Masonry.framework in Frameworks */,
 				2330EF4862FE12080437592F /* Pods_SwiftWibo.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -273,6 +273,7 @@
 			isa = PBXGroup;
 			children = (
 				A78F5CEF1E82A52100FE9AAA /* EPMOAuthViewController.swift */,
+				A78F5CF51E839FAA00FE9AAA /* EPMWelcomViewController.swift */,
 			);
 			path = OAuth;
 			sourceTree = "<group>";
@@ -612,6 +613,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A78F5CF61E839FAA00FE9AAA /* EPMWelcomViewController.swift in Sources */,
 				A756B6931E7EA9A300F76A2D /* EPBaseNavigationController.swift in Sources */,
 				A756B6911E7EA15A00F76A2D /* EPMHomeViewController.swift in Sources */,
 				A78F5CF21E82D60D00FE9AAA /* commen.swift in Sources */,

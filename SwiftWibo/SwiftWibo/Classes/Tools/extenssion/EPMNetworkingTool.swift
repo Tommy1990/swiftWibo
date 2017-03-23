@@ -25,15 +25,9 @@ class EPMNetworkingTool: AFHTTPSessionManager {
         return tool
     }()
     
-    private  convenience init()
-    {
-        self.init()
-    }
+   
     
-    required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-    
+   
     func request(method:HTTPMethod ,urlString: String, paramter: Any, finished:@escaping ((Any?,Error?)->())){
         
         let successClouser = { (task:URLSessionTask ,respond:Any?) -> () in
