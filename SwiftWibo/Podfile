@@ -21,4 +21,5 @@ pod 'SnapKit'
 pod 'AFNetworking'
 pod 'SVProgressHUD'
 pod 'SDWebImage'
+pod 'YYModel'
 end

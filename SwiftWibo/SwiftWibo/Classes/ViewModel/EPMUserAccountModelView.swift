@@ -75,8 +75,9 @@ class EPMUserAccountModelView: NSObject {
         let uid = dict["uid"]
         let para = [ "access_token" : token,
                      "uid" : uid]
-        EPMNetworkingTool.shearedTool.request(method: .POST, urlString: urlString, paramter: para) { (result, error) in
+        EPMNetworkingTool.shearedTool.request(method: .GET, urlString: urlString, paramter: para) { (result, error) in
             if (error != nil){
+//                print(error ?? "")
                 loadUserFinished(false)
                 return
             }

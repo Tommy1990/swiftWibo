@@ -112,9 +112,6 @@ extension EPMOAuthViewController: UIWebViewDelegate{
                     return
                 }
                 
-                
-                
-                
                UIApplication.shared.keyWindow?.rootViewController = EPMWelcomViewController()
                 
             })
