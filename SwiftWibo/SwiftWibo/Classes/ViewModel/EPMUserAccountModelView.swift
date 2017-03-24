@@ -41,7 +41,13 @@ class EPMUserAccountModelView: NSObject {
         return true
         
     }
-    
+    //MARKE: 添加令牌参数
+    var token :String?{
+        if userLogin {
+           return account?.access_token
+        }
+        return nil
+    }
     var headIconUrl:URL?{
         return  URL(string:account?.avatar_large ?? "")
     }

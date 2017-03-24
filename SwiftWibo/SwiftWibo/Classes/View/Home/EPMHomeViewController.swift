@@ -8,6 +8,8 @@
 
 import UIKit
 
+ private let CELL_ID = "cell"
+let homeViewModel = EPMHomeViewModel()
 class EPMHomeViewController: EPMBaseViewController {
 
     override func viewDidLoad() {
@@ -23,6 +25,8 @@ class EPMHomeViewController: EPMBaseViewController {
             return
         }
         
+        setupUI()
+        loadData()
     }
     @objc private func push(){
         
@@ -30,11 +34,43 @@ class EPMHomeViewController: EPMBaseViewController {
         navigationController?.pushViewController(VC, animated: true)
     }
     
-    
-    
-    
-    
-    
-  
+}
 
+
+//MARKE: tabelView的相关操作
+extension EPMHomeViewController{
+     fileprivate func setupUI()  {
+    tableView.register(EPMHomeTableViewCell.self, forCellReuseIdentifier: CELL_ID)
+    tableView.tableFooterView = UIView()
+
+}
+}
+//MARKE: tabelView的数据源方法
+extension EPMHomeViewController{
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return homeViewModel.dataArray.count
+    }
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: CELL_ID, for: indexPath) as! EPMHomeTableViewCell
+        cell.backgroundColor = getRandomColor()
+        return cell
+    }
+}
+
+//MARKE: 数据请求
+extension EPMHomeViewController{
+    
+    fileprivate func loadData(){
+        homeViewModel.getHomeViewData { (isSuccess) in
+            if !isSuccess{
+                print("加载失败")
+                return
+            }
+            
+            self.tableView.reloadData()
+        }
+    }
+    
+    
+    
 }

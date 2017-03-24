@@ -47,8 +47,18 @@ class EPMNetworkingTool: AFHTTPSessionManager {
         
     }
     
+
+}
+//MARKE: homeView加载网络数据
+extension EPMNetworkingTool{
     
-    
-    
-    
+    func loadHomeData(finished:@escaping ((Any?,Error?)->()))  {
+        //请求地址
+        let urlString = "https://api.weibo.com/2/statuses/home_timeline.json"
+        //请求参数
+        let para = ["access_token":EPMUserAccountModelView.shared.token]
+        
+        self.request(method: .GET, urlString: urlString, paramter: para, finished: finished)
+        
+}
 }
