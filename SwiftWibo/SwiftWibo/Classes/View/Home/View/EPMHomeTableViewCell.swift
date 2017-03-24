@@ -33,7 +33,7 @@ extension EPMHomeTableViewCell{
         //MARKE: 约束
         originalView.snp.makeConstraints { (make) in
             make.leading.top.trailing.equalTo(self.contentView)
-            make.height.equalTo(100)
+//            make.height.equalTo(100)
         }
         
         retweetView.snp.makeConstraints { (make) in
@@ -45,7 +45,7 @@ extension EPMHomeTableViewCell{
         bottomView.snp.makeConstraints { (make) in
             make.leading.trailing.equalTo(retweetView)
             make.top.equalTo(retweetView.snp.bottom)
-            make.height.equalTo(50)
+            make.height.equalTo(30)
             make.bottom.equalTo(self.contentView)
         }
         
