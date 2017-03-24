@@ -39,6 +39,7 @@ class EPMHomeViewModel: NSObject {
                 statueModel.homeModel = model
                 temArray.append(statueModel)
             }
+            //MARKE: 加载完成后处理
             self.dataArray = temArray
             finished(true)
         }

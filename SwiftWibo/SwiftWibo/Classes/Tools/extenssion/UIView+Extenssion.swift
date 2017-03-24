@@ -32,3 +32,22 @@ extension UIButton{
     }
     
 }
+
+// 快速创建UIImageView
+extension UIImageView{
+    
+    convenience init(imgName: String){
+        self.init(image: UIImage(named: imgName))
+    }
+    
+    /// 对SD进行封装
+    ///
+    /// - Parameters:
+    ///   - urlString: 网络图片的地址
+    ///   - placeholderImgName: 占位图片的名称
+    func hm_setImage(urlString: String?, placeholderImgName: String?){
+        self.sd_setImage(with: URL(string: urlString ?? ""), placeholderImage: UIImage(named: placeholderImgName ?? ""))
+    }
+    
+    
+}
