@@ -33,6 +33,9 @@
 		A78F5D0E1E85419900FE9AAA /* EPMHomeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A78F5D0D1E85419900FE9AAA /* EPMHomeModel.swift */; };
 		A78F5D101E8542B000FE9AAA /* EPMHomeStatueViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A78F5D0F1E8542B000FE9AAA /* EPMHomeStatueViewModel.swift */; };
 		A78F5D121E8548F100FE9AAA /* EPMHomeUserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A78F5D111E8548F100FE9AAA /* EPMHomeUserModel.swift */; };
+		A78F5D151E8554F500FE9AAA /* EPMOrignialView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A78F5D141E8554F500FE9AAA /* EPMOrignialView.swift */; };
+		A78F5D171E85554200FE9AAA /* EPMHomeRetweetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A78F5D161E85554200FE9AAA /* EPMHomeRetweetView.swift */; };
+		A78F5D191E85554F00FE9AAA /* EPMBottomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A78F5D181E85554F00FE9AAA /* EPMBottomView.swift */; };
 		A7BC68D61E7E979500DFDCEC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7BC68D51E7E979500DFDCEC /* AppDelegate.swift */; };
 		A7BC68DE1E7E979500DFDCEC /* SwiftWibo.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A7BC68DC1E7E979500DFDCEC /* SwiftWibo.xcdatamodeld */; };
 		A7BC68E01E7E979500DFDCEC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A7BC68DF1E7E979500DFDCEC /* Assets.xcassets */; };
@@ -90,6 +93,9 @@
 		A78F5D0D1E85419900FE9AAA /* EPMHomeModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EPMHomeModel.swift; sourceTree = "<group>"; };
 		A78F5D0F1E8542B000FE9AAA /* EPMHomeStatueViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EPMHomeStatueViewModel.swift; sourceTree = "<group>"; };
 		A78F5D111E8548F100FE9AAA /* EPMHomeUserModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EPMHomeUserModel.swift; sourceTree = "<group>"; };
+		A78F5D141E8554F500FE9AAA /* EPMOrignialView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EPMOrignialView.swift; sourceTree = "<group>"; };
+		A78F5D161E85554200FE9AAA /* EPMHomeRetweetView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EPMHomeRetweetView.swift; sourceTree = "<group>"; };
+		A78F5D181E85554F00FE9AAA /* EPMBottomView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EPMBottomView.swift; sourceTree = "<group>"; };
 		A7BC68D21E7E979500DFDCEC /* SwiftWibo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftWibo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A7BC68D51E7E979500DFDCEC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A7BC68DD1E7E979500DFDCEC /* SwiftWibo.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = SwiftWibo.xcdatamodel; sourceTree = "<group>"; };
@@ -295,6 +301,9 @@
 			isa = PBXGroup;
 			children = (
 				A78F5D061E853C9400FE9AAA /* EPMHomeTableViewCell.swift */,
+				A78F5D141E8554F500FE9AAA /* EPMOrignialView.swift */,
+				A78F5D161E85554200FE9AAA /* EPMHomeRetweetView.swift */,
+				A78F5D181E85554F00FE9AAA /* EPMBottomView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -652,6 +661,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A78F5D191E85554F00FE9AAA /* EPMBottomView.swift in Sources */,
 				A78F5CF61E839FAA00FE9AAA /* EPMWelcomViewController.swift in Sources */,
 				A756B6931E7EA9A300F76A2D /* EPBaseNavigationController.swift in Sources */,
 				A756B6911E7EA15A00F76A2D /* EPMHomeViewController.swift in Sources */,
@@ -663,9 +673,11 @@
 				A78F5CEB1E829D3A00FE9AAA /* EPMNetworkingTool.swift in Sources */,
 				A7BC68D61E7E979500DFDCEC /* AppDelegate.swift in Sources */,
 				A7BC68DE1E7E979500DFDCEC /* SwiftWibo.xcdatamodeld in Sources */,
+				A78F5D171E85554200FE9AAA /* EPMHomeRetweetView.swift in Sources */,
 				A78F5D0E1E85419900FE9AAA /* EPMHomeModel.swift in Sources */,
 				A756B68F1E7EA14700F76A2D /* EPMDiscoverViewController.swift in Sources */,
 				A78F5BD11E7F93F700FE9AAA /* UIView+Extenssion.swift in Sources */,
+				A78F5D151E8554F500FE9AAA /* EPMOrignialView.swift in Sources */,
 				A756B68B1E7EA11B00F76A2D /* EPMMessageViewController.swift in Sources */,
 				A78F5D0C1E85418100FE9AAA /* EPMHomeViewModel.swift in Sources */,
 				A78F5D071E853C9400FE9AAA /* EPMHomeTableViewCell.swift in Sources */,

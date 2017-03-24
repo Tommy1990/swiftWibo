@@ -42,6 +42,8 @@ extension EPMHomeViewController{
      fileprivate func setupUI()  {
     tableView.register(EPMHomeTableViewCell.self, forCellReuseIdentifier: CELL_ID)
     tableView.tableFooterView = UIView()
+    tableView.rowHeight = UITableViewAutomaticDimension
+    tableView.estimatedRowHeight = 200
 
 }
 }
@@ -52,7 +54,7 @@ extension EPMHomeViewController{
     }
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: CELL_ID, for: indexPath) as! EPMHomeTableViewCell
-        cell.backgroundColor = getRandomColor()
+//        cell.backgroundColor = getRandomColor()
         return cell
     }
 }
