@@ -55,6 +55,7 @@ extension EPMHomeViewController{
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: CELL_ID, for: indexPath) as! EPMHomeTableViewCell
 //        cell.backgroundColor = getRandomColor()
+        cell.statusViewModel = homeViewModel.dataArray[indexPath.row]
         return cell
     }
 }

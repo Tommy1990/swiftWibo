@@ -13,11 +13,25 @@ class EPMHomeRetweetView: UIView {
     override init(frame:CGRect)
     {
         super.init(frame: frame)
-        self.backgroundColor = getRandomColor()
+//        self.backgroundColor = getRandomColor()
+        setupUI()
     }
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-
+    func setupUI(){
+        addSubview(labReteetContent)
+        labReteetContent.preferredMaxLayoutWidth = screenWidth - 2 * margine
+        labReteetContent.textAlignment = .left
+        labReteetContent.snp.makeConstraints { (make) in
+            make.top.equalTo(self).offset(margine)
+            make.centerX.equalTo(self)
+            make.width.equalTo(screenWidth - 2 * margine)
+            make.bottom.equalTo(self).offset(-margine)
+        }
+        
+    }
+    private lazy var labReteetContent =  UILabel(title: "转发微博正文转发微博正文转发微博正文转发微博正文转发微博正文转发微博正文转发微博正文转发微博正文转发微博正文转发微博正文转发微博正文转发微博正文转发微博正文转发微博正文转发微博正文转发微博正文转发微博正文", textColor: UIColor.darkGray, fontSize: FONTSIZEOFNORMAL)
+    
 }

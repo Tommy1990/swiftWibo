@@ -15,6 +15,7 @@ extension UILabel{
         self.text = title
         self.textColor = textColor
         self.font = UIFont.systemFont(ofSize: fontSize)
+        self.numberOfLines = 0
         self.sizeToFit()
     }
     
@@ -45,7 +46,7 @@ extension UIImageView{
     /// - Parameters:
     ///   - urlString: 网络图片的地址
     ///   - placeholderImgName: 占位图片的名称
-    func hm_setImage(urlString: String?, placeholderImgName: String?){
+    func EPM_setImage(urlString: String?, placeholderImgName: String?){
         self.sd_setImage(with: URL(string: urlString ?? ""), placeholderImage: UIImage(named: placeholderImgName ?? ""))
     }
     

@@ -10,6 +10,12 @@ import UIKit
 
 
 class EPMHomeTableViewCell: UITableViewCell {
+    var statusViewModel: EPMHomeStatueViewModel?{
+        didSet{
+            // 给原创微博 转发微博 底部视图 进行赋值
+          originalView.statueModel = statusViewModel
+        }
+    }
 
     override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
         super.init(style:style ,reuseIdentifier:reuseIdentifier)
@@ -39,13 +45,13 @@ extension EPMHomeTableViewCell{
         retweetView.snp.makeConstraints { (make) in
             make.leading.trailing.equalTo(originalView)
             make.top.equalTo(originalView.snp.bottom)
-            make.height.equalTo(50)
+//            make.height.equalTo(50)
         }
         
         bottomView.snp.makeConstraints { (make) in
             make.leading.trailing.equalTo(retweetView)
             make.top.equalTo(retweetView.snp.bottom)
-            make.height.equalTo(30)
+//            make.height.equalTo(30)
             make.bottom.equalTo(self.contentView)
         }
         

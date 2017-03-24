@@ -12,9 +12,19 @@ class EPMOrignialView: UIView {
 
     override init(frame:CGRect){
         super.init(frame:frame)
-        self.backgroundColor = getRandomColor()
+//        self.backgroundColor = getRandomColor()
         setupUI()
         
+    }
+    
+    var statueModel:EPMHomeStatueViewModel?{
+        didSet{
+            imgHead.EPM_setImage(urlString: statueModel?.homeModel?.user?.profile_image_url, placeholderImgName:"avatar_default")
+            labuserName.text = statueModel?.homeModel?.user?.name
+            imgMemberShip.image = statueModel?.MbrankImg
+            labContent.text = statueModel?.homeModel?.text
+            imgVarif.image = statueModel?.verifiedImg
+        }
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -29,7 +39,7 @@ class EPMOrignialView: UIView {
         addSubview(labSource)
         addSubview(imgVarif)
         addSubview(labContent)
-        labContent.numberOfLines = 0
+       
         labContent.textAlignment = .left
         labContent.preferredMaxLayoutWidth = screenWidth - 2*margine
         //MARKE: 约束
