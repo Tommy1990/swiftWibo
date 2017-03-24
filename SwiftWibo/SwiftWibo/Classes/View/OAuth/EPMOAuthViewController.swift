@@ -112,7 +112,8 @@ extension EPMOAuthViewController: UIWebViewDelegate{
                     return
                 }
                 
-               UIApplication.shared.keyWindow?.rootViewController = EPMWelcomViewController()
+//               UIApplication.shared.keyWindow?.rootViewController = EPMWelcomViewController()
+                NotificationCenter.default.post(name: NSNotification.Name(rawValue: SWITCHROOTCONTROLLERINFO), object: nil )
                 
             })
             //获取结果后不再继续展示其余的结果

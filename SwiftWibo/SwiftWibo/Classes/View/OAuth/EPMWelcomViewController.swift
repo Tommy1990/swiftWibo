@@ -58,7 +58,9 @@ class EPMWelcomViewController: UIViewController {
             UIView.animate(withDuration: 1, animations: { 
                 self.welcomeLabel.alpha = 1
             }, completion: { (true) in
-             UIApplication.shared.keyWindow?.rootViewController = EPMMainTabBarController()
+                NotificationCenter.default.post(name: NSNotification.Name(rawValue:SWITCHROOTCONTROLLERINFO), object: "welcomeVC")
+                
+//             UIApplication.shared.keyWindow?.rootViewController = EPMMainTabBarController()
             })
     }
     
