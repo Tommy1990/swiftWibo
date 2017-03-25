@@ -13,7 +13,7 @@ class EPMHomeRetweetView: UIView {
     override init(frame:CGRect)
     {
         super.init(frame: frame)
-//        self.backgroundColor = getRandomColor()
+        self.backgroundColor = UIColor(white: 235/255, alpha: 1.0)
         setupUI()
     }
     var statueModel: EPMHomeStatueViewModel?{

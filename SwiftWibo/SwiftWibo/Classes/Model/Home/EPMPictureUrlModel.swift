@@ -9,5 +9,6 @@
 import UIKit
 
 class EPMPictureUrlModel: NSObject {
-
+    // 配图图片地址
+    var thumbnail_pic: String?
 }

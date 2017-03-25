@@ -7,9 +7,11 @@
 //
 
 import UIKit
+import SnapKit
 
 class EPMOrignialView: UIView {
 
+     var selfConstraint:Constraint?
     override init(frame:CGRect){
         super.init(frame:frame)
 //        self.backgroundColor = getRandomColor()
@@ -19,11 +21,29 @@ class EPMOrignialView: UIView {
     
     var statueModel:EPMHomeStatueViewModel?{
         didSet{
+            
             imgHead.EPM_setImage(urlString: statueModel?.homeModel?.user?.profile_image_url, placeholderImgName:"avatar_default")
             labuserName.text = statueModel?.homeModel?.user?.name
             imgMemberShip.image = statueModel?.MbrankImg
             labContent.text = statueModel?.homeModel?.text
             imgVarif.image = statueModel?.verifiedImg
+            //判断视图逻辑
+            selfConstraint?.deactivate()
+            if let picUrls = statueModel?.homeModel?.pic_urls , picUrls.count > 0 {
+                photoView.pic_urls = picUrls
+                //更新约束
+                self.snp.makeConstraints({ (make) in
+                    selfConstraint = make.bottom.equalTo(photoView.snp.bottom).offset(margine).constraint
+                })
+                photoView.isHidden = false
+                
+            }else{
+                self.snp.makeConstraints({ (make) in
+                    selfConstraint = make.bottom.equalTo(labContent.snp.bottom).offset(margine).constraint
+                })
+                photoView.isHidden = true
+                
+            }
         }
     }
     
@@ -81,7 +101,7 @@ class EPMOrignialView: UIView {
         }
         
         self.snp.makeConstraints { (make) in
-            make.bottom.equalTo(photoView).offset(margine)
+          selfConstraint = make.bottom.equalTo(photoView).offset(margine).constraint
         }
         
     }
