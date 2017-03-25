@@ -39,6 +39,7 @@ class EPMOrignialView: UIView {
         addSubview(labSource)
         addSubview(imgVarif)
         addSubview(labContent)
+        addSubview(photoView)
        
         labContent.textAlignment = .left
         labContent.preferredMaxLayoutWidth = screenWidth - 2*margine
@@ -73,8 +74,14 @@ class EPMOrignialView: UIView {
             make.top.equalTo(imgHead.snp.bottom).offset(margine)
             
         }
+        photoView.snp.makeConstraints { (make) in
+            make.leading.equalTo(self).offset(margine)
+            make.width.equalTo(screenWidth - 2*margine)
+            make.top.equalTo(labContent.snp.bottom).offset(margine)
+        }
+        
         self.snp.makeConstraints { (make) in
-            make.bottom.equalTo(labContent).offset(margine)
+            make.bottom.equalTo(photoView).offset(margine)
         }
         
     }
@@ -85,7 +92,8 @@ class EPMOrignialView: UIView {
     private lazy var labSource = UILabel(title: "微博来源", textColor: UIColor.darkGray, fontSize: FONTSIZEOFSMALL)
      private lazy var imgVarif = UIImageView(imgName: "avatar_vgirl")
     private lazy var labContent = UILabel(title: "微博正文微博正文微博正文微博正文微博正文微博正文微博正文微博正文微博正文微博正文微博正文微博正文微博正文微博正文微博正文微博正文微博正文微博正文微博正文微博正文微博正文微博正文微博正文微博正文微博正文微博正文", textColor: UIColor.black, fontSize: FONTSIZEOFNORMAL)
-    
+    private lazy var photoView:EPMPictureView = EPMPictureView()
+       
     
     
 }

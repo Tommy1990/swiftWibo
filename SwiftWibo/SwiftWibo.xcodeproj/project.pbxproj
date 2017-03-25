@@ -37,6 +37,7 @@
 		A78F5D171E85554200FE9AAA /* EPMHomeRetweetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A78F5D161E85554200FE9AAA /* EPMHomeRetweetView.swift */; };
 		A78F5D191E85554F00FE9AAA /* EPMBottomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A78F5D181E85554F00FE9AAA /* EPMBottomView.swift */; };
 		A78F5D1E1E869CB100FE9AAA /* EPMPictureUrlModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A78F5D1D1E869CB100FE9AAA /* EPMPictureUrlModel.swift */; };
+		A78F5D201E869D0E00FE9AAA /* EPMPictureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A78F5D1F1E869D0E00FE9AAA /* EPMPictureView.swift */; };
 		A7BC68D61E7E979500DFDCEC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7BC68D51E7E979500DFDCEC /* AppDelegate.swift */; };
 		A7BC68DE1E7E979500DFDCEC /* SwiftWibo.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A7BC68DC1E7E979500DFDCEC /* SwiftWibo.xcdatamodeld */; };
 		A7BC68E01E7E979500DFDCEC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A7BC68DF1E7E979500DFDCEC /* Assets.xcassets */; };
@@ -98,6 +99,7 @@
 		A78F5D161E85554200FE9AAA /* EPMHomeRetweetView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EPMHomeRetweetView.swift; sourceTree = "<group>"; };
 		A78F5D181E85554F00FE9AAA /* EPMBottomView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EPMBottomView.swift; sourceTree = "<group>"; };
 		A78F5D1D1E869CB100FE9AAA /* EPMPictureUrlModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EPMPictureUrlModel.swift; sourceTree = "<group>"; };
+		A78F5D1F1E869D0E00FE9AAA /* EPMPictureView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EPMPictureView.swift; sourceTree = "<group>"; };
 		A7BC68D21E7E979500DFDCEC /* SwiftWibo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftWibo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A7BC68D51E7E979500DFDCEC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A7BC68DD1E7E979500DFDCEC /* SwiftWibo.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = SwiftWibo.xcdatamodel; sourceTree = "<group>"; };
@@ -306,6 +308,7 @@
 				A78F5D141E8554F500FE9AAA /* EPMOrignialView.swift */,
 				A78F5D161E85554200FE9AAA /* EPMHomeRetweetView.swift */,
 				A78F5D181E85554F00FE9AAA /* EPMBottomView.swift */,
+				A78F5D1F1E869D0E00FE9AAA /* EPMPictureView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -674,6 +677,7 @@
 				A78F5CF41E83679B00FE9AAA /* EPMUserInfoModel.swift in Sources */,
 				A78F5CF01E82A52100FE9AAA /* EPMOAuthViewController.swift in Sources */,
 				A78F5CEB1E829D3A00FE9AAA /* EPMNetworkingTool.swift in Sources */,
+				A78F5D201E869D0E00FE9AAA /* EPMPictureView.swift in Sources */,
 				A7BC68D61E7E979500DFDCEC /* AppDelegate.swift in Sources */,
 				A7BC68DE1E7E979500DFDCEC /* SwiftWibo.xcdatamodeld in Sources */,
 				A78F5D171E85554200FE9AAA /* EPMHomeRetweetView.swift in Sources */,
