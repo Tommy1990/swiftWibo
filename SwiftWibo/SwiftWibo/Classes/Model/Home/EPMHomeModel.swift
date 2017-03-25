@@ -22,4 +22,11 @@ class EPMHomeModel: NSObject {
     var user: EPMHomeUserModel?
     ///转发微博
     var retweeted_status: EPMHomeModel?
+    var pic_urls: [String:Any]?
+    
+    class func modelContainerPropertyGenericClass() -> [String: Any]{
+        return ["pic_urls":EPMPictureUrlModel.self]
+    }
+
+    
 }
