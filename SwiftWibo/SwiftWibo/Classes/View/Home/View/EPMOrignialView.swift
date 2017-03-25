@@ -71,9 +71,11 @@ class EPMOrignialView: UIView {
             make.centerX.equalTo(self)
             make.width.equalTo(screenWidth - 2*margine)
             make.top.equalTo(imgHead.snp.bottom).offset(margine)
-            make.bottom.equalTo(self).offset(-margine)
+            
         }
-        
+        self.snp.makeConstraints { (make) in
+            make.bottom.equalTo(labContent).offset(margine)
+        }
         
     }
     private lazy var imgHead:UIImageView = UIImageView(imgName: "avatar_default")

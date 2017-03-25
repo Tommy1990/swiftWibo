@@ -20,4 +20,6 @@ class EPMHomeModel: NSObject {
     var source: String?
     /// 用户信息
     var user: EPMHomeUserModel?
+    ///转发微博
+    var retweeted_status: EPMHomeModel?
 }

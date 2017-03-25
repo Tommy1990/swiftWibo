@@ -7,13 +7,36 @@
 //
 
 import UIKit
+import SnapKit
 
-
+private var bottomViewConstraint :Constraint?
 class EPMHomeTableViewCell: UITableViewCell {
     var statusViewModel: EPMHomeStatueViewModel?{
         didSet{
             // 给原创微博 转发微博 底部视图 进行赋值
           originalView.statueModel = statusViewModel
+          bottomViewConstraint?.deactivate()
+//            print(statusViewModel?.homeModel?.retweeted_status)
+            if let _ = statusViewModel?.homeModel?.retweeted_status{
+                 retweetView.isHidden = false
+               //赋值
+                retweetView.statueModel = statusViewModel
+                //更新约束
+                bottomView.snp.makeConstraints({ (make) in
+                bottomViewConstraint = make.top.equalTo(retweetView.snp.bottom).constraint
+                })
+                //显示
+               
+            }else{
+                //更新约束
+                 retweetView.isHidden = true
+                bottomView.snp.makeConstraints({ (make) in
+                    bottomViewConstraint = make.top.equalTo(originalView.snp.bottom).constraint
+                })
+                //隐藏转发视图
+               
+            }
+            
         }
     }
 
@@ -49,10 +72,10 @@ extension EPMHomeTableViewCell{
         }
         
         bottomView.snp.makeConstraints { (make) in
-            make.leading.trailing.equalTo(retweetView)
-            make.top.equalTo(retweetView.snp.bottom)
-//            make.height.equalTo(30)
-            make.bottom.equalTo(self.contentView)
+            
+           bottomViewConstraint =  make.top.equalTo(retweetView.snp.bottom).constraint
+            make.height.equalTo(35)
+            make.bottom.leading.trailing.equalTo(self.contentView)
         }
         
         

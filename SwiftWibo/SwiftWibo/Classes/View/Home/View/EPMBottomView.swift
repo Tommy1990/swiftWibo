@@ -12,7 +12,7 @@ class EPMBottomView: UIView {
     override init(frame:CGRect)
     {
         super.init(frame: frame)
-      self.backgroundColor = UIColor.green
+      self.backgroundColor = UIColor.white
         setupUI()
     }
     

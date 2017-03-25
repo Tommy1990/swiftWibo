@@ -16,6 +16,12 @@ class EPMHomeRetweetView: UIView {
 //        self.backgroundColor = getRandomColor()
         setupUI()
     }
+    var statueModel: EPMHomeStatueViewModel?{
+        didSet{
+            labReteetContent.text = statueModel?.homeModel?.retweeted_status?.text
+        }
+    }
+    
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
@@ -28,7 +34,10 @@ class EPMHomeRetweetView: UIView {
             make.top.equalTo(self).offset(margine)
             make.centerX.equalTo(self)
             make.width.equalTo(screenWidth - 2 * margine)
-            make.bottom.equalTo(self).offset(-margine)
+           
+        }
+        self.snp.makeConstraints { (make) in
+            make.bottom.equalTo(labReteetContent.snp.bottom).offset(margine)
         }
         
     }

@@ -43,7 +43,7 @@ extension EPMHomeViewController{
     tableView.register(EPMHomeTableViewCell.self, forCellReuseIdentifier: CELL_ID)
     tableView.tableFooterView = UIView()
     tableView.rowHeight = UITableViewAutomaticDimension
-    tableView.estimatedRowHeight = 200
+    tableView.estimatedRowHeight = 300
 
 }
 }

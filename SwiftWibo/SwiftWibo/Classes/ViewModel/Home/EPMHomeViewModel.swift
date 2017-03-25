@@ -31,6 +31,7 @@ class EPMHomeViewModel: NSObject {
             }
             let staueArr = NSArray.yy_modelArray(with: EPMHomeModel.self, json: resArr) as! [EPMHomeModel]
             
+              print(resArr)
             var temArray: [EPMHomeStatueViewModel] = [EPMHomeStatueViewModel]()
             
             //MARKE: 遍历数组获得
@@ -39,6 +40,7 @@ class EPMHomeViewModel: NSObject {
                 statueModel.homeModel = model
                 temArray.append(statueModel)
             }
+          
             //MARKE: 加载完成后处理
             self.dataArray = temArray
             finished(true)
