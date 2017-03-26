@@ -56,7 +56,7 @@ class EPMHomeRetweetView: UIView {
         
         photoView.snp.makeConstraints { (make) in
             make.leading.equalTo(self).offset(margine)
-            make.top.equalTo(labReteetContent).offset(margine)
+            make.top.equalTo(labReteetContent.snp.bottom).offset(margine)
             make.width.equalTo(screenWidth - 2 * margine)
         }
         

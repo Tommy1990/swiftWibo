@@ -59,6 +59,7 @@ extension EPMHomeViewController{
     
     tableView.tableFooterView = footView
     tableView.separatorStyle = .none
+    tableView.addSubview(EPMRefreshControl)
         
 
 }

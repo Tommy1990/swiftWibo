@@ -58,7 +58,7 @@ class EPMPictureView: UICollectionView {
     //MARKE: 设置UI
     private func setupUI() {
        dataSource = self
-        
+    self.backgroundColor = UIColor.clear
     register(EPMPictureviewCell.self, forCellWithReuseIdentifier: Cell_ID)
         self.snp.makeConstraints { (make) in
             make.size.equalTo(CGSize(width: 100, height: 100))
@@ -139,7 +139,7 @@ class EPMPictureviewCell: UICollectionViewCell {
         }
         
         gifImageView.snp.makeConstraints { (make) in
-            make.trailing.top.equalTo(contentView)
+            make.trailing.top.equalTo(imgPicture)
         }
     }
     
