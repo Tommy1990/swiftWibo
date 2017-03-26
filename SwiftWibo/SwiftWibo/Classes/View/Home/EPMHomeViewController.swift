@@ -33,7 +33,19 @@ class EPMHomeViewController: EPMBaseViewController {
         let VC = EPMTestViewController()
         navigationController?.pushViewController(VC, animated: true)
     }
+    fileprivate lazy var footView:UIActivityIndicatorView = {
+        let view = UIActivityIndicatorView(activityIndicatorStyle: UIActivityIndicatorViewStyle.whiteLarge)
+        view.color = ThemeColor
+        return view
+    }()
     
+    fileprivate lazy var EPMRefreshControl: UIRefreshControl = {
+        let view = UIRefreshControl()
+        view.attributedTitle = NSAttributedString(string: "加载中请稍后")
+        // 添加监听事件
+        view.addTarget(self, action: #selector(refreshAction), for: UIControlEvents.valueChanged)
+        return view
+    }()
 }
 
 
@@ -44,6 +56,10 @@ extension EPMHomeViewController{
     tableView.tableFooterView = UIView()
     tableView.rowHeight = UITableViewAutomaticDimension
     tableView.estimatedRowHeight = 300
+    
+    tableView.tableFooterView = footView
+    tableView.separatorStyle = .none
+        
 
 }
 }
@@ -56,7 +72,18 @@ extension EPMHomeViewController{
         let cell = tableView.dequeueReusableCell(withIdentifier: CELL_ID, for: indexPath) as! EPMHomeTableViewCell
 //        cell.backgroundColor = getRandomColor()
         cell.statusViewModel = homeViewModel.dataArray[indexPath.row]
+        cell.selectionStyle = .none
         return cell
+    }
+    
+    override func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        if indexPath.row == homeViewModel.dataArray.count-1 && !footView.isAnimating {
+         footView.startAnimating()
+         loadData()
+        }
+    }
+    @objc fileprivate func refreshAction() {
+        loadData()
     }
 }
 
@@ -64,7 +91,10 @@ extension EPMHomeViewController{
 extension EPMHomeViewController{
     
     fileprivate func loadData(){
-        homeViewModel.getHomeViewData { (isSuccess) in
+       
+        homeViewModel.getHomeViewData(isPullUp: self.footView.isAnimating) { (isSuccess) in
+            //加载控件动画停止
+            self.termingRefrshing()
             if !isSuccess{
                 print("加载失败")
                 return
@@ -74,6 +104,9 @@ extension EPMHomeViewController{
         }
     }
     
-    
+    fileprivate func termingRefrshing() {
+        self.EPMRefreshControl.endRefreshing()
+        self.footView.stopAnimating()
+    }
     
 }

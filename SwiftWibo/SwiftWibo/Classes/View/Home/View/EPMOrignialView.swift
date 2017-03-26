@@ -32,15 +32,15 @@ class EPMOrignialView: UIView {
             if let picUrls = statueModel?.homeModel?.pic_urls , picUrls.count > 0 {
                 photoView.pic_urls = picUrls
                 //更新约束
-                self.snp.makeConstraints({ (make) in
+                self.snp.makeConstraints{ (make) in
                     selfConstraint = make.bottom.equalTo(photoView.snp.bottom).offset(margine).constraint
-                })
+                }
                 photoView.isHidden = false
                 
             }else{
-                self.snp.makeConstraints({ (make) in
+                self.snp.makeConstraints{ (make) in
                     selfConstraint = make.bottom.equalTo(labContent.snp.bottom).offset(margine).constraint
-                })
+                }
                 photoView.isHidden = true
                 
             }

@@ -24,17 +24,17 @@ class EPMHomeTableViewCell: UITableViewCell {
                //赋值
                 retweetView.statueModel = statusViewModel
                 //更新约束
-                bottomView.snp.makeConstraints({ (make) in
+                bottomView.snp.makeConstraints{ (make) in
                 bottomViewConstraint = make.top.equalTo(retweetView.snp.bottom).constraint
-                })
+                }
                 //显示
                
             }else{
                 //更新约束
                  retweetView.isHidden = true
-                bottomView.snp.makeConstraints({ (make) in
+                bottomView.snp.makeConstraints{ (make) in
                     bottomViewConstraint = make.top.equalTo(originalView.snp.bottom).constraint
-                })
+                }
             }
             
         }

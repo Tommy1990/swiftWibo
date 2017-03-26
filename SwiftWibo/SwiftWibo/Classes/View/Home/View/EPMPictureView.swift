@@ -7,9 +7,10 @@
 //
 
 import UIKit
+import SDWebImage
 
 private let Cell_ID = "Cell_ID"
-fileprivate let layOut = UICollectionViewFlowLayout()
+
 fileprivate let sizeMargin:CGFloat = 5.0
 fileprivate let itemWH = (screenWidth - 2*margine - 2 * sizeMargin)/3
 class EPMPictureView: UICollectionView {
@@ -23,8 +24,16 @@ class EPMPictureView: UICollectionView {
         self.snp.updateConstraints { (make) in
             make.size.equalTo(size)
         }
-        
-        layOut.itemSize = CGSize(width: itemWH, height: itemWH)
+            let layout = collectionViewLayout as! UICollectionViewFlowLayout
+            
+            if pic_urls?.count == 1{
+               layout.itemSize = size
+            }else{
+                layout.itemSize = CGSize(width: itemWH, height: itemWH)
+            }
+            
+            
+        layout.itemSize = CGSize(width: itemWH, height: itemWH)
             
             
             layoutIfNeeded()
@@ -34,7 +43,12 @@ class EPMPictureView: UICollectionView {
     }
     override init(frame: CGRect, collectionViewLayout layout: UICollectionViewLayout) {
         
-        super.init(frame: frame, collectionViewLayout: layOut)
+        let flowLayout = UICollectionViewFlowLayout()
+        flowLayout.itemSize = CGSize(width: itemWH, height: itemWH)
+        flowLayout.minimumLineSpacing = sizeMargin
+        flowLayout.minimumInteritemSpacing = sizeMargin
+        
+        super.init(frame: frame, collectionViewLayout: flowLayout)
         setupUI()
     }
     
@@ -54,18 +68,26 @@ class EPMPictureView: UICollectionView {
     //MARKE: 设置图片的大小
     private func dealPictureViewSize(count:Int)-> CGSize{
         
-        
-        
-        
-        
-        
+        if count == 1 {
+            
+           if let thumbnail_pic = pic_urls?.first?.thumbnail_pic {
+             let image = SDWebImageManager.shared().imageCache.imageFromDiskCache(forKey: thumbnail_pic)
+            
+            if let img = image {
+                let imgW = img.size.width < 80 ? 80 : img.size.width
+                let imgH = img.size.height > 150 ? 150 : img.size.height
+                
+                return CGSize(width: imgW, height: imgH)
+                
+            }
+            }
+        }
         let row = count == 4 ? 2 : (count - 1)/3 + 1
         let col = count == 4 ? 2 : count >= 3 ? 3 : count
         let viewWide = CGFloat(col) * itemWH + CGFloat(col - 1)*sizeMargin
         let viewHeight = CGFloat(row) * itemWH + CGFloat(row - 1)*sizeMargin
         return CGSize(width: viewWide, height: viewHeight)
-        
-        
+
     }
     
     
@@ -90,7 +112,11 @@ class EPMPictureviewCell: UICollectionViewCell {
     var pictureModel:EPMPictureUrlModel?{
         didSet{
             imgPicture.EPM_setImage(urlString: pictureModel?.thumbnail_pic, placeholderImgName: "avatar_default_big")
-            
+            if let thumbnail_pic = pictureModel?.thumbnail_pic,thumbnail_pic.hasSuffix(".gif") {
+                gifImageView.isHidden = false
+            }else{
+                gifImageView.isHidden = true
+            }
             
         }
     }
@@ -106,9 +132,14 @@ class EPMPictureviewCell: UICollectionViewCell {
     //设置UI
     private func setupUI() {
         contentView.addSubview(imgPicture)
-       
+        contentView.addSubview(gifImageView)
+        
         imgPicture.snp.makeConstraints { (make) in
             make.edges.equalTo(UIEdgeInsetsMake(0, 0, 0, 0))
+        }
+        
+        gifImageView.snp.makeConstraints { (make) in
+            make.trailing.top.equalTo(contentView)
         }
     }
     
@@ -121,5 +152,5 @@ class EPMPictureviewCell: UICollectionViewCell {
         return img
     }()
 
-    
+   private lazy var gifImageView: UIImageView = UIImageView(imgName: "timeline_image_gif")
 }

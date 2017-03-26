@@ -52,11 +52,14 @@ class EPMNetworkingTool: AFHTTPSessionManager {
 //MARKE: homeView加载网络数据
 extension EPMNetworkingTool{
     
-    func loadHomeData(finished:@escaping ((Any?,Error?)->()))  {
+    func loadHomeData(since_id: Int64, max_id: Int64,finished:@escaping ((Any?,Error?)->()))  {
         //请求地址
         let urlString = "https://api.weibo.com/2/statuses/home_timeline.json"
         //请求参数
-        let para = ["access_token":EPMUserAccountModelView.shared.token]
+        let para = ["access_token":EPMUserAccountModelView.shared.token,
+                    "since_id":"\(since_id)",
+                    "max_id":"\(max_id)"
+                    ]
         
         self.request(method: .GET, urlString: urlString, paramter: para, finished: finished)
         

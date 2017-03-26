@@ -13,7 +13,7 @@ class EPMHomeModel: NSObject {
     /// 创建时间
     var created_at: String?
     /// 微博ID
-    var id: Int = 0
+    var id: Int64 = 0
     /// 微博信息内容
     var text: String?
     /// 微博来源
