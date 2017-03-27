@@ -52,3 +52,21 @@ extension UIImageView{
     
     
 }
+
+extension UIImage{
+    
+    class func getScreenSnap() ->UIImage?{
+        let window  = UIApplication.shared.keyWindow
+        UIGraphicsBeginImageContext(window!.bounds.size)
+        window?.drawHierarchy(in: window!.bounds, afterScreenUpdates: false)
+        let picture = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        
+        return picture
+        
+        
+        
+    }
+}
+
+
