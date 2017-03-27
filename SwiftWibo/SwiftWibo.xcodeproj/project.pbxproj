@@ -39,6 +39,8 @@
 		A78F5D1E1E869CB100FE9AAA /* EPMPictureUrlModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A78F5D1D1E869CB100FE9AAA /* EPMPictureUrlModel.swift */; };
 		A78F5D201E869D0E00FE9AAA /* EPMPictureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A78F5D1F1E869D0E00FE9AAA /* EPMPictureView.swift */; };
 		A78F5D731E89453000FE9AAA /* EPMRefreshControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = A78F5D721E89453000FE9AAA /* EPMRefreshControl.swift */; };
+		A78F5D771E89671400FE9AAA /* EPMComposeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A78F5D761E89671400FE9AAA /* EPMComposeView.swift */; };
+		A78F5D7D1E8967AB00FE9AAA /* UIImage+ImageEffects.m in Sources */ = {isa = PBXBuildFile; fileRef = A78F5D7C1E8967AB00FE9AAA /* UIImage+ImageEffects.m */; };
 		A7BC68D61E7E979500DFDCEC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7BC68D51E7E979500DFDCEC /* AppDelegate.swift */; };
 		A7BC68DE1E7E979500DFDCEC /* SwiftWibo.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A7BC68DC1E7E979500DFDCEC /* SwiftWibo.xcdatamodeld */; };
 		A7BC68E01E7E979500DFDCEC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A7BC68DF1E7E979500DFDCEC /* Assets.xcassets */; };
@@ -102,6 +104,9 @@
 		A78F5D1D1E869CB100FE9AAA /* EPMPictureUrlModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EPMPictureUrlModel.swift; sourceTree = "<group>"; };
 		A78F5D1F1E869D0E00FE9AAA /* EPMPictureView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EPMPictureView.swift; sourceTree = "<group>"; };
 		A78F5D721E89453000FE9AAA /* EPMRefreshControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EPMRefreshControl.swift; sourceTree = "<group>"; };
+		A78F5D761E89671400FE9AAA /* EPMComposeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EPMComposeView.swift; sourceTree = "<group>"; };
+		A78F5D7B1E8967AB00FE9AAA /* UIImage+ImageEffects.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+ImageEffects.h"; sourceTree = "<group>"; };
+		A78F5D7C1E8967AB00FE9AAA /* UIImage+ImageEffects.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+ImageEffects.m"; sourceTree = "<group>"; };
 		A7BC68D21E7E979500DFDCEC /* SwiftWibo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftWibo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A7BC68D51E7E979500DFDCEC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A7BC68DD1E7E979500DFDCEC /* SwiftWibo.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = SwiftWibo.xcdatamodel; sourceTree = "<group>"; };
@@ -194,6 +199,7 @@
 		A756B66D1E7E9D5800F76A2D /* Tools */ = {
 			isa = PBXGroup;
 			children = (
+				A78F5D791E8967AB00FE9AAA /* Lib */,
 				A78F5CEA1E829D3A00FE9AAA /* EPMNetworkingTool.swift */,
 				A78F5CF11E82D60D00FE9AAA /* commen.swift */,
 				A78F5D721E89453000FE9AAA /* EPMRefreshControl.swift */,
@@ -205,6 +211,7 @@
 		A756B66F1E7E9D5800F76A2D /* View */ = {
 			isa = PBXGroup;
 			children = (
+				A78F5D741E89663300FE9AAA /* Compose */,
 				A78F5CEE1E82A4DB00FE9AAA /* OAuth */,
 				A756B69C1E7EBA6800F76A2D /* Other */,
 				A756B6771E7E9D5800F76A2D /* Message */,
@@ -333,6 +340,39 @@
 				A78F5D0F1E8542B000FE9AAA /* EPMHomeStatueViewModel.swift */,
 			);
 			path = Home;
+			sourceTree = "<group>";
+		};
+		A78F5D741E89663300FE9AAA /* Compose */ = {
+			isa = PBXGroup;
+			children = (
+				A78F5D751E8966ED00FE9AAA /* View */,
+			);
+			path = Compose;
+			sourceTree = "<group>";
+		};
+		A78F5D751E8966ED00FE9AAA /* View */ = {
+			isa = PBXGroup;
+			children = (
+				A78F5D761E89671400FE9AAA /* EPMComposeView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		A78F5D791E8967AB00FE9AAA /* Lib */ = {
+			isa = PBXGroup;
+			children = (
+				A78F5D7A1E8967AB00FE9AAA /* ImageEffects */,
+			);
+			path = Lib;
+			sourceTree = "<group>";
+		};
+		A78F5D7A1E8967AB00FE9AAA /* ImageEffects */ = {
+			isa = PBXGroup;
+			children = (
+				A78F5D7B1E8967AB00FE9AAA /* UIImage+ImageEffects.h */,
+				A78F5D7C1E8967AB00FE9AAA /* UIImage+ImageEffects.m */,
+			);
+			path = ImageEffects;
 			sourceTree = "<group>";
 		};
 		A7BC68C91E7E979500DFDCEC = {
@@ -672,6 +712,7 @@
 			files = (
 				A78F5D191E85554F00FE9AAA /* EPMBottomView.swift in Sources */,
 				A78F5CF61E839FAA00FE9AAA /* EPMWelcomViewController.swift in Sources */,
+				A78F5D771E89671400FE9AAA /* EPMComposeView.swift in Sources */,
 				A756B6931E7EA9A300F76A2D /* EPBaseNavigationController.swift in Sources */,
 				A756B6911E7EA15A00F76A2D /* EPMHomeViewController.swift in Sources */,
 				A78F5CF21E82D60D00FE9AAA /* commen.swift in Sources */,
@@ -695,6 +736,7 @@
 				A756B6991E7EAEDB00F76A2D /* EPMTabBar.swift in Sources */,
 				A78F5D121E8548F100FE9AAA /* EPMHomeUserModel.swift in Sources */,
 				A756B6961E7EABF900F76A2D /* UIBarButtonItem+Extenssion.swift in Sources */,
+				A78F5D7D1E8967AB00FE9AAA /* UIImage+ImageEffects.m in Sources */,
 				A78F5D101E8542B000FE9AAA /* EPMHomeStatueViewModel.swift in Sources */,
 				A78F5D731E89453000FE9AAA /* EPMRefreshControl.swift in Sources */,
 				A756B6871E7EA0B100F76A2D /* EPMMainTabBarController.swift in Sources */,

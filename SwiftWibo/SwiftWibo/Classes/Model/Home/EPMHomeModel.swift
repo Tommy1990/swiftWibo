@@ -11,7 +11,7 @@ import UIKit
 class EPMHomeModel: NSObject {
     // MARK: - 模型属性
     /// 创建时间
-    var created_at: String?
+    var created_at: Date?
     /// 微博ID
     var id: Int64 = 0
     /// 微博信息内容

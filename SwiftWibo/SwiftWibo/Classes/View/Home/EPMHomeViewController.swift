@@ -115,6 +115,12 @@ extension EPMHomeViewController{
     }
     fileprivate func showLabRefreshing(count: Int){
         
+        if (count <= 0){
+            labRefreshTip.text = "已经是最新的微博啦!"
+        }else{
+            labRefreshTip.text = "更新了\(count)条微博"
+        }
+        
     }
     
     fileprivate func termingRefrshing() {

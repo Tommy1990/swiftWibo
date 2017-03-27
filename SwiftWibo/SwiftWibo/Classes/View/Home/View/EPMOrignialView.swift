@@ -27,6 +27,8 @@ class EPMOrignialView: UIView {
             imgMemberShip.image = statueModel?.MbrankImg
             labContent.text = statueModel?.homeModel?.text
             imgVarif.image = statueModel?.verifiedImg
+            labSource.text = statueModel?.sourceText
+            labCreatTime.text = statueModel?.timeText
             //判断视图逻辑
             selfConstraint?.deactivate()
             if let picUrls = statueModel?.homeModel?.pic_urls , picUrls.count > 0 {
