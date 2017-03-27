@@ -15,7 +15,7 @@ class EPMHomeViewModel: NSObject {
     var dataArray: [EPMHomeStatueViewModel] = [EPMHomeStatueViewModel]()
     
     //MARKE: 数据获取
-    func getHomeViewData(isPullUp:Bool,finished:@escaping ((Bool)->())){
+    func getHomeViewData(isPullUp:Bool,finished:@escaping ((Bool,Int)->())){
         var sinceId:Int64 = 0
         var maxId:Int64 = 0
         if isPullUp {
@@ -31,15 +31,15 @@ class EPMHomeViewModel: NSObject {
         
         EPMNetworkingTool.shearedTool.loadHomeData(since_id: sinceId, max_id: maxId) { (respond, error) in
             if  error != nil{
-                finished(false)
+                finished(false,0)
                 return
             }
             guard let res = respond as? [String: Any] else{
-                finished(false)
+                finished(false,0)
                 return
             }
             guard let resArr = res["statuses"] as? [[String: Any]] else{
-                finished(false)
+                finished(false,0)
                 return
             }
             let staueArr = NSArray.yy_modelArray(with: EPMHomeModel.self, json: resArr) as! [EPMHomeModel]
@@ -68,7 +68,7 @@ class EPMHomeViewModel: NSObject {
         }
     }
     
-    private func downLoadSingleImage(tempArray:[EPMHomeStatueViewModel],finish:@escaping (Bool)->()) {
+    private func downLoadSingleImage(tempArray:[EPMHomeStatueViewModel],finish:@escaping (Bool,Int)->()) {
         //创建线程管理
         let  group = DispatchGroup()
         
@@ -90,7 +90,7 @@ class EPMHomeViewModel: NSObject {
                 })
                 
                 group.notify(queue: DispatchQueue.main){
-                    finish(true)
+                    finish(true,tempArray.count)
                 }
                 
             }

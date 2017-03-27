@@ -38,6 +38,7 @@
 		A78F5D191E85554F00FE9AAA /* EPMBottomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A78F5D181E85554F00FE9AAA /* EPMBottomView.swift */; };
 		A78F5D1E1E869CB100FE9AAA /* EPMPictureUrlModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A78F5D1D1E869CB100FE9AAA /* EPMPictureUrlModel.swift */; };
 		A78F5D201E869D0E00FE9AAA /* EPMPictureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A78F5D1F1E869D0E00FE9AAA /* EPMPictureView.swift */; };
+		A78F5D731E89453000FE9AAA /* EPMRefreshControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = A78F5D721E89453000FE9AAA /* EPMRefreshControl.swift */; };
 		A7BC68D61E7E979500DFDCEC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7BC68D51E7E979500DFDCEC /* AppDelegate.swift */; };
 		A7BC68DE1E7E979500DFDCEC /* SwiftWibo.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A7BC68DC1E7E979500DFDCEC /* SwiftWibo.xcdatamodeld */; };
 		A7BC68E01E7E979500DFDCEC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A7BC68DF1E7E979500DFDCEC /* Assets.xcassets */; };
@@ -100,6 +101,7 @@
 		A78F5D181E85554F00FE9AAA /* EPMBottomView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EPMBottomView.swift; sourceTree = "<group>"; };
 		A78F5D1D1E869CB100FE9AAA /* EPMPictureUrlModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EPMPictureUrlModel.swift; sourceTree = "<group>"; };
 		A78F5D1F1E869D0E00FE9AAA /* EPMPictureView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EPMPictureView.swift; sourceTree = "<group>"; };
+		A78F5D721E89453000FE9AAA /* EPMRefreshControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EPMRefreshControl.swift; sourceTree = "<group>"; };
 		A7BC68D21E7E979500DFDCEC /* SwiftWibo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftWibo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A7BC68D51E7E979500DFDCEC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A7BC68DD1E7E979500DFDCEC /* SwiftWibo.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = SwiftWibo.xcdatamodel; sourceTree = "<group>"; };
@@ -194,6 +196,7 @@
 			children = (
 				A78F5CEA1E829D3A00FE9AAA /* EPMNetworkingTool.swift */,
 				A78F5CF11E82D60D00FE9AAA /* commen.swift */,
+				A78F5D721E89453000FE9AAA /* EPMRefreshControl.swift */,
 				A756B6941E7EAB9B00F76A2D /* extenssion */,
 			);
 			path = Tools;
@@ -693,6 +696,7 @@
 				A78F5D121E8548F100FE9AAA /* EPMHomeUserModel.swift in Sources */,
 				A756B6961E7EABF900F76A2D /* UIBarButtonItem+Extenssion.swift in Sources */,
 				A78F5D101E8542B000FE9AAA /* EPMHomeStatueViewModel.swift in Sources */,
+				A78F5D731E89453000FE9AAA /* EPMRefreshControl.swift in Sources */,
 				A756B6871E7EA0B100F76A2D /* EPMMainTabBarController.swift in Sources */,
 				A78F5BD61E7F9A9300FE9AAA /* EPMVistorView.swift in Sources */,
 				A756B68D1E7EA13400F76A2D /* EPMProfileViewController.swift in Sources */,

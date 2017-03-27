@@ -39,12 +39,17 @@ class EPMHomeViewController: EPMBaseViewController {
         return view
     }()
     
-    fileprivate lazy var EPMRefreshControl: UIRefreshControl = {
-        let view = UIRefreshControl()
-        view.attributedTitle = NSAttributedString(string: "加载中请稍后")
+    fileprivate lazy var myRefreshControl: EPMRefreshControl = {
+        let view:EPMRefreshControl = EPMRefreshControl()
         // 添加监听事件
         view.addTarget(self, action: #selector(refreshAction), for: UIControlEvents.valueChanged)
         return view
+    }()
+    
+    fileprivate lazy var labRefreshTip:UILabel = {
+        let label = UILabel(title:"加载", textColor: UIColor.white, fontSize: 15)
+        label.frame = CGRect(x: 0, y: -30, width: screenWidth, height: 30)
+        return label
     }()
 }
 
@@ -59,8 +64,8 @@ extension EPMHomeViewController{
     
     tableView.tableFooterView = footView
     tableView.separatorStyle = .none
-    tableView.addSubview(EPMRefreshControl)
-        
+    tableView.addSubview(myRefreshControl)
+    self.navigationController?.view.insertSubview(labRefreshTip, belowSubview: (self.navigationController?.navigationBar)!)
 
 }
 }
@@ -93,20 +98,27 @@ extension EPMHomeViewController{
     
     fileprivate func loadData(){
        
-        homeViewModel.getHomeViewData(isPullUp: self.footView.isAnimating) { (isSuccess) in
+        homeViewModel.getHomeViewData(isPullUp: self.footView.isAnimating) { (isSuccess,count) in
             //加载控件动画停止
-            self.termingRefrshing()
+           
             if !isSuccess{
                 print("加载失败")
-                return
+            }else{
+                self.tableView.reloadData()
+                
             }
             
-            self.tableView.reloadData()
+             self.termingRefrshing()
+            
+           
         }
+    }
+    fileprivate func showLabRefreshing(count: Int){
+        
     }
     
     fileprivate func termingRefrshing() {
-        self.EPMRefreshControl.endRefreshing()
+        self.myRefreshControl.endRefreshing()
         self.footView.stopAnimating()
     }
     
