@@ -7,9 +7,11 @@
 //
 
 import UIKit
-
+import pop
 class EPMComposeView: UIView {
 
+    var target:UIViewController?
+    
     override init(frame: CGRect) {
         super.init(frame: UIScreen.main.bounds)
         setupUI()
@@ -41,16 +43,26 @@ class EPMComposeView: UIView {
     }()
  
     lazy var imgAds:UIImageView = UIImageView(image: UIImage(named: "compose_slogan"))
+    lazy var btnArr:[EPMComposeButton] = [EPMComposeButton]()
 }
 extension EPMComposeView{
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        self.removeFromSuperview()
+        btnAnimation(isUP: false)
+        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.4) {
+            self.removeFromSuperview()
+        }
     }
 }
+
+
 //MARKE: 对外接口
 extension EPMComposeView{
-    func showView() {
-        
+    
+    func showView(target:UIViewController) {
+        let composeView = EPMComposeView()
+         composeView.target = target
+        target.view.addSubview(composeView)
+        btnAnimation(isUP: true)
     }
     
 }
@@ -75,23 +87,44 @@ extension EPMComposeView{
 
             btn.frame = CGRect(x: btnMargine+(btnMargine+btnWidth)*col, y: (btnMargine+btnHeight)*row, width: btnWidth, height: btnHeight+screenHeight)
             btn.composeModel = model
-                        btn.addTarget(self, action: #selector(clickBtnAction(btn:)), for: .touchUpOutside)
+            
+            btnArr.append(btn)
+            btn.addTarget(self, action: #selector(clickBtnAction(btn:)), for: .touchUpOutside)
             addSubview(btn)
         }
         
     }
+    fileprivate func btnAnimation(isUP:Bool) {
+        let msrginY = isUP ? -350 : 350
+        let btnList = isUP ? btnArr : btnArr.reversed()
+        for (i,button) in btnList.enumerated(){
+            // 实例化弹簧动画对象
+            let anSpring = POPSpringAnimation(propertyNamed: kPOPViewCenter)!
+            // 设置toValue
+            anSpring.toValue = CGPoint(x: button.center.x, y: button.center.y + CGFloat(msrginY))
+            // 开始时间 CACurrentMediaTime() 系统绝对时间
+            anSpring.beginTime = CACurrentMediaTime() + Double(i)*0.025
+            // 振幅
+            anSpring.springBounciness = 10.0
+            // 设置动画
+            button.pop_add(anSpring, forKey: nil)
+            
+            
+        }
+        
+        
+    }
     
-    
-}
-extension EPMComposeView{
-
     @objc fileprivate func clickBtnAction(btn:EPMComposeButton) {
         
         
         
         
     }
+    
 }
+
+
 
 
 
