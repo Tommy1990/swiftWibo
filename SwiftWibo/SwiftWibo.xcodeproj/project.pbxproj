@@ -44,6 +44,7 @@
 		A78F5D941E8A7B4F00FE9AAA /* EPMComposeButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A78F5D931E8A7B4F00FE9AAA /* EPMComposeButton.swift */; };
 		A78F5D971E8A822C00FE9AAA /* compose.plist in Resources */ = {isa = PBXBuildFile; fileRef = A78F5D961E8A822C00FE9AAA /* compose.plist */; };
 		A78F5D9A1E8A828200FE9AAA /* EPMComposeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A78F5D991E8A828200FE9AAA /* EPMComposeModel.swift */; };
+		A78F5D9E1E8A9BE700FE9AAA /* EPMComposeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A78F5D9D1E8A9BE700FE9AAA /* EPMComposeViewController.swift */; };
 		A7BC68D61E7E979500DFDCEC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7BC68D51E7E979500DFDCEC /* AppDelegate.swift */; };
 		A7BC68DE1E7E979500DFDCEC /* SwiftWibo.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A7BC68DC1E7E979500DFDCEC /* SwiftWibo.xcdatamodeld */; };
 		A7BC68E01E7E979500DFDCEC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A7BC68DF1E7E979500DFDCEC /* Assets.xcassets */; };
@@ -113,6 +114,7 @@
 		A78F5D931E8A7B4F00FE9AAA /* EPMComposeButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EPMComposeButton.swift; sourceTree = "<group>"; };
 		A78F5D961E8A822C00FE9AAA /* compose.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = compose.plist; sourceTree = "<group>"; };
 		A78F5D991E8A828200FE9AAA /* EPMComposeModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EPMComposeModel.swift; sourceTree = "<group>"; };
+		A78F5D9D1E8A9BE700FE9AAA /* EPMComposeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EPMComposeViewController.swift; sourceTree = "<group>"; };
 		A7BC68D21E7E979500DFDCEC /* SwiftWibo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftWibo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A7BC68D51E7E979500DFDCEC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A7BC68DD1E7E979500DFDCEC /* SwiftWibo.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = SwiftWibo.xcdatamodel; sourceTree = "<group>"; };
@@ -354,6 +356,7 @@
 			isa = PBXGroup;
 			children = (
 				A78F5D751E8966ED00FE9AAA /* View */,
+				A78F5D9D1E8A9BE700FE9AAA /* EPMComposeViewController.swift */,
 			);
 			path = Compose;
 			sourceTree = "<group>";
@@ -756,6 +759,7 @@
 				A756B68F1E7EA14700F76A2D /* EPMDiscoverViewController.swift in Sources */,
 				A78F5BD11E7F93F700FE9AAA /* UIView+Extenssion.swift in Sources */,
 				A78F5D9A1E8A828200FE9AAA /* EPMComposeModel.swift in Sources */,
+				A78F5D9E1E8A9BE700FE9AAA /* EPMComposeViewController.swift in Sources */,
 				A78F5D151E8554F500FE9AAA /* EPMOrignialView.swift in Sources */,
 				A756B68B1E7EA11B00F76A2D /* EPMMessageViewController.swift in Sources */,
 				A78F5D0C1E85418100FE9AAA /* EPMHomeViewModel.swift in Sources */,

@@ -21,8 +21,7 @@ class EPMMainTabBarController: UITabBarController {
         
         epmTabBar.clickClosure = {[weak self](tabBar:EPMTabBar) in
                 
-            let composeView = EPMComposeView()
-            self?.view.addSubview(composeView)
+            EPMComposeView.showView(target: self!)
         }
         
      

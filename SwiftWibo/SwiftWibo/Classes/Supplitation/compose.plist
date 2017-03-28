@@ -8,7 +8,7 @@
 		<key>title</key>
 		<string>文字</string>
 		<key>classname</key>
-		<string>Weibo.HMComposeViewController</string>
+		<string>SwiftWibo.EPMComposeViewController</string>
 	</dict>
 	<dict>
 		<key>classname</key>

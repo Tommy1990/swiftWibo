@@ -58,11 +58,11 @@ extension EPMComposeView{
 //MARKE: 对外接口
 extension EPMComposeView{
     
-    func showView(target:UIViewController) {
+   class func showView(target:UIViewController) {
         let composeView = EPMComposeView()
          composeView.target = target
         target.view.addSubview(composeView)
-        btnAnimation(isUP: true)
+        composeView.btnAnimation(isUP: true)
     }
     
 }
@@ -85,23 +85,23 @@ extension EPMComposeView{
             
             btn.setTitle(model.title!, for: .normal)
 
-            btn.frame = CGRect(x: btnMargine+(btnMargine+btnWidth)*col, y: (btnMargine+btnHeight)*row, width: btnWidth, height: btnHeight+screenHeight)
+            btn.frame = CGRect(x: btnMargine+(btnMargine+btnWidth)*col, y: (btnMargine+btnHeight)*row+screenHeight, width: btnWidth, height: btnHeight)
             btn.composeModel = model
             
             btnArr.append(btn)
-            btn.addTarget(self, action: #selector(clickBtnAction(btn:)), for: .touchUpOutside)
+            btn.addTarget(self, action: #selector(clickBtnAction(btn:)), for: .touchUpInside)
             addSubview(btn)
         }
         
     }
     fileprivate func btnAnimation(isUP:Bool) {
-        let msrginY = isUP ? -350 : 350
+        let msrginY:CGFloat = isUP ? -350 : 350
         let btnList = isUP ? btnArr : btnArr.reversed()
         for (i,button) in btnList.enumerated(){
             // 实例化弹簧动画对象
             let anSpring = POPSpringAnimation(propertyNamed: kPOPViewCenter)!
             // 设置toValue
-            anSpring.toValue = CGPoint(x: button.center.x, y: button.center.y + CGFloat(msrginY))
+            anSpring.toValue = CGPoint(x: button.center.x, y: button.center.y + msrginY)
             // 开始时间 CACurrentMediaTime() 系统绝对时间
             anSpring.beginTime = CACurrentMediaTime() + Double(i)*0.025
             // 振幅
@@ -117,8 +117,40 @@ extension EPMComposeView{
     
     @objc fileprivate func clickBtnAction(btn:EPMComposeButton) {
         
+       UIView.animate(withDuration: 0.25, animations: { 
+        for button in self.btnArr{
+            button.alpha = 0.2
+            if btn == button{
+                btn.transform = CGAffineTransform.init(scaleX: 2, y: 2)
+            }else{
+               button.transform = CGAffineTransform.init(scaleX: 0.2, y: 0.2)
+            }
+        }
         
         
+       }) { (_) in
+           UIView.animate(withDuration: 0.25, animations: { 
+            for button in self.btnArr{
+                button.alpha = 1
+                button.transform = CGAffineTransform.identity
+            }
+           }, completion: { (_) in
+            guard let className = btn.composeModel?.classname else{
+                return
+            }
+            guard let classType = NSClassFromString(className) as? UIViewController.Type else{
+                return
+            }
+            let vc = classType.init()
+            self.target?.present(EPBaseNavigationController(rootViewController:vc), animated: true, completion: {
+                self.removeFromSuperview()
+            })
+            
+            
+            
+            
+           })
+        }
         
     }
     
