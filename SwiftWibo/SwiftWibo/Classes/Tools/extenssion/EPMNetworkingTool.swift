@@ -65,3 +65,11 @@ extension EPMNetworkingTool{
         
 }
 }
+//MARKE: 发微博方法
+extension EPMNetworkingTool{
+    func senderWeibo(finished:()->()) {
+               
+        
+    }
+    
+}
