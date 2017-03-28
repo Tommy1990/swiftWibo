@@ -10,4 +10,5 @@
 #define SwiftWibo_Bridging_Header_h
 #import "UIImage+ImageEffects.h"
 //#import <Masonry/Masonry.h>
+
 #endif /* SwiftWibo_Bridging_Header_h */

@@ -20,7 +20,7 @@ class EPMMainTabBarController: UITabBarController {
         self.setValue(epmTabBar, forKey: "tabBar")
         
         epmTabBar.clickClosure = {[weak self](tabBar:EPMTabBar) in
-                print("按钮被点击了\(self)")
+                
             let composeView = EPMComposeView()
             self?.view.addSubview(composeView)
         }

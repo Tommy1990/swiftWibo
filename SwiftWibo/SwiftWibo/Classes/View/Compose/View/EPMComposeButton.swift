@@ -13,7 +13,7 @@ class EPMComposeButton: UIButton {
         super.init(frame: frame)
         setupUI()
     }
-    
+    var composeModel:EPMComposeModel?
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
@@ -41,6 +41,7 @@ class EPMComposeButton: UIButton {
     
     //MARKE: 重写布局方法
     override func layoutSubviews() {
+        super.layoutSubviews()
         imageView?.frame = CGRect(x: 0, y: 0, width: self.frame.size.width, height: self.frame.size.width)
         titleLabel?.frame = CGRect(x: 0, y: self.frame.size.width, width: self.frame.size.width, height: self.frame.size.height-self.frame.size.width)
     }
