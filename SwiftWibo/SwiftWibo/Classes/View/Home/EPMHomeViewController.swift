@@ -105,7 +105,9 @@ extension EPMHomeViewController{
                 print("加载失败")
             }else{
                 self.tableView.reloadData()
-                
+                if !self.footView.isAnimating{
+                   self.showLabRefreshing(count: count)
+                }
             }
             
              self.termingRefrshing()
@@ -114,11 +116,24 @@ extension EPMHomeViewController{
         }
     }
     fileprivate func showLabRefreshing(count: Int){
+        if self.labRefreshTip.isHidden == false{
+            return
+        }
         
-        if (count <= 0){
+        if count <= 0{
             labRefreshTip.text = "已经是最新的微博啦!"
         }else{
             labRefreshTip.text = "更新了\(count)条微博"
+        }
+        UIView.animate(withDuration: 0.25, animations: {
+            self.labRefreshTip.transform = CGAffineTransform(translationX: 0, y: 30)
+        }) { (_) in
+         
+            UIView.animate(withDuration: 0.25, delay: 2, options: [], animations: { 
+                self.labRefreshTip.transform = CGAffineTransform.identity
+            }, completion: { (_) in
+                self.labRefreshTip.isHidden = true
+            })
         }
         
     }
