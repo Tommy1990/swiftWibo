@@ -67,8 +67,13 @@ extension EPMNetworkingTool{
 }
 //MARKE: 发微博方法
 extension EPMNetworkingTool{
-    func senderWeibo(finished:()->()) {
-               
+    func senderWeibo(status: String?,finished:@escaping (Any?, Error?)->()) {
+        let urlString:String = "https://api.weibo.com/2/statuses/update.json"
+        let para = [
+                    "access_token":EPMUserAccountModelView.shared.token,
+                    "status":status ?? ""
+                    ]
+        request(method: .POST, urlString: urlString, paramter: para, finished: finished)
         
     }
     

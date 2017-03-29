@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+import SVProgressHUD
 class EPMComposeViewController: UIViewController {
 
     override func viewDidLoad() {
@@ -22,15 +22,37 @@ class EPMComposeViewController: UIViewController {
     {
         setupNavUI()
        view.addSubview(viewText)
+        view.addSubview(bottomView)
         viewText.delegate = self
         viewText.snp.makeConstraints { (make) in
             make.edges.equalTo(self.view)
         }
         
-        
+        bottomView.snp.makeConstraints { (make) in
+            make.leading.trailing.equalTo(self.view)
+            make.bottom.equalTo(self.view)
+            make.height.equalTo(40)
+        }
         
         
        
+        
+        bottomView.clouser = {[weak self] (type) -> () in
+            switch type {
+            case .picture:
+                print("图片")
+               self?.bottomBtnClick()
+            case .emoticon:
+                print("表情")
+            case .add:
+                print("添加")
+            case .trend:
+                print("热门话题")
+            case .mention:
+                print("@")
+            }
+        }
+        
     }
     
     
@@ -82,6 +104,8 @@ class EPMComposeViewController: UIViewController {
         view.alwaysBounceVertical = true
         return view
     }()
+    
+    fileprivate lazy var bottomView:EPMComposeBottomView = EPMComposeBottomView()
 }
 //MARKE: 点击方法实现
 extension EPMComposeViewController{
@@ -91,6 +115,18 @@ extension EPMComposeViewController{
     
     @objc fileprivate func sendAction() {
      print("保存按钮被点击了")
+     EPMNetworkingTool.shearedTool.senderWeibo(status: self.viewText.text) { (_, error) in
+        if error != nil{
+             SVProgressHUD.showError(withStatus: "发送失败")
+        }else{
+            SVProgressHUD.showSuccess(withStatus: "发送失败")
+        }
+        self.cancelClick()
+        }
+    }
+    
+    @objc fileprivate func bottomBtnClick() {
+        
     }
     
 }
