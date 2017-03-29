@@ -24,20 +24,21 @@ class EPMComposeViewController: UIViewController {
        view.addSubview(viewText)
         view.addSubview(bottomView)
         viewText.delegate = self
-        view.addSubview(pictureView)
+        viewText.addSubview(pictureView)
         viewText.snp.makeConstraints { (make) in
             make.edges.equalTo(self.view)
         }
         
         bottomView.snp.makeConstraints { (make) in
-            make.leading.trailing.equalTo(self.view)
-            make.bottom.equalTo(self.view)
+            make.leading.trailing.bottom.equalTo(self.view)
+           
             make.height.equalTo(40)
         }
+        
         pictureView.snp.makeConstraints { (make) in
             make.centerX.equalTo(self.view)
             make.width.height.equalTo(screenWidth - 20)
-            make.top.equalTo(self.view).offset(100)
+            make.top.equalTo(self.viewText).offset(100)
         }
         
        
@@ -57,9 +58,10 @@ class EPMComposeViewController: UIViewController {
                 print("@")
             }
         }
+        NotificationCenter.default.addObserver(self, selector: #selector(KeyboardWillChangeFrame), name: Notification.Name.UIKeyboardWillChangeFrame, object: nil)
+        
         
     }
-    
     
     
     //设置导航栏
@@ -67,7 +69,7 @@ class EPMComposeViewController: UIViewController {
        navigationItem.leftBarButtonItem = UIBarButtonItem(title: "取消", imageName: nil, target:self , action: #selector(cancelClick))
         
         navigationItem.rightBarButtonItem = UIBarButtonItem(customView: sendButton)
-        sendButton.isEnabled = false
+        navigationItem.rightBarButtonItem?.isEnabled = false
         navigationItem.titleView = labTitle
     }
     // 发送按钮
@@ -112,6 +114,10 @@ class EPMComposeViewController: UIViewController {
     
     fileprivate lazy var bottomView:EPMComposeBottomView = EPMComposeBottomView()
     fileprivate lazy var pictureView:EPMComposePictureView = EPMComposePictureView()
+    deinit {
+        NotificationCenter.default.removeObserver(self)
+        self.view.endEditing(true)
+    }
 }
 //MARKE: 点击方法实现
 extension EPMComposeViewController:UIImagePickerControllerDelegate,UINavigationControllerDelegate{
@@ -120,7 +126,7 @@ extension EPMComposeViewController:UIImagePickerControllerDelegate,UINavigationC
     }
     
     @objc fileprivate func sendAction() {
-     print("保存按钮被点击了")
+    
      EPMNetworkingTool.shearedTool.senderWeibo(status: self.viewText.text) { (_, error) in
         if error != nil{
              SVProgressHUD.showError(withStatus: "发送失败")
@@ -152,5 +158,28 @@ extension EPMComposeViewController:UITextViewDelegate {
     }
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         self.viewText.resignFirstResponder()
+    }
+}
+
+extension EPMComposeViewController{
+    @objc fileprivate func KeyboardWillChangeFrame(noti:Notification){
+        // 判断noti.userInfo是否为nil
+        guard let userInfo = noti.userInfo else {
+            return
+        }
+        // 通过key获取到frame
+        let frame = (userInfo["UIKeyboardFrameEndUserInfoKey"] as! NSValue).cgRectValue
+        // 更新约束
+        self.bottomView.snp.updateConstraints { (make) in
+            make.bottom.equalTo(self.view).offset(frame.origin.y - screenHeight)
+        }
+        // 获取动画时长
+        let duration = (userInfo["UIKeyboardAnimationDurationUserInfoKey"] as! NSNumber).doubleValue
+        
+        // 设置动画
+        UIView.animate(withDuration: duration) {
+            self.view.layoutIfNeeded()
+        }
+
     }
 }
