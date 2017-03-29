@@ -18,6 +18,7 @@ class EPMHomeViewModel: NSObject {
     func getHomeViewData(isPullUp:Bool,finished:@escaping ((Bool,Int)->())){
         var sinceId:Int64 = 0
         var maxId:Int64 = 0
+        
         if isPullUp {
             maxId = dataArray.last?.homeModel?.id ?? 0
             if maxId > 0 {
@@ -84,19 +85,20 @@ class EPMHomeViewModel: NSObject {
             }
             
             if statueView.homeModel?.retweeted_status?.pic_urls?.count == 1{
+                
                 group.enter()
                 SDWebImageManager.shared().downloadImage(with: URL(string:statueView.homeModel?.retweeted_status?.pic_urls?.last?.thumbnail_pic ?? ""), options: [], progress: nil, completed: { (image, error, _, _, _) in
                     group.leave()
                 })
                 
-                group.notify(queue: DispatchQueue.main){
-                    finish(true,tempArray.count)
-                }
+               
                 
             }
             
         }
-    
+        group.notify(queue: DispatchQueue.main){
+            finish(true,tempArray.count)
+        }
     }
     
 }

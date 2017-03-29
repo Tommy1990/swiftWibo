@@ -32,10 +32,6 @@ class EPMPictureView: UICollectionView {
                 layout.itemSize = CGSize(width: itemWH, height: itemWH)
             }
             
-            
-        layout.itemSize = CGSize(width: itemWH, height: itemWH)
-            
-            
             layoutIfNeeded()
             reloadData()
         }
@@ -74,19 +70,19 @@ class EPMPictureView: UICollectionView {
              let image = SDWebImageManager.shared().imageCache.imageFromDiskCache(forKey: thumbnail_pic)
             
             if let img = image {
-                let imgW = img.size.width < 80 ? 80 : img.size.width
-                let imgH = img.size.height > 150 ? 150 : img.size.height
+                let W = img.size.width < 80 ? 80 : img.size.width
+                let H = img.size.height > 150 ? 150 : img.size.height
                 
-                return CGSize(width: imgW, height: imgH)
+                return CGSize(width: W, height: H)
                 
             }
             }
         }
         let row = count == 4 ? 2 : (count - 1)/3 + 1
         let col = count == 4 ? 2 : count >= 3 ? 3 : count
-        let viewWide = CGFloat(col) * itemWH + CGFloat(col - 1)*sizeMargin
-        let viewHeight = CGFloat(row) * itemWH + CGFloat(row - 1)*sizeMargin
-        return CGSize(width: viewWide, height: viewHeight)
+        let W = CGFloat(col) * itemWH + CGFloat(col - 1)*sizeMargin
+        let H = CGFloat(row) * itemWH + CGFloat(row - 1)*sizeMargin
+        return CGSize(width: W, height: H)
 
     }
     

@@ -48,7 +48,11 @@ class EPMHomeViewController: EPMBaseViewController {
     
     fileprivate lazy var labRefreshTip:UILabel = {
         let label = UILabel(title:"加载", textColor: UIColor.white, fontSize: 15)
-        label.frame = CGRect(x: 0, y: -30, width: screenWidth, height: 30)
+        label.frame = CGRect(x: 0, y:64-30, width: screenWidth, height: 30)
+        label.backgroundColor = ThemeColor
+        label.textColor = UIColor.white
+        label.isHidden = true
+        label.textAlignment = .center
         return label
     }()
 }
@@ -66,6 +70,7 @@ extension EPMHomeViewController{
     tableView.separatorStyle = .none
     tableView.addSubview(myRefreshControl)
     self.navigationController?.view.insertSubview(labRefreshTip, belowSubview: (self.navigationController?.navigationBar)!)
+//    labRefreshTip.isHidden = true
 
 }
 }
@@ -99,7 +104,7 @@ extension EPMHomeViewController{
     fileprivate func loadData(){
        
         homeViewModel.getHomeViewData(isPullUp: self.footView.isAnimating) { (isSuccess,count) in
-            //加载控件动画停止
+            
            
             if !isSuccess{
                 print("加载失败")
@@ -119,7 +124,7 @@ extension EPMHomeViewController{
         if self.labRefreshTip.isHidden == false{
             return
         }
-        
+        self.labRefreshTip.isHidden = false
         if count <= 0{
             labRefreshTip.text = "已经是最新的微博啦!"
         }else{
