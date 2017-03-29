@@ -29,7 +29,7 @@ class EPMComposePictureView: UICollectionView {
     }
     func setupUI() {
         backgroundColor = UIColor.lightGray
-        register(UICollectionViewCell.self, forCellWithReuseIdentifier: "cell")
+        register(EPMComposeCollectionView.self, forCellWithReuseIdentifier: "cell")
         dataSource = self
         delegate = self
     }
@@ -37,14 +37,59 @@ class EPMComposePictureView: UICollectionView {
 }
 extension EPMComposePictureView: UICollectionViewDataSource,UICollectionViewDelegate {
     func  collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return imgList.count
+        let s = imgList.count
+        if s == 0 || s == 9{
+            return s
+        }else{
+            return s+1
+        }
     }
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath)
-        
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! EPMComposeCollectionView
+        if indexPath.item == imgList.count{
+            cell.img = nil
+        }else{
+            cell.img = imgList[indexPath.item]
+        }
         return cell
     }
     
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        collectionView.deselectItem(at: indexPath, animated: true)
+    }
+}
+
+class EPMComposeCollectionView: UICollectionViewCell {
+    
+    var img:UIImage?{
+        didSet{
+            if img == nil{
+                imgView.image = UIImage(named: "compose_pic_add")
+                imgView.highlightedImage = UIImage(named:"compose_pic_add_highlighted")
+            }else{
+                imgView.image = img
+                imgView.highlightedImage = nil
+            }
+        }
+    }
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        setupUI()
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    private func setupUI()
+    {
+        addSubview(imgView)
+        imgView.snp.makeConstraints { (make) in
+            make.edges.equalTo(self)
+        }
+    }
+    
+    private lazy var imgView:UIImageView = UIImageView()
 }
 
 

@@ -24,6 +24,7 @@ class EPMComposeViewController: UIViewController {
        view.addSubview(viewText)
         view.addSubview(bottomView)
         viewText.delegate = self
+        view.addSubview(pictureView)
         viewText.snp.makeConstraints { (make) in
             make.edges.equalTo(self.view)
         }
@@ -33,7 +34,11 @@ class EPMComposeViewController: UIViewController {
             make.bottom.equalTo(self.view)
             make.height.equalTo(40)
         }
-        
+        pictureView.snp.makeConstraints { (make) in
+            make.centerX.equalTo(self.view)
+            make.width.height.equalTo(screenWidth - 20)
+            make.top.equalTo(self.view).offset(100)
+        }
         
        
         
@@ -106,6 +111,7 @@ class EPMComposeViewController: UIViewController {
     }()
     
     fileprivate lazy var bottomView:EPMComposeBottomView = EPMComposeBottomView()
+    fileprivate lazy var pictureView:EPMComposePictureView = EPMComposePictureView()
 }
 //MARKE: 点击方法实现
 extension EPMComposeViewController:UIImagePickerControllerDelegate,UINavigationControllerDelegate{
@@ -135,7 +141,7 @@ extension EPMComposeViewController:UIImagePickerControllerDelegate,UINavigationC
         guard let img = info["UIImagePickerControllerOriginalImage"] as? UIImage else{
             return
         }
-        
+        pictureView.addImg(img: img)
     }
     
 }
