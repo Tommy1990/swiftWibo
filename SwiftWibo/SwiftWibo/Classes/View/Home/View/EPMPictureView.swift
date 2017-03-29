@@ -24,6 +24,7 @@ class EPMPictureView: UICollectionView {
         self.snp.updateConstraints { (make) in
             make.size.equalTo(size)
         }
+            self.contentSize = size
             let layout = collectionViewLayout as! UICollectionViewFlowLayout
             
             if pic_urls?.count == 1{
@@ -72,16 +73,18 @@ class EPMPictureView: UICollectionView {
             if let img = image {
                 let W = img.size.width < 80 ? 80 : img.size.width
                 let H = img.size.height > 150 ? 150 : img.size.height
-                
+                 print("元素:\(count)\n宽\(W)高\(H)")
                 return CGSize(width: W, height: H)
                 
             }
             }
         }
         let row = count == 4 ? 2 : (count - 1)/3 + 1
-        let col = count == 4 ? 2 : count >= 3 ? 3 : count
+        let numW = count >= 3 ? 3 : count
+        let col = count == 4 ? 2 : numW
         let W = CGFloat(col) * itemWH + CGFloat(col - 1)*sizeMargin
         let H = CGFloat(row) * itemWH + CGFloat(row - 1)*sizeMargin
+        print("元素:\(count)\n行:\(row)列:\(col)\n宽\(W)高\(H)")
         return CGSize(width: W, height: H)
 
     }

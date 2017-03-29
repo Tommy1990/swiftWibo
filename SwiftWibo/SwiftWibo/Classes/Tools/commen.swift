@@ -9,11 +9,11 @@
 import UIKit
 
 //MARKE:开发者信息
-let client_id = "1130717009"
+let client_id = "3053476709"
 
 let redirect_uri = "http://www.itheima.com"
 
-let client_secret = "65cb70a5820fcb3a7e199ce9043ac674"
+let client_secret = "371df9bb8e30cc0ad305ccfc39417e92"
 
 //设置通知
 
