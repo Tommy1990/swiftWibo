@@ -108,7 +108,7 @@ class EPMComposeViewController: UIViewController {
     fileprivate lazy var bottomView:EPMComposeBottomView = EPMComposeBottomView()
 }
 //MARKE: 点击方法实现
-extension EPMComposeViewController{
+extension EPMComposeViewController:UIImagePickerControllerDelegate,UINavigationControllerDelegate{
     @objc fileprivate func cancelClick() {
         self.dismiss(animated: true, completion: nil)
     }
@@ -124,8 +124,17 @@ extension EPMComposeViewController{
         self.cancelClick()
         }
     }
-    
+    //底部视图图片按钮点击方法
     @objc fileprivate func bottomBtnClick() {
+        let imgPickerVC = UIImagePickerController()
+        imgPickerVC.delegate = self
+        present(imgPickerVC, animated: true, completion: nil)
+    }
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
+         picker.dismiss(animated: true, completion: nil)
+        guard let img = info["UIImagePickerControllerOriginalImage"] as? UIImage else{
+            return
+        }
         
     }
     
