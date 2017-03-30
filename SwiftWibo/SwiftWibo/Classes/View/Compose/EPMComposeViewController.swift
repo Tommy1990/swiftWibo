@@ -53,7 +53,7 @@ class EPMComposeViewController: UIViewController {
                self?.addPictureBtnClick()
             case .emoticon:
                 print("表情")
-                self!.inputViewChanged()
+                self?.inputViewChanged()
             case .add:
                 print("添加")
             case .trend:

@@ -11,6 +11,8 @@
 		38F7EAFF7B4B9300993BA9F9 /* Pods_SwiftWiboTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D7F195A2B54F350A1413A8A /* Pods_SwiftWiboTests.framework */; };
 		7157B29DB624918C8233FFCB /* Pods_SwiftWiboUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B66EB86B1E7A055CE796995 /* Pods_SwiftWiboUITests.framework */; };
 		A73AAEE81E8D1A3F00DAFBAD /* EPMEmojCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A73AAEE71E8D1A3F00DAFBAD /* EPMEmojCollectionView.swift */; };
+		A73AAEEA1E8D2F5000DAFBAD /* EPMbottombtnView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A73AAEE91E8D2F5000DAFBAD /* EPMbottombtnView.swift */; };
+		A73AAEEC1E8D4D9400DAFBAD /* EPMEmotionPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A73AAEEB1E8D4D9400DAFBAD /* EPMEmotionPageView.swift */; };
 		A756B6871E7EA0B100F76A2D /* EPMMainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A756B6861E7EA0B100F76A2D /* EPMMainTabBarController.swift */; };
 		A756B68B1E7EA11B00F76A2D /* EPMMessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A756B68A1E7EA11B00F76A2D /* EPMMessageViewController.swift */; };
 		A756B68D1E7EA13400F76A2D /* EPMProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A756B68C1E7EA13400F76A2D /* EPMProfileViewController.swift */; };
@@ -83,6 +85,8 @@
 		7B66EB86B1E7A055CE796995 /* Pods_SwiftWiboUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SwiftWiboUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9D7F195A2B54F350A1413A8A /* Pods_SwiftWiboTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SwiftWiboTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A73AAEE71E8D1A3F00DAFBAD /* EPMEmojCollectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EPMEmojCollectionView.swift; sourceTree = "<group>"; };
+		A73AAEE91E8D2F5000DAFBAD /* EPMbottombtnView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EPMbottombtnView.swift; sourceTree = "<group>"; };
+		A73AAEEB1E8D4D9400DAFBAD /* EPMEmotionPageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EPMEmotionPageView.swift; sourceTree = "<group>"; };
 		A756B6681E7E9A9F00F76A2D /* Masonry.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Masonry.framework; path = "../../Library/Developer/Xcode/DerivedData/SwiftWibo-hgascnrjlfotggavhgktlnwqtebb/Build/Products/Debug-iphonesimulator/Masonry/Masonry.framework"; sourceTree = "<group>"; };
 		A756B6861E7EA0B100F76A2D /* EPMMainTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EPMMainTabBarController.swift; sourceTree = "<group>"; };
 		A756B68A1E7EA11B00F76A2D /* EPMMessageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EPMMessageViewController.swift; sourceTree = "<group>"; };
@@ -196,6 +200,8 @@
 			isa = PBXGroup;
 			children = (
 				A73AAEE71E8D1A3F00DAFBAD /* EPMEmojCollectionView.swift */,
+				A73AAEE91E8D2F5000DAFBAD /* EPMbottombtnView.swift */,
+				A73AAEEB1E8D4D9400DAFBAD /* EPMEmotionPageView.swift */,
 			);
 			path = EmojView;
 			sourceTree = "<group>";
@@ -761,7 +767,9 @@
 			files = (
 				A78F5D191E85554F00FE9AAA /* EPMBottomView.swift in Sources */,
 				A78F5CF61E839FAA00FE9AAA /* EPMWelcomViewController.swift in Sources */,
+				A73AAEEC1E8D4D9400DAFBAD /* EPMEmotionPageView.swift in Sources */,
 				A78F5D771E89671400FE9AAA /* EPMComposeView.swift in Sources */,
+				A73AAEEA1E8D2F5000DAFBAD /* EPMbottombtnView.swift in Sources */,
 				A756B6931E7EA9A300F76A2D /* EPBaseNavigationController.swift in Sources */,
 				A756B6911E7EA15A00F76A2D /* EPMHomeViewController.swift in Sources */,
 				A78F5CF21E82D60D00FE9AAA /* commen.swift in Sources */,
