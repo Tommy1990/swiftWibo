@@ -52,7 +52,16 @@ extension EPMComposePictureView: UICollectionViewDataSource,UICollectionViewDele
             cell.img = nil
         }else{
             cell.img = imgList[indexPath.item]
+            cell.closure = {[weak self] in
+                self?.imgList.remove(at: indexPath.item)
+                if self?.imgList.count == 0{
+                    self?.isHidden = true
+                }
+                self?.reloadData()
+            }
         }
+        
+        
         return cell
     }
     
@@ -66,15 +75,17 @@ extension EPMComposePictureView: UICollectionViewDataSource,UICollectionViewDele
 }
 
 class EPMComposeCollectionView: UICollectionViewCell {
-    
+    var closure:(()->())?
     var img:UIImage?{
         didSet{
             if img == nil{
                 imgView.image = UIImage(named: "compose_pic_add")
                 imgView.highlightedImage = UIImage(named:"compose_pic_add_highlighted")
+                cancelBtn.isHidden = true
             }else{
                 imgView.image = img
                 imgView.highlightedImage = nil
+                cancelBtn.isHidden = false
             }
         }
     }
@@ -89,13 +100,29 @@ class EPMComposeCollectionView: UICollectionViewCell {
     
     private func setupUI()
     {
-        addSubview(imgView)
+       contentView.addSubview(imgView)
+        contentView.addSubview(cancelBtn)
         imgView.snp.makeConstraints { (make) in
-            make.edges.equalTo(self)
+            make.edges.equalTo(self.contentView)
+        }
+        cancelBtn.snp.makeConstraints { (make) in
+            make.top.trailing.equalTo(imgView)
         }
     }
     
     private lazy var imgView:UIImageView = UIImageView()
+    fileprivate lazy var cancelBtn: UIButton = {
+       let btn = UIButton()
+        btn.setImage(UIImage(named:"compose_photo_close"), for: .normal)
+        btn.addTarget(self, action: #selector(cancelBtnClick), for: .touchUpInside)
+        btn.isHidden = false
+        btn.sizeToFit()
+        return btn
+    }()
 }
-
+extension EPMComposeCollectionView{
+    @objc fileprivate func cancelBtnClick(){
+     closure?()
+    }
+}
 

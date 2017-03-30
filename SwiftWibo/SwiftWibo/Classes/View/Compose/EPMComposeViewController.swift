@@ -117,7 +117,11 @@ class EPMComposeViewController: UIViewController {
     }()
     
     fileprivate lazy var bottomView:EPMComposeBottomView = EPMComposeBottomView()
-    fileprivate lazy var pictureView:EPMComposePictureView = EPMComposePictureView()
+    fileprivate lazy var pictureView:EPMComposePictureView = {
+        let view = EPMComposePictureView()
+        view.isHidden = true
+        return view;
+    }()
     deinit {
         NotificationCenter.default.removeObserver(self)
         self.view.endEditing(true)
@@ -147,6 +151,7 @@ extension EPMComposeViewController:UIImagePickerControllerDelegate,UINavigationC
     }
     //底部视图图片按钮点击方法
     @objc fileprivate func addPictureBtnClick() {
+        
         let imgPickerVC = UIImagePickerController()
         imgPickerVC.delegate = self
         present(imgPickerVC, animated: true, completion: nil)
@@ -157,6 +162,7 @@ extension EPMComposeViewController:UIImagePickerControllerDelegate,UINavigationC
             return
         }
         pictureView.addImg(img: img)
+        pictureView.isHidden = false
     }
     //emoj表情键盘
     fileprivate func inputViewChanged() {
