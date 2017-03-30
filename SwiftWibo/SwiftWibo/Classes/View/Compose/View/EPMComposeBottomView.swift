@@ -23,7 +23,13 @@ enum EPMComposeBottomViewType:Int {
 class EPMComposeBottomView: UIView {
 
     var clouser:((EPMComposeBottomViewType)->())?
-    
+    var emotionBtnName:String?{
+        didSet{
+        emotionBtn?.setImage(UIImage(named:emotionBtnName!), for: UIControlState.normal)
+            emotionBtn?.setImage(UIImage(named:"\(emotionBtnName!)_highlighted"), for: UIControlState.highlighted)
+        }
+    }
+     fileprivate var emotionBtn:UIButton?
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -38,7 +44,7 @@ class EPMComposeBottomView: UIView {
         let pictureBtn = addbutton(imgName: "compose_toolbar_picture", type: .picture)
         let mentionbtn = addbutton(imgName: "compose_mentionbutton_background", type: .mention)
         let trendBtn = addbutton(imgName: "compose_trendbutton_background", type: .mention)
-        let emotionBtn = addbutton(imgName: "compose_emoticonbutton_background", type: .emoticon)
+         emotionBtn = addbutton(imgName: "compose_emoticonbutton_background", type: .emoticon)
         let addBtn = addbutton(imgName: "compose_add_background", type: .add)
         
         pictureBtn.snp.makeConstraints { (make) in
@@ -53,16 +59,16 @@ class EPMComposeBottomView: UIView {
         trendBtn.snp.makeConstraints { (make) in
             make.top.bottom.equalTo(self)
             make.leading.equalTo(mentionbtn.snp.trailing)
-            make.width.equalTo(emotionBtn)
+            make.width.equalTo(emotionBtn!)
         }
-        emotionBtn.snp.makeConstraints { (make) in
+        emotionBtn!.snp.makeConstraints { (make) in
             make.top.bottom.equalTo(self)
             make.leading.equalTo(trendBtn.snp.trailing)
             make.width.equalTo(addBtn)
         }
         addBtn.snp.makeConstraints { (make) in
             make.top.bottom.trailing.equalTo(self)
-            make.leading.equalTo(emotionBtn.snp.trailing)
+            make.leading.equalTo(emotionBtn!.snp.trailing)
         }
     }
 }

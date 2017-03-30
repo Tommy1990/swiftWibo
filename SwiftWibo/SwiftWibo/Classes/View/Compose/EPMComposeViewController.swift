@@ -25,6 +25,7 @@ class EPMComposeViewController: UIViewController {
         view.addSubview(bottomView)
         viewText.delegate = self
         viewText.addSubview(pictureView)
+        
         viewText.snp.makeConstraints { (make) in
             make.edges.equalTo(self.view)
         }
@@ -52,6 +53,7 @@ class EPMComposeViewController: UIViewController {
                self?.addPictureBtnClick()
             case .emoticon:
                 print("表情")
+                self!.inputViewChanged()
             case .add:
                 print("添加")
             case .trend:
@@ -120,6 +122,11 @@ class EPMComposeViewController: UIViewController {
         NotificationCenter.default.removeObserver(self)
         self.view.endEditing(true)
     }
+    fileprivate lazy var emojView: EPMEmojCollectionView = {
+        let view = EPMEmojCollectionView()
+        view.bounds.size = CGSize(width: screenWidth, height: 216)
+        return view;
+    }()
 }
 //MARKE: 点击方法实现
 extension EPMComposeViewController:UIImagePickerControllerDelegate,UINavigationControllerDelegate{
@@ -150,6 +157,18 @@ extension EPMComposeViewController:UIImagePickerControllerDelegate,UINavigationC
             return
         }
         pictureView.addImg(img: img)
+    }
+    //emoj表情键盘
+    fileprivate func inputViewChanged() {
+        if viewText.inputView == nil{
+            viewText.inputView = emojView;
+            bottomView.emotionBtnName = "compose_keyboardbutton_background"
+        }else{
+            viewText.inputView = nil
+            bottomView.emotionBtnName = "compose_emoticonbutton_background"
+        }
+        viewText.reloadInputViews()
+        viewText.becomeFirstResponder()
     }
     
 }

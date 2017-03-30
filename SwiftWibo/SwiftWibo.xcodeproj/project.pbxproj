@@ -10,6 +10,7 @@
 		2330EF4862FE12080437592F /* Pods_SwiftWibo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CC0CA27DF69F3B5E5896E15D /* Pods_SwiftWibo.framework */; };
 		38F7EAFF7B4B9300993BA9F9 /* Pods_SwiftWiboTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D7F195A2B54F350A1413A8A /* Pods_SwiftWiboTests.framework */; };
 		7157B29DB624918C8233FFCB /* Pods_SwiftWiboUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B66EB86B1E7A055CE796995 /* Pods_SwiftWiboUITests.framework */; };
+		A73AAEE81E8D1A3F00DAFBAD /* EPMEmojCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A73AAEE71E8D1A3F00DAFBAD /* EPMEmojCollectionView.swift */; };
 		A756B6871E7EA0B100F76A2D /* EPMMainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A756B6861E7EA0B100F76A2D /* EPMMainTabBarController.swift */; };
 		A756B68B1E7EA11B00F76A2D /* EPMMessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A756B68A1E7EA11B00F76A2D /* EPMMessageViewController.swift */; };
 		A756B68D1E7EA13400F76A2D /* EPMProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A756B68C1E7EA13400F76A2D /* EPMProfileViewController.swift */; };
@@ -81,6 +82,7 @@
 		66B7E907F1634625A34C3806 /* Pods-SwiftWiboTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftWiboTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SwiftWiboTests/Pods-SwiftWiboTests.debug.xcconfig"; sourceTree = "<group>"; };
 		7B66EB86B1E7A055CE796995 /* Pods_SwiftWiboUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SwiftWiboUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9D7F195A2B54F350A1413A8A /* Pods_SwiftWiboTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SwiftWiboTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A73AAEE71E8D1A3F00DAFBAD /* EPMEmojCollectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EPMEmojCollectionView.swift; sourceTree = "<group>"; };
 		A756B6681E7E9A9F00F76A2D /* Masonry.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Masonry.framework; path = "../../Library/Developer/Xcode/DerivedData/SwiftWibo-hgascnrjlfotggavhgktlnwqtebb/Build/Products/Debug-iphonesimulator/Masonry/Masonry.framework"; sourceTree = "<group>"; };
 		A756B6861E7EA0B100F76A2D /* EPMMainTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EPMMainTabBarController.swift; sourceTree = "<group>"; };
 		A756B68A1E7EA11B00F76A2D /* EPMMessageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EPMMessageViewController.swift; sourceTree = "<group>"; };
@@ -188,6 +190,14 @@
 				7B66EB86B1E7A055CE796995 /* Pods_SwiftWiboUITests.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		A73AAEE61E8D1A0300DAFBAD /* EmojView */ = {
+			isa = PBXGroup;
+			children = (
+				A73AAEE71E8D1A3F00DAFBAD /* EPMEmojCollectionView.swift */,
+			);
+			path = EmojView;
 			sourceTree = "<group>";
 		};
 		A756B66A1E7E9D5800F76A2D /* Classes */ = {
@@ -370,6 +380,7 @@
 		A78F5D751E8966ED00FE9AAA /* View */ = {
 			isa = PBXGroup;
 			children = (
+				A73AAEE61E8D1A0300DAFBAD /* EmojView */,
 				A78F5D761E89671400FE9AAA /* EPMComposeView.swift */,
 				A78F5D931E8A7B4F00FE9AAA /* EPMComposeButton.swift */,
 				A78F5D9F1E8AB86700FE9AAA /* EPMComposeTextView.swift */,
@@ -758,6 +769,7 @@
 				A78F5D941E8A7B4F00FE9AAA /* EPMComposeButton.swift in Sources */,
 				A756B69B1E7EB7CE00F76A2D /* EPMBaseViewController.swift in Sources */,
 				A78F5CF41E83679B00FE9AAA /* EPMUserInfoModel.swift in Sources */,
+				A73AAEE81E8D1A3F00DAFBAD /* EPMEmojCollectionView.swift in Sources */,
 				A78F5CF01E82A52100FE9AAA /* EPMOAuthViewController.swift in Sources */,
 				A78F5CEB1E829D3A00FE9AAA /* EPMNetworkingTool.swift in Sources */,
 				A78F5D201E869D0E00FE9AAA /* EPMPictureView.swift in Sources */,
