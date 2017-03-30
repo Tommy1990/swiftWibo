@@ -13,6 +13,7 @@
 		A73AAEE81E8D1A3F00DAFBAD /* EPMEmojCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A73AAEE71E8D1A3F00DAFBAD /* EPMEmojCollectionView.swift */; };
 		A73AAEEA1E8D2F5000DAFBAD /* EPMbottombtnView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A73AAEE91E8D2F5000DAFBAD /* EPMbottombtnView.swift */; };
 		A73AAEEC1E8D4D9400DAFBAD /* EPMEmotionPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A73AAEEB1E8D4D9400DAFBAD /* EPMEmotionPageView.swift */; };
+		A73AAEEE1E8D5A7400DAFBAD /* EPMEmotionPageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A73AAEED1E8D5A7400DAFBAD /* EPMEmotionPageCell.swift */; };
 		A756B6871E7EA0B100F76A2D /* EPMMainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A756B6861E7EA0B100F76A2D /* EPMMainTabBarController.swift */; };
 		A756B68B1E7EA11B00F76A2D /* EPMMessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A756B68A1E7EA11B00F76A2D /* EPMMessageViewController.swift */; };
 		A756B68D1E7EA13400F76A2D /* EPMProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A756B68C1E7EA13400F76A2D /* EPMProfileViewController.swift */; };
@@ -87,6 +88,7 @@
 		A73AAEE71E8D1A3F00DAFBAD /* EPMEmojCollectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EPMEmojCollectionView.swift; sourceTree = "<group>"; };
 		A73AAEE91E8D2F5000DAFBAD /* EPMbottombtnView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EPMbottombtnView.swift; sourceTree = "<group>"; };
 		A73AAEEB1E8D4D9400DAFBAD /* EPMEmotionPageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EPMEmotionPageView.swift; sourceTree = "<group>"; };
+		A73AAEED1E8D5A7400DAFBAD /* EPMEmotionPageCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EPMEmotionPageCell.swift; sourceTree = "<group>"; };
 		A756B6681E7E9A9F00F76A2D /* Masonry.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Masonry.framework; path = "../../Library/Developer/Xcode/DerivedData/SwiftWibo-hgascnrjlfotggavhgktlnwqtebb/Build/Products/Debug-iphonesimulator/Masonry/Masonry.framework"; sourceTree = "<group>"; };
 		A756B6861E7EA0B100F76A2D /* EPMMainTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EPMMainTabBarController.swift; sourceTree = "<group>"; };
 		A756B68A1E7EA11B00F76A2D /* EPMMessageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EPMMessageViewController.swift; sourceTree = "<group>"; };
@@ -202,6 +204,7 @@
 				A73AAEE71E8D1A3F00DAFBAD /* EPMEmojCollectionView.swift */,
 				A73AAEE91E8D2F5000DAFBAD /* EPMbottombtnView.swift */,
 				A73AAEEB1E8D4D9400DAFBAD /* EPMEmotionPageView.swift */,
+				A73AAEED1E8D5A7400DAFBAD /* EPMEmotionPageCell.swift */,
 			);
 			path = EmojView;
 			sourceTree = "<group>";
@@ -800,6 +803,7 @@
 				A78F5D121E8548F100FE9AAA /* EPMHomeUserModel.swift in Sources */,
 				A756B6961E7EABF900F76A2D /* UIBarButtonItem+Extenssion.swift in Sources */,
 				A78F5DA01E8AB86700FE9AAA /* EPMComposeTextView.swift in Sources */,
+				A73AAEEE1E8D5A7400DAFBAD /* EPMEmotionPageCell.swift in Sources */,
 				A78F5D7D1E8967AB00FE9AAA /* UIImage+ImageEffects.m in Sources */,
 				A78F5D101E8542B000FE9AAA /* EPMHomeStatueViewModel.swift in Sources */,
 				A78F5D731E89453000FE9AAA /* EPMRefreshControl.swift in Sources */,

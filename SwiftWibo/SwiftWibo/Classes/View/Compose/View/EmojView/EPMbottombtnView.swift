@@ -57,8 +57,8 @@ extension EPMbottombtnView{
         button.addTarget(self, action: #selector(btnclicked(btn:)), for: UIControlEvents.touchUpInside)
         button.tag = type.rawValue
         button.setTitle(title, for: UIControlState.normal)
-        button.setTitleColor(UIColor.white, for: UIControlState.normal)
-        button.setTitleColor(UIColor.darkGray, for: UIControlState.selected)
+        button.setTitleColor(UIColor.white, for: .normal)
+        button.setTitleColor(UIColor.darkGray, for: .selected)
         button.titleLabel?.font = UIFont.systemFont(ofSize: FONTSIZEOFNORMAL)
         button.setBackgroundImage(UIImage(named:"\(imgName)_normal"), for: UIControlState.normal)
         button.setBackgroundImage(UIImage(named:"(imgName)_selected"), for: UIControlState.selected)
