@@ -40,14 +40,16 @@ class EPMComposeViewController: UIViewController {
             make.width.height.equalTo(screenWidth - 20)
             make.top.equalTo(self.viewText).offset(100)
         }
-        
+        pictureView.closure = {[weak self] in
+            self?.addPictureBtnClick()
+        }
        
         
         bottomView.clouser = {[weak self] (type) -> () in
             switch type {
             case .picture:
                 print("图片")
-               self?.bottomBtnClick()
+               self?.addPictureBtnClick()
             case .emoticon:
                 print("表情")
             case .add:
@@ -137,7 +139,7 @@ extension EPMComposeViewController:UIImagePickerControllerDelegate,UINavigationC
         }
     }
     //底部视图图片按钮点击方法
-    @objc fileprivate func bottomBtnClick() {
+    @objc fileprivate func addPictureBtnClick() {
         let imgPickerVC = UIImagePickerController()
         imgPickerVC.delegate = self
         present(imgPickerVC, animated: true, completion: nil)

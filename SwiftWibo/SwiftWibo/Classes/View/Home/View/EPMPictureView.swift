@@ -16,6 +16,7 @@ fileprivate let itemWH = (screenWidth - 2*margine - 2 * sizeMargin)/3
 class EPMPictureView: UICollectionView {
     
     
+    
     var pic_urls:[EPMPictureUrlModel]? {
         didSet{
      
@@ -73,7 +74,7 @@ class EPMPictureView: UICollectionView {
             if let img = image {
                 let W = img.size.width < 80 ? 80 : img.size.width
                 let H = img.size.height > 150 ? 150 : img.size.height
-                 print("元素:\(count)\n宽\(W)高\(H)")
+//                 print("元素:\(count)\n宽\(W)高\(H)")
                 return CGSize(width: W, height: H)
                 
             }
@@ -84,7 +85,7 @@ class EPMPictureView: UICollectionView {
         let col = count == 4 ? 2 : numW
         let W = CGFloat(col) * itemWH + CGFloat(col - 1)*sizeMargin
         let H = CGFloat(row) * itemWH + CGFloat(row - 1)*sizeMargin
-        print("元素:\(count)\n行:\(row)列:\(col)\n宽\(W)高\(H)")
+//        print("元素:\(count)\n行:\(row)列:\(col)\n宽\(W)高\(H)")
         return CGSize(width: W, height: H)
 
     }

@@ -98,7 +98,7 @@ extension EPMHomeStatueViewModel{
             }else if canclender.isDateInYesterday(sinaDate){
                 df.dateFormat = "昨天  hh:mm"
             }else{
-            df.dateFormat = "MM月dd日 hh:mm"
+            
             }
         
         }else{

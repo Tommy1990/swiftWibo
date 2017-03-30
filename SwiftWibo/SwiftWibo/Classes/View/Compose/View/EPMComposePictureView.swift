@@ -11,6 +11,8 @@ fileprivate let sizeMargin:CGFloat = 5.0
 fileprivate let itemWH = (screenWidth - 2*margine - 2 * sizeMargin)/3
 class EPMComposePictureView: UICollectionView {
     var imgList:[UIImage] = [UIImage]()
+    var closure:(()->())?
+    
     func addImg(img:UIImage){
         imgList.append(img)
         reloadData()
@@ -56,6 +58,10 @@ extension EPMComposePictureView: UICollectionViewDataSource,UICollectionViewDele
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         collectionView.deselectItem(at: indexPath, animated: true)
+        if indexPath.item == imgList.count{
+            closure!()
+        }
+        
     }
 }
 
