@@ -62,7 +62,11 @@ class EPMComposeViewController: UIViewController {
                 print("@")
             }
         }
+        //监听
         NotificationCenter.default.addObserver(self, selector: #selector(KeyboardWillChangeFrame), name: Notification.Name.UIKeyboardWillChangeFrame, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(addEmotionNoti(noti:)), name: NSNotification.Name(rawValue: EMOTIONADDBTNCLICK), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(deleteEmotionNoti), name: NSNotification.Name(rawValue: EMOTIONDELETEBTNCLICK), object: nil)
+        
         
         
     }
@@ -175,6 +179,54 @@ extension EPMComposeViewController:UIImagePickerControllerDelegate,UINavigationC
         }
         viewText.reloadInputViews()
         viewText.becomeFirstResponder()
+    }
+    
+    @objc func addEmotionNoti(noti: Notification) {
+        guard let model = noti.object as? EPMEmotionModel else {
+            return
+        }
+        
+        
+        if model.isEmoji{
+            
+            //是emoji表情
+            let code = ((model.code ?? "") as NSString).emoji()
+            viewText.insertText(code!)
+        }else{
+            let allAtt = NSMutableAttributedString(attributedString: viewText.attributedText)
+            //图片表情
+            let allpath = model.allPath ?? ""
+            let img = UIImage(named: allpath, in: EPMEmotionTool.sheardTool.emotionBundle, compatibleWith: nil)
+            let height = viewText.font!.lineHeight
+            let att = EPMTextAttachment()
+            att.emojiModel = model
+            att.image = img
+            att.bounds = CGRect(x: 0, y: -4, width: height, height: height)
+            //创建不可变富文本
+            let attr = NSAttributedString(attachment: att)
+            //获取光标
+            let selectRange = viewText.selectedRange
+            
+            allAtt.replaceCharacters(in: selectRange, with: attr)
+            
+            allAtt.addAttribute(NSFontAttributeName,value:UIFont.systemFont(ofSize:16), range: NSRange(location: 0, length: allAtt.length))
+            
+            viewText.attributedText = allAtt
+            viewText.selectedRange = NSRange(location: selectRange.location + 1, length: 0)
+            
+            //系统辅助通知
+            //激活发送按钮
+            self.viewText.delegate?.textViewDidChange!(viewText)
+            //隐藏占位文字
+            NotificationCenter.default.post(name: Notification.Name.UITextViewTextDidChange, object: nil)
+        }
+        
+        
+        
+    }
+    @objc func deleteEmotionNoti (){
+        //系统方法删去光标最近的文字
+        viewText.deleteBackward()
     }
     
 }

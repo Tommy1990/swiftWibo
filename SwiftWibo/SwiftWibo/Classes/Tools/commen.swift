@@ -16,8 +16,9 @@ let redirect_uri = "http://www.itheima.com"
 let client_secret = "371df9bb8e30cc0ad305ccfc39417e92"
 
 //设置通知
-
 let SWITCHROOTCONTROLLERINFO = "switchRootControllerInfo"
+let EMOTIONADDBTNCLICK = "emotionAddBtnClick"
+let EMOTIONDELETEBTNCLICK = "emotionDeleteBtnClick"
 
 //设置随机颜色
 func getRandomColor()->UIColor{

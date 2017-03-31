@@ -18,6 +18,8 @@
 		A73AAEF21E8D5DED00DAFBAD /* Emoticons.bundle in Resources */ = {isa = PBXBuildFile; fileRef = A73AAEF11E8D5DED00DAFBAD /* Emoticons.bundle */; };
 		A73AAEF61E8D5E1A00DAFBAD /* NSString+Emoji.m in Sources */ = {isa = PBXBuildFile; fileRef = A73AAEF51E8D5E1A00DAFBAD /* NSString+Emoji.m */; };
 		A73AAEF81E8D5F2D00DAFBAD /* EPMEmotionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A73AAEF71E8D5F2D00DAFBAD /* EPMEmotionModel.swift */; };
+		A73AAEFA1E8E6BBF00DAFBAD /* EPMEmotionBtn.swift in Sources */ = {isa = PBXBuildFile; fileRef = A73AAEF91E8E6BBE00DAFBAD /* EPMEmotionBtn.swift */; };
+		A73AAEFC1E8E76EE00DAFBAD /* EPMTextAttachment.swift in Sources */ = {isa = PBXBuildFile; fileRef = A73AAEFB1E8E76EE00DAFBAD /* EPMTextAttachment.swift */; };
 		A756B6871E7EA0B100F76A2D /* EPMMainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A756B6861E7EA0B100F76A2D /* EPMMainTabBarController.swift */; };
 		A756B68B1E7EA11B00F76A2D /* EPMMessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A756B68A1E7EA11B00F76A2D /* EPMMessageViewController.swift */; };
 		A756B68D1E7EA13400F76A2D /* EPMProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A756B68C1E7EA13400F76A2D /* EPMProfileViewController.swift */; };
@@ -98,6 +100,8 @@
 		A73AAEF41E8D5E1A00DAFBAD /* NSString+Emoji.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Emoji.h"; sourceTree = "<group>"; };
 		A73AAEF51E8D5E1A00DAFBAD /* NSString+Emoji.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Emoji.m"; sourceTree = "<group>"; };
 		A73AAEF71E8D5F2D00DAFBAD /* EPMEmotionModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EPMEmotionModel.swift; sourceTree = "<group>"; };
+		A73AAEF91E8E6BBE00DAFBAD /* EPMEmotionBtn.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EPMEmotionBtn.swift; sourceTree = "<group>"; };
+		A73AAEFB1E8E76EE00DAFBAD /* EPMTextAttachment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EPMTextAttachment.swift; sourceTree = "<group>"; };
 		A756B6681E7E9A9F00F76A2D /* Masonry.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Masonry.framework; path = "../../Library/Developer/Xcode/DerivedData/SwiftWibo-hgascnrjlfotggavhgktlnwqtebb/Build/Products/Debug-iphonesimulator/Masonry/Masonry.framework"; sourceTree = "<group>"; };
 		A756B6861E7EA0B100F76A2D /* EPMMainTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EPMMainTabBarController.swift; sourceTree = "<group>"; };
 		A756B68A1E7EA11B00F76A2D /* EPMMessageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EPMMessageViewController.swift; sourceTree = "<group>"; };
@@ -215,7 +219,9 @@
 				A73AAEE91E8D2F5000DAFBAD /* EPMbottombtnView.swift */,
 				A73AAEEB1E8D4D9400DAFBAD /* EPMEmotionPageView.swift */,
 				A73AAEED1E8D5A7400DAFBAD /* EPMEmotionPageCell.swift */,
+				A73AAEF91E8E6BBE00DAFBAD /* EPMEmotionBtn.swift */,
 				A73AAEEF1E8D5D7300DAFBAD /* EPMEmotionTool.swift */,
+				A73AAEFB1E8E76EE00DAFBAD /* EPMTextAttachment.swift */,
 			);
 			path = EmojView;
 			sourceTree = "<group>";
@@ -807,6 +813,7 @@
 				A73AAEE81E8D1A3F00DAFBAD /* EPMEmojCollectionView.swift in Sources */,
 				A78F5CF01E82A52100FE9AAA /* EPMOAuthViewController.swift in Sources */,
 				A78F5CEB1E829D3A00FE9AAA /* EPMNetworkingTool.swift in Sources */,
+				A73AAEFA1E8E6BBF00DAFBAD /* EPMEmotionBtn.swift in Sources */,
 				A78F5D201E869D0E00FE9AAA /* EPMPictureView.swift in Sources */,
 				A7BC68D61E7E979500DFDCEC /* AppDelegate.swift in Sources */,
 				A7BC68DE1E7E979500DFDCEC /* SwiftWibo.xcdatamodeld in Sources */,
@@ -824,6 +831,7 @@
 				A78F5DA21E8ADA1D00FE9AAA /* EPMComposeBottomView.swift in Sources */,
 				A756B69E1E7EBA9200F76A2D /* EPMTestViewController.swift in Sources */,
 				A756B6991E7EAEDB00F76A2D /* EPMTabBar.swift in Sources */,
+				A73AAEFC1E8E76EE00DAFBAD /* EPMTextAttachment.swift in Sources */,
 				A78F5D121E8548F100FE9AAA /* EPMHomeUserModel.swift in Sources */,
 				A73AAEF81E8D5F2D00DAFBAD /* EPMEmotionModel.swift in Sources */,
 				A756B6961E7EABF900F76A2D /* UIBarButtonItem+Extenssion.swift in Sources */,

@@ -21,6 +21,7 @@ class EPMEmotionPageCell: UICollectionViewCell {
             for (i, emoticonModel) in emoticons!.enumerated(){
                 // 通过角标 获取对应按钮
                 let button =  emotionButtons[i]
+                    button.emotionModel = emoticonModel
                 // 显示
                 button.isHidden = false
                 // 赋值 (如果emoji表情 赋值的title  如果是图片表情 赋值的image)
@@ -45,11 +46,11 @@ class EPMEmotionPageCell: UICollectionViewCell {
     
     var indexpath : IndexPath?{
         didSet{
-            label.text = "第\(indexpath!.section)组\n" + "第\(indexpath!.item)列"
+//            label.text = "第\(indexpath!.section)组\n" + "第\(indexpath!.item)列"
             
         }
     }
-    var emotionButtons:[UIButton] = [UIButton]()
+    var emotionButtons:[EPMEmotionBtn] = [EPMEmotionBtn]()
     
     
     override init(frame: CGRect) {
@@ -72,6 +73,7 @@ class EPMEmotionPageCell: UICollectionViewCell {
             make.center.equalTo(self)
         }
         self.addChildBtns()
+        self.contentView.addSubview(deleteButton)
     }
     override func layoutSubviews() {
         super.layoutSubviews()
@@ -93,6 +95,7 @@ class EPMEmotionPageCell: UICollectionViewCell {
         let button =  UIButton()
         button.setImage(UIImage(named:"compose_emotion_delete"), for: UIControlState.normal)
         button.setImage(UIImage(named:"compose_emotion_delete_highlighted"), for: UIControlState.highlighted)
+        button.addTarget(self, action: #selector(deleteBtnClick), for: .touchUpInside)
         return button
     }()
     //MARK: 懒加载控件
@@ -109,11 +112,25 @@ extension EPMEmotionPageCell{
     fileprivate func addChildBtns() {
         
         for _ in 0 ..< HMEMOTICONMAXCOUNT{
-            let btn = UIButton()
+            let btn = EPMEmotionBtn()
             btn.titleLabel?.font = UIFont.systemFont(ofSize: 30)
            emotionButtons.append(btn)
             contentView.addSubview(btn)
+            btn.addTarget(self, action: #selector(addBtnClick(btn:)), for: .touchUpInside)
         }
     }
     
 }
+  //MARK:点击事件
+extension EPMEmotionPageCell{
+    @objc fileprivate func deleteBtnClick() {
+    NotificationCenter.default.post(name:NSNotification.Name(rawValue: EMOTIONDELETEBTNCLICK) , object: nil)
+    }
+    @objc fileprivate func addBtnClick(btn:EPMEmotionBtn) {
+        NotificationCenter.default.post(name: NSNotification.Name(rawValue:EMOTIONADDBTNCLICK), object: btn.emotionModel)
+        
+    }
+    
+}
+
+
