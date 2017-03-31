@@ -15,7 +15,7 @@ enum EmojBtnType: Int {
 }
 
 class EPMbottombtnView: UIStackView {
-
+    var closure:((EmojBtnType)->())?
     var currentBtn: UIButton?
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -81,5 +81,7 @@ extension EPMbottombtnView{
         currentBtn?.isSelected = false
         btn.isSelected = true
         currentBtn = btn
+    
+        closure!(EmojBtnType(rawValue: btn.tag)!)
     }
 }

@@ -9,6 +9,7 @@
 #ifndef SwiftWibo_Bridging_Header_h
 #define SwiftWibo_Bridging_Header_h
 #import "UIImage+ImageEffects.h"
+#import "NSString+Emoji.h"
 //#import <Masonry/Masonry.h>
 
 #endif /* SwiftWibo_Bridging_Header_h */
