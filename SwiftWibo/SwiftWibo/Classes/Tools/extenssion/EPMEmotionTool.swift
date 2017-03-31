@@ -92,7 +92,7 @@ extension EPMEmotionTool{
 }
 //数据归档/解档/默认数组添加
 extension EPMEmotionTool{
-    fileprivate func saveRecentEmoj(emojiModel:EPMEmotionModel) {
+     func saveRecentEmoj(emojiModel:EPMEmotionModel) {
         for (i ,model) in recntEmotion.enumerated(){
             if emojiModel.isEmoji{
                 if emojiModel.code == model.code{

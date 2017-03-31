@@ -20,7 +20,12 @@ class EPMEmojCollectionView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
 
-    func setupUI() {
+    func reloadRecntEmotionPage(){
+        let index = IndexPath(item: 0, section: 0)
+        self.emotionPageView.reloadItems(at: [index])
+    }
+    
+   fileprivate func setupUI() {
         addSubview(bottomBtnView)
         addSubview(emotionPageView)
         addSubview(pageControl)

@@ -26,6 +26,7 @@ class EPMEmotionPageView: UICollectionView {
         fatalError("init(coder:) has not been implemented")
     }
 
+    
     fileprivate func setupUI(){
         
         dataSource = self

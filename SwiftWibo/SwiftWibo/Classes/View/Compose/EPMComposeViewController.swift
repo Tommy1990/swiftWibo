@@ -186,7 +186,8 @@ extension EPMComposeViewController:UIImagePickerControllerDelegate,UINavigationC
             return
         }
         
-        
+        EPMEmotionTool.sheardTool.saveRecentEmoj(emojiModel: model)
+        emojView.reloadRecntEmotionPage()
         if model.isEmoji{
             
             //是emoji表情
@@ -220,6 +221,7 @@ extension EPMComposeViewController:UIImagePickerControllerDelegate,UINavigationC
             //隐藏占位文字
             NotificationCenter.default.post(name: Notification.Name.UITextViewTextDidChange, object: nil)
         }
+        
         
         
         
