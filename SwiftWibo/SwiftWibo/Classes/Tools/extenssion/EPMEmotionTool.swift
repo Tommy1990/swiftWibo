@@ -13,7 +13,8 @@ let HMEMOTICONMAXCOUNT = HMEMOTICONMAXCOL*HMEMOTICONMAXROW - 1
 class EPMEmotionTool: NSObject {
  
     static let sheardTool = EPMEmotionTool()
-    
+    //存储路径
+     fileprivate let file = (NSSearchPathForDirectoriesInDomains(FileManager.SearchPathDirectory.documentDirectory, FileManager.SearchPathDomainMask.userDomainMask, true).last! as NSString).appendingPathComponent("emoticon.archiver")
     
     lazy var emotionBundle : Bundle = {
        let path = Bundle.main.path(forResource: "Emoticons", ofType: "bundle")!
@@ -21,7 +22,7 @@ class EPMEmotionTool: NSObject {
     }()
     
     lazy var recntEmotion: [EPMEmotionModel] = {
-       return [EPMEmotionModel]()
+       return self.decodeRectEmoj()
     }()
     
     lazy var normalEmotion: [EPMEmotionModel] = {
@@ -86,9 +87,40 @@ extension EPMEmotionTool{
             let png = emotionModel.png ?? ""
             emotionModel.allPath = path + "/" + png
         }
-        
-        
         return tempArray
-        
     }
 }
+//数据归档/解档/默认数组添加
+extension EPMEmotionTool{
+    fileprivate func saveRecentEmoj(emojiModel:EPMEmotionModel) {
+        for (i ,model) in recntEmotion.enumerated(){
+            if emojiModel.isEmoji{
+                if emojiModel.code == model.code{
+                    recntEmotion.remove(at: i)
+                }
+            }else{
+                if emojiModel.png == model.png{
+                    recntEmotion.remove(at: i)
+                }
+            }
+        }
+        //插入新的元素
+        recntEmotion.insert(emojiModel, at: 0)
+        if (recntEmotion.count > 20){
+            recntEmotion.removeLast()
+        }
+        //全路径赋值
+        allEmotions[0][0] = recntEmotion
+        //归档
+        NSKeyedArchiver.archiveRootObject(recntEmotion, toFile: file)
+    }
+    
+    fileprivate func decodeRectEmoj() -> [EPMEmotionModel]{
+        
+  if let reasult = NSKeyedUnarchiver.unarchiveObject(withFile: file) as? [EPMEmotionModel]{
+        return reasult
+    }
+        return [EPMEmotionModel]()
+    }
+}
+
