@@ -136,6 +136,35 @@ class EPMComposeViewController: UIViewController {
         return view;
     }()
 }
+//发送数据
+extension EPMComposeViewController{
+    //发送纯文字
+    fileprivate func postTextFile() {
+    
+    EPMNetworkingTool.shearedTool.senderWeibo(status: self.viewText.text) { (_, error) in
+    if error != nil{
+             SVProgressHUD.showError(withStatus: "发送失败")
+      }else{
+    SVProgressHUD.showSuccess(withStatus: "发送失败")
+          }
+        self.cancelClick()
+       }
+    }
+    //发送带图片
+    fileprivate func postTextPictureFile(){
+        
+        EPMNetworkingTool.shearedTool.sendWeibo(status:self.viewText.text , imgList: self.pictureView.imgList) { (_, error) in
+            if error != nil{
+                SVProgressHUD.showError(withStatus: "发送失败")
+            }else{
+                SVProgressHUD.showSuccess(withStatus: "发送失败")
+            }
+            self.cancelClick()
+        }
+        }
+    
+    }
+
 //MARKE: 点击方法实现
 extension EPMComposeViewController:UIImagePickerControllerDelegate,UINavigationControllerDelegate{
     @objc fileprivate func cancelClick() {
@@ -143,15 +172,12 @@ extension EPMComposeViewController:UIImagePickerControllerDelegate,UINavigationC
     }
     
     @objc fileprivate func sendAction() {
+        
+        
+        
+        
+        self.pictureView.imgList.count > 0 ? postTextPictureFile() : postTextFile()
     
-     EPMNetworkingTool.shearedTool.senderWeibo(status: self.viewText.text) { (_, error) in
-        if error != nil{
-             SVProgressHUD.showError(withStatus: "发送失败")
-        }else{
-            SVProgressHUD.showSuccess(withStatus: "发送失败")
-        }
-        self.cancelClick()
-        }
     }
     //底部视图图片按钮点击方法
     @objc fileprivate func addPictureBtnClick() {
@@ -165,7 +191,8 @@ extension EPMComposeViewController:UIImagePickerControllerDelegate,UINavigationC
         guard let img = info["UIImagePickerControllerOriginalImage"] as? UIImage else{
             return
         }
-        pictureView.addImg(img: img)
+        
+        pictureView.addImg(img: img.scaleImge(MAXWidth: 400))
         pictureView.isHidden = false
     }
     //emoj表情键盘

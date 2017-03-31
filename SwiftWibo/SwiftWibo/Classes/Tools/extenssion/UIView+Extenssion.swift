@@ -63,9 +63,18 @@ extension UIImage{
         UIGraphicsEndImageContext()
         
         return picture
-        
-        
-        
+    }
+    func scaleImge(MAXWidth:CGFloat) -> UIImage{
+        if self.size.width < MAXWidth{
+            return self
+        }
+        let MAXHeight = self.size.height * MAXWidth / self.size.width
+        let rect = CGRect(x: 0, y: 0, width: MAXWidth, height: MAXHeight)
+        UIGraphicsBeginImageContext(rect.size)
+        self.draw(in: rect)
+        let img = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        return img!
     }
 }
 

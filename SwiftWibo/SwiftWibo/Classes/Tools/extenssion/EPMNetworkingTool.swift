@@ -43,6 +43,7 @@ class EPMNetworkingTool: AFHTTPSessionManager {
             get(urlString, parameters: paramter, progress: nil, success: successClouser, failure: failedClouser)
         }else{
             post(urlString, parameters: paramter, progress: nil, success: successClouser, failure: failedClouser)
+            
         }
         
     }
@@ -67,6 +68,8 @@ extension EPMNetworkingTool{
 }
 //MARKE: 发微博方法
 extension EPMNetworkingTool{
+    
+    //纯文字
     func senderWeibo(status: String?,finished:@escaping (Any?, Error?)->()) {
         let urlString:String = "https://api.weibo.com/2/statuses/update.json"
         let para = [
@@ -75,6 +78,31 @@ extension EPMNetworkingTool{
                     ]
         request(method: .POST, urlString: urlString, paramter: para, finished: finished)
         
+    }
+    //含图片
+    func sendWeibo(status:String?,imgList:[UIImage],finished:@escaping (Any?, Error?)->()){
+        let urlString = "https://upload.api.weibo.com/2/statuses/upload.json"
+        let para = [
+                "access_token":EPMUserAccountModelView.shared.token,
+                "status":status ?? ""
+                    ]
+        post(urlString, parameters: para, constructingBodyWith: { (formData) in
+            
+            for img in imgList{
+                let data = UIImagePNGRepresentation(img)
+                guard let d = data  else{
+                    return
+                }
+                formData.appendPart(withFileData: d, name: "pic", fileName: "suisui", mimeType: "application/actet-stream")
+            }
+            
+            
+            
+        }, progress: nil, success: { (_, res) in
+            finished(res,nil)
+        }) { (_, error) in
+            finished(nil,error)
+        }
     }
     
 }
