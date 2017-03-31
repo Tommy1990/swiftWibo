@@ -8,7 +8,7 @@
 
 import UIKit
 
-class EPMEmotionModel: NSObject {
+class EPMEmotionModel: NSObject,NSCoding {
     // 16进制编码
     var code: String?
     // 如果type == "1" 代表是emoji表情
@@ -25,4 +25,15 @@ class EPMEmotionModel: NSObject {
     var isEmoji: Bool = false
     // 图片表情的全路径
     var allPath: String?
+    
+    override init(){
+        super.init()
+    }
+    func encode(with aCoder: NSCoder) {
+        self.yy_modelEncode(with: aCoder)
+    }
+    required init?(coder aDecoder: NSCoder) {
+        super.init()
+        self.yy_modelInit(with: aDecoder)
+    }
 }

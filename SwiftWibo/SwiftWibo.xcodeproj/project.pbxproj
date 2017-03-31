@@ -14,12 +14,12 @@
 		A73AAEEA1E8D2F5000DAFBAD /* EPMbottombtnView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A73AAEE91E8D2F5000DAFBAD /* EPMbottombtnView.swift */; };
 		A73AAEEC1E8D4D9400DAFBAD /* EPMEmotionPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A73AAEEB1E8D4D9400DAFBAD /* EPMEmotionPageView.swift */; };
 		A73AAEEE1E8D5A7400DAFBAD /* EPMEmotionPageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A73AAEED1E8D5A7400DAFBAD /* EPMEmotionPageCell.swift */; };
-		A73AAEF01E8D5D7300DAFBAD /* EPMEmotionTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = A73AAEEF1E8D5D7300DAFBAD /* EPMEmotionTool.swift */; };
 		A73AAEF21E8D5DED00DAFBAD /* Emoticons.bundle in Resources */ = {isa = PBXBuildFile; fileRef = A73AAEF11E8D5DED00DAFBAD /* Emoticons.bundle */; };
 		A73AAEF61E8D5E1A00DAFBAD /* NSString+Emoji.m in Sources */ = {isa = PBXBuildFile; fileRef = A73AAEF51E8D5E1A00DAFBAD /* NSString+Emoji.m */; };
 		A73AAEF81E8D5F2D00DAFBAD /* EPMEmotionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A73AAEF71E8D5F2D00DAFBAD /* EPMEmotionModel.swift */; };
 		A73AAEFA1E8E6BBF00DAFBAD /* EPMEmotionBtn.swift in Sources */ = {isa = PBXBuildFile; fileRef = A73AAEF91E8E6BBE00DAFBAD /* EPMEmotionBtn.swift */; };
 		A73AAEFC1E8E76EE00DAFBAD /* EPMTextAttachment.swift in Sources */ = {isa = PBXBuildFile; fileRef = A73AAEFB1E8E76EE00DAFBAD /* EPMTextAttachment.swift */; };
+		A73AAEFE1E8E7ED100DAFBAD /* EPMEmotionTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = A73AAEFD1E8E7ED100DAFBAD /* EPMEmotionTool.swift */; };
 		A756B6871E7EA0B100F76A2D /* EPMMainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A756B6861E7EA0B100F76A2D /* EPMMainTabBarController.swift */; };
 		A756B68B1E7EA11B00F76A2D /* EPMMessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A756B68A1E7EA11B00F76A2D /* EPMMessageViewController.swift */; };
 		A756B68D1E7EA13400F76A2D /* EPMProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A756B68C1E7EA13400F76A2D /* EPMProfileViewController.swift */; };
@@ -95,13 +95,13 @@
 		A73AAEE91E8D2F5000DAFBAD /* EPMbottombtnView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EPMbottombtnView.swift; sourceTree = "<group>"; };
 		A73AAEEB1E8D4D9400DAFBAD /* EPMEmotionPageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EPMEmotionPageView.swift; sourceTree = "<group>"; };
 		A73AAEED1E8D5A7400DAFBAD /* EPMEmotionPageCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EPMEmotionPageCell.swift; sourceTree = "<group>"; };
-		A73AAEEF1E8D5D7300DAFBAD /* EPMEmotionTool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EPMEmotionTool.swift; sourceTree = "<group>"; };
 		A73AAEF11E8D5DED00DAFBAD /* Emoticons.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Emoticons.bundle; sourceTree = "<group>"; };
 		A73AAEF41E8D5E1A00DAFBAD /* NSString+Emoji.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Emoji.h"; sourceTree = "<group>"; };
 		A73AAEF51E8D5E1A00DAFBAD /* NSString+Emoji.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Emoji.m"; sourceTree = "<group>"; };
 		A73AAEF71E8D5F2D00DAFBAD /* EPMEmotionModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EPMEmotionModel.swift; sourceTree = "<group>"; };
 		A73AAEF91E8E6BBE00DAFBAD /* EPMEmotionBtn.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EPMEmotionBtn.swift; sourceTree = "<group>"; };
 		A73AAEFB1E8E76EE00DAFBAD /* EPMTextAttachment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EPMTextAttachment.swift; sourceTree = "<group>"; };
+		A73AAEFD1E8E7ED100DAFBAD /* EPMEmotionTool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EPMEmotionTool.swift; path = extenssion/EPMEmotionTool.swift; sourceTree = "<group>"; };
 		A756B6681E7E9A9F00F76A2D /* Masonry.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Masonry.framework; path = "../../Library/Developer/Xcode/DerivedData/SwiftWibo-hgascnrjlfotggavhgktlnwqtebb/Build/Products/Debug-iphonesimulator/Masonry/Masonry.framework"; sourceTree = "<group>"; };
 		A756B6861E7EA0B100F76A2D /* EPMMainTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EPMMainTabBarController.swift; sourceTree = "<group>"; };
 		A756B68A1E7EA11B00F76A2D /* EPMMessageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EPMMessageViewController.swift; sourceTree = "<group>"; };
@@ -220,7 +220,6 @@
 				A73AAEEB1E8D4D9400DAFBAD /* EPMEmotionPageView.swift */,
 				A73AAEED1E8D5A7400DAFBAD /* EPMEmotionPageCell.swift */,
 				A73AAEF91E8E6BBE00DAFBAD /* EPMEmotionBtn.swift */,
-				A73AAEEF1E8D5D7300DAFBAD /* EPMEmotionTool.swift */,
 				A73AAEFB1E8E76EE00DAFBAD /* EPMTextAttachment.swift */,
 			);
 			path = EmojView;
@@ -262,6 +261,7 @@
 			children = (
 				A78F5D791E8967AB00FE9AAA /* Lib */,
 				A78F5CEA1E829D3A00FE9AAA /* EPMNetworkingTool.swift */,
+				A73AAEFD1E8E7ED100DAFBAD /* EPMEmotionTool.swift */,
 				A78F5CF11E82D60D00FE9AAA /* commen.swift */,
 				A78F5D721E89453000FE9AAA /* EPMRefreshControl.swift */,
 				A756B6941E7EAB9B00F76A2D /* extenssion */,
@@ -823,6 +823,7 @@
 				A78F5BD11E7F93F700FE9AAA /* UIView+Extenssion.swift in Sources */,
 				A78F5D9A1E8A828200FE9AAA /* EPMComposeModel.swift in Sources */,
 				A78F5D9E1E8A9BE700FE9AAA /* EPMComposeViewController.swift in Sources */,
+				A73AAEFE1E8E7ED100DAFBAD /* EPMEmotionTool.swift in Sources */,
 				A78F5D151E8554F500FE9AAA /* EPMOrignialView.swift in Sources */,
 				A78F5DA41E8B555A00FE9AAA /* EPMComposePictureView.swift in Sources */,
 				A756B68B1E7EA11B00F76A2D /* EPMMessageViewController.swift in Sources */,
@@ -835,7 +836,6 @@
 				A78F5D121E8548F100FE9AAA /* EPMHomeUserModel.swift in Sources */,
 				A73AAEF81E8D5F2D00DAFBAD /* EPMEmotionModel.swift in Sources */,
 				A756B6961E7EABF900F76A2D /* UIBarButtonItem+Extenssion.swift in Sources */,
-				A73AAEF01E8D5D7300DAFBAD /* EPMEmotionTool.swift in Sources */,
 				A78F5DA01E8AB86700FE9AAA /* EPMComposeTextView.swift in Sources */,
 				A73AAEEE1E8D5A7400DAFBAD /* EPMEmotionPageCell.swift in Sources */,
 				A78F5D7D1E8967AB00FE9AAA /* UIImage+ImageEffects.m in Sources */,
