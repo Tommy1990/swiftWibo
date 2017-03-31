@@ -139,29 +139,32 @@ class EPMComposeViewController: UIViewController {
 //发送数据
 extension EPMComposeViewController{
     //发送纯文字
-    fileprivate func postTextFile() {
+    fileprivate func postTextFile(statues: String) {
     
-    EPMNetworkingTool.shearedTool.senderWeibo(status: self.viewText.text) { (_, error) in
+    EPMNetworkingTool.shearedTool.senderWeibo(status: statues) { (_, error) in
     if error != nil{
              SVProgressHUD.showError(withStatus: "发送失败")
       }else{
-    SVProgressHUD.showSuccess(withStatus: "发送失败")
+    SVProgressHUD.showSuccess(withStatus: "发送成功")
           }
         self.cancelClick()
        }
     }
     //发送带图片
-    fileprivate func postTextPictureFile(){
+    fileprivate func postTextPictureFile(statues: String){
         
-        EPMNetworkingTool.shearedTool.sendWeibo(status:self.viewText.text , imgList: self.pictureView.imgList) { (_, error) in
+        EPMNetworkingTool.shearedTool.sendWeibo(status:statues , imgList: self.pictureView.imgList) { (_, error) in
             if error != nil{
                 SVProgressHUD.showError(withStatus: "发送失败")
             }else{
-                SVProgressHUD.showSuccess(withStatus: "发送失败")
+                SVProgressHUD.showSuccess(withStatus: "发送成功")
             }
             self.cancelClick()
         }
         }
+    
+    
+    
     
     }
 
@@ -172,11 +175,19 @@ extension EPMComposeViewController:UIImagePickerControllerDelegate,UINavigationC
     }
     
     @objc fileprivate func sendAction() {
+        var allText = ""
+        
+        viewText.attributedText.enumerateAttributes(in: NSRange(location:0,length:viewText.attributedText.length), options: []) { (dict, range, _) in
+            if let arr = dict["NSAttachment"] as? EPMTextAttachment {
+                allText += arr.emojiModel!.chs ?? ""
+            }else{
+                allText += viewText.attributedText.attributedSubstring(from: range).string
+            }
+        }
         
         
         
-        
-        self.pictureView.imgList.count > 0 ? postTextPictureFile() : postTextFile()
+        self.pictureView.imgList.count > 0 ? postTextPictureFile(statues:allText) : postTextFile(statues:allText)
     
     }
     //底部视图图片按钮点击方法
