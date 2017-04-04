@@ -20,6 +20,9 @@
 		A73AAEFA1E8E6BBF00DAFBAD /* EPMEmotionBtn.swift in Sources */ = {isa = PBXBuildFile; fileRef = A73AAEF91E8E6BBE00DAFBAD /* EPMEmotionBtn.swift */; };
 		A73AAEFC1E8E76EE00DAFBAD /* EPMTextAttachment.swift in Sources */ = {isa = PBXBuildFile; fileRef = A73AAEFB1E8E76EE00DAFBAD /* EPMTextAttachment.swift */; };
 		A73AAEFE1E8E7ED100DAFBAD /* EPMEmotionTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = A73AAEFD1E8E7ED100DAFBAD /* EPMEmotionTool.swift */; };
+		A73AAF2B1E93664700DAFBAD /* db.sql in Resources */ = {isa = PBXBuildFile; fileRef = A73AAF2A1E93664700DAFBAD /* db.sql */; };
+		A73AAF2D1E9366AE00DAFBAD /* EPMSQLManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A73AAF2C1E9366AE00DAFBAD /* EPMSQLManager.swift */; };
+		A73AAF2F1E93703700DAFBAD /* EPMEPMDAL.swift in Sources */ = {isa = PBXBuildFile; fileRef = A73AAF2E1E93703700DAFBAD /* EPMEPMDAL.swift */; };
 		A756B6871E7EA0B100F76A2D /* EPMMainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A756B6861E7EA0B100F76A2D /* EPMMainTabBarController.swift */; };
 		A756B68B1E7EA11B00F76A2D /* EPMMessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A756B68A1E7EA11B00F76A2D /* EPMMessageViewController.swift */; };
 		A756B68D1E7EA13400F76A2D /* EPMProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A756B68C1E7EA13400F76A2D /* EPMProfileViewController.swift */; };
@@ -64,6 +67,7 @@
 		A7BC68E31E7E979500DFDCEC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A7BC68E11E7E979500DFDCEC /* LaunchScreen.storyboard */; };
 		A7BC68EE1E7E979500DFDCEC /* SwiftWiboTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7BC68ED1E7E979500DFDCEC /* SwiftWiboTests.swift */; };
 		A7BC68F91E7E979500DFDCEC /* SwiftWiboUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7BC68F81E7E979500DFDCEC /* SwiftWiboUITests.swift */; };
+		A7DA19511E9386E1009CCF70 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = A7DA19501E9386E1009CCF70 /* libsqlite3.tbd */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -102,6 +106,9 @@
 		A73AAEF91E8E6BBE00DAFBAD /* EPMEmotionBtn.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EPMEmotionBtn.swift; sourceTree = "<group>"; };
 		A73AAEFB1E8E76EE00DAFBAD /* EPMTextAttachment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EPMTextAttachment.swift; sourceTree = "<group>"; };
 		A73AAEFD1E8E7ED100DAFBAD /* EPMEmotionTool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EPMEmotionTool.swift; path = extenssion/EPMEmotionTool.swift; sourceTree = "<group>"; };
+		A73AAF2A1E93664700DAFBAD /* db.sql */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = db.sql; sourceTree = "<group>"; };
+		A73AAF2C1E9366AE00DAFBAD /* EPMSQLManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EPMSQLManager.swift; sourceTree = "<group>"; };
+		A73AAF2E1E93703700DAFBAD /* EPMEPMDAL.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EPMEPMDAL.swift; sourceTree = "<group>"; };
 		A756B6681E7E9A9F00F76A2D /* Masonry.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Masonry.framework; path = "../../Library/Developer/Xcode/DerivedData/SwiftWibo-hgascnrjlfotggavhgktlnwqtebb/Build/Products/Debug-iphonesimulator/Masonry/Masonry.framework"; sourceTree = "<group>"; };
 		A756B6861E7EA0B100F76A2D /* EPMMainTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EPMMainTabBarController.swift; sourceTree = "<group>"; };
 		A756B68A1E7EA11B00F76A2D /* EPMMessageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EPMMessageViewController.swift; sourceTree = "<group>"; };
@@ -155,6 +162,7 @@
 		A7BC68F81E7E979500DFDCEC /* SwiftWiboUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftWiboUITests.swift; sourceTree = "<group>"; };
 		A7BC68FA1E7E979500DFDCEC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A7BC69061E7E985200DFDCEC /* SwiftWibo-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SwiftWibo-Bridging-Header.h"; sourceTree = "<group>"; };
+		A7DA19501E9386E1009CCF70 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
 		CC0CA27DF69F3B5E5896E15D /* Pods_SwiftWibo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SwiftWibo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DDCFE9FF376C60D9E87A06E0 /* Pods-SwiftWibo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftWibo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SwiftWibo/Pods-SwiftWibo.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -164,6 +172,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A7DA19511E9386E1009CCF70 /* libsqlite3.tbd in Frameworks */,
 				2330EF4862FE12080437592F /* Pods_SwiftWibo.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -203,6 +212,7 @@
 		9274B6D33461178070D78F0B /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				A7DA19501E9386E1009CCF70 /* libsqlite3.tbd */,
 				A756B6681E7E9A9F00F76A2D /* Masonry.framework */,
 				CC0CA27DF69F3B5E5896E15D /* Pods_SwiftWibo.framework */,
 				9D7F195A2B54F350A1413A8A /* Pods_SwiftWiboTests.framework */,
@@ -261,6 +271,7 @@
 			children = (
 				A78F5D791E8967AB00FE9AAA /* Lib */,
 				A78F5CEA1E829D3A00FE9AAA /* EPMNetworkingTool.swift */,
+				A73AAF2C1E9366AE00DAFBAD /* EPMSQLManager.swift */,
 				A73AAEFD1E8E7ED100DAFBAD /* EPMEmotionTool.swift */,
 				A78F5CF11E82D60D00FE9AAA /* commen.swift */,
 				A78F5D721E89453000FE9AAA /* EPMRefreshControl.swift */,
@@ -399,6 +410,7 @@
 			children = (
 				A78F5D0B1E85418100FE9AAA /* EPMHomeViewModel.swift */,
 				A78F5D0F1E8542B000FE9AAA /* EPMHomeStatueViewModel.swift */,
+				A73AAF2E1E93703700DAFBAD /* EPMEPMDAL.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -490,6 +502,7 @@
 				A7BC69061E7E985200DFDCEC /* SwiftWibo-Bridging-Header.h */,
 				A7BC68DF1E7E979500DFDCEC /* Assets.xcassets */,
 				A7BC68E11E7E979500DFDCEC /* LaunchScreen.storyboard */,
+				A73AAF2A1E93664700DAFBAD /* db.sql */,
 				A7BC68E41E7E979500DFDCEC /* Info.plist */,
 				A7BC68DC1E7E979500DFDCEC /* SwiftWibo.xcdatamodeld */,
 			);
@@ -592,6 +605,7 @@
 				TargetAttributes = {
 					A7BC68D11E7E979500DFDCEC = {
 						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = XB6867T683;
 						ProvisioningStyle = Automatic;
 					};
 					A7BC68E81E7E979500DFDCEC = {
@@ -631,6 +645,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A73AAF2B1E93664700DAFBAD /* db.sql in Resources */,
 				A7BC68E31E7E979500DFDCEC /* LaunchScreen.storyboard in Resources */,
 				A73AAEF21E8D5DED00DAFBAD /* Emoticons.bundle in Resources */,
 				A7BC68E01E7E979500DFDCEC /* Assets.xcassets in Resources */,
@@ -825,6 +840,7 @@
 				A78F5D9E1E8A9BE700FE9AAA /* EPMComposeViewController.swift in Sources */,
 				A73AAEFE1E8E7ED100DAFBAD /* EPMEmotionTool.swift in Sources */,
 				A78F5D151E8554F500FE9AAA /* EPMOrignialView.swift in Sources */,
+				A73AAF2D1E9366AE00DAFBAD /* EPMSQLManager.swift in Sources */,
 				A78F5DA41E8B555A00FE9AAA /* EPMComposePictureView.swift in Sources */,
 				A756B68B1E7EA11B00F76A2D /* EPMMessageViewController.swift in Sources */,
 				A78F5D0C1E85418100FE9AAA /* EPMHomeViewModel.swift in Sources */,
@@ -843,6 +859,7 @@
 				A78F5D731E89453000FE9AAA /* EPMRefreshControl.swift in Sources */,
 				A756B6871E7EA0B100F76A2D /* EPMMainTabBarController.swift in Sources */,
 				A78F5BD61E7F9A9300FE9AAA /* EPMVistorView.swift in Sources */,
+				A73AAF2F1E93703700DAFBAD /* EPMEPMDAL.swift in Sources */,
 				A756B68D1E7EA13400F76A2D /* EPMProfileViewController.swift in Sources */,
 				A78F5D1E1E869CB100FE9AAA /* EPMPictureUrlModel.swift in Sources */,
 			);
@@ -989,6 +1006,7 @@
 			baseConfigurationReference = DDCFE9FF376C60D9E87A06E0 /* Pods-SwiftWibo.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = XB6867T683;
 				INFOPLIST_FILE = SwiftWibo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = COM.EP.SwiftWibo;
@@ -1004,6 +1022,7 @@
 			baseConfigurationReference = 2ED990E17AF2342B15061A6C /* Pods-SwiftWibo.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = XB6867T683;
 				INFOPLIST_FILE = SwiftWibo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = COM.EP.SwiftWibo;

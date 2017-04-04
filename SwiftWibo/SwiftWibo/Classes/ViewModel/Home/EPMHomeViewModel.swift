@@ -28,44 +28,60 @@ class EPMHomeViewModel: NSObject {
             sinceId = dataArray.first?.homeModel?.id ?? 0
         }
         
+        EPMEPMDAL.checkCache(sinceID: sinceId, maxID: maxId) { (response) in
+            guard let resArr = response else{
+                finished(false,0)
+                return
+        }
+            // 字典转模型
+            let statusesArray = NSArray.yy_modelArray(with: EPMHomeModel.self, json: resArr) as! [EPMHomeModel]
+            // 创建一个临时可变的statusViewModel的空数组
+            var tempArray:[EPMHomeStatueViewModel] = [EPMHomeStatueViewModel]()
+            // 遍历statusesArray
+            for homeModel in statusesArray{
+                // 实例化statusViewModel
+                let statueViewModel = EPMHomeStatueViewModel()
+                // 赋值
+                statueViewModel.homeModel = homeModel
+                // 添加元素->statueViewModel
+                tempArray.append(statueViewModel)
+                
+            }
         
+//        EPMNetworkingTool.shearedTool.loadHomeData(since_id: sinceId, max_id: maxId) { (respond, error) in
+//            if  error != nil{
+//                finished(false,0)
+//                return
+//            }
+//            guard let res = respond as? [String: Any] else{
+//                finished(false,0)
+//                return
+//            }
+//            guard let resArr = res["statuses"] as? [[String: Any]] else{
+//                finished(false,0)
+//                return
+//            }
+//            let staueArr = NSArray.yy_modelArray(with: EPMHomeModel.self, json: resArr) as! [EPMHomeModel]
+//            
+////              print(resArr)
+//            var temArray: [EPMHomeStatueViewModel] = [EPMHomeStatueViewModel]()
+//            
+//            //MARKE: 遍历数组获得
+//            for model in staueArr{
+//                let statueModel:EPMHomeStatueViewModel = EPMHomeStatueViewModel()
+//                statueModel.homeModel = model
+//                temArray.append(statueModel)
+//            }
+//            
         
-        EPMNetworkingTool.shearedTool.loadHomeData(since_id: sinceId, max_id: maxId) { (respond, error) in
-            if  error != nil{
-                finished(false,0)
-                return
-            }
-            guard let res = respond as? [String: Any] else{
-                finished(false,0)
-                return
-            }
-            guard let resArr = res["statuses"] as? [[String: Any]] else{
-                finished(false,0)
-                return
-            }
-            let staueArr = NSArray.yy_modelArray(with: EPMHomeModel.self, json: resArr) as! [EPMHomeModel]
-            
-//              print(resArr)
-            var temArray: [EPMHomeStatueViewModel] = [EPMHomeStatueViewModel]()
-            
-            //MARKE: 遍历数组获得
-            for model in staueArr{
-                let statueModel:EPMHomeStatueViewModel = EPMHomeStatueViewModel()
-                statueModel.homeModel = model
-                temArray.append(statueModel)
-            }
-           self.downLoadSingleImage(tempArray: temArray, finish: finished)
+           self.downLoadSingleImage(tempArray: tempArray, finish: finished)
             
             //MARKE: 加载完成后处理
             if isPullUp {
-                 self.dataArray = self.dataArray + temArray
+                 self.dataArray = self.dataArray + tempArray
             }else{
-                 self.dataArray = temArray + self.dataArray
+                 self.dataArray = tempArray + self.dataArray
             }
-                
-            
-           
-            
         }
     }
     
