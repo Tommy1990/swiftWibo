@@ -23,4 +23,5 @@ pod 'SVProgressHUD'
 pod 'SDWebImage'
 pod 'YYModel'
 pod 'pop'
+pod 'YYText'
 end

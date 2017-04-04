@@ -8,6 +8,7 @@
 
 import UIKit
 import SnapKit
+import YYText
 class EPMHomeRetweetView: UIView {
 
     private var selfBottomConstraint:Constraint?
@@ -20,7 +21,7 @@ class EPMHomeRetweetView: UIView {
     var statueModel: EPMHomeStatueViewModel?{
         didSet{
             selfBottomConstraint?.deactivate()
-            labReteetContent.text = statueModel?.homeModel?.retweeted_status?.text
+            labReteetContent.attributedText = statueModel?.retweetContext
             if let pic_urls = statueModel?.homeModel?.retweeted_status?.pic_urls ,pic_urls.count > 0 {
                 photoView.pic_urls = pic_urls
                 self.snp.makeConstraints{ (make) in
@@ -65,6 +66,14 @@ class EPMHomeRetweetView: UIView {
         }
         
     }
-    private lazy var labReteetContent =  UILabel(title: "转发微博正文转发微博正文转发微博正文转发微博正文转发微博正文转发微博正文转发微博正文转发微博正文转发微博正文转发微博正文转发微博正文转发微博正文转发微博正文转发微博正文转发微博正文转发微博正文转发微博正文", textColor: UIColor.darkGray, fontSize: FONTSIZEOFNORMAL)
+    private lazy var labReteetContent:YYLabel =  {
+        let lab = YYLabel()
+        lab.textColor = UIColor.darkGray
+        lab.font = UIFont.systemFont(ofSize: FONTSIZEOFNORMAL)
+        lab.preferredMaxLayoutWidth = screenWidth - 20
+        lab.numberOfLines = 0;
+        return lab
+ 
+    }()
     private lazy var photoView:EPMPictureView = EPMPictureView()
 }

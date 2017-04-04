@@ -123,4 +123,25 @@ extension EPMEmotionTool{
         return [EPMEmotionModel]()
     }
 }
+//MARKE: 获得字符串对应的模型
+extension EPMEmotionTool{
+    
+    func getEmoticonModelWithEmoticons(chs: String) -> EPMEmotionModel?{
+        
+        //遍历默认表情数组
+        for  model in normalEmotion{
+            if model.chs == chs {
+                return model
+            }
+        }
+        
+        for model in  lxhEmotion{
+            if model.chs == chs{
+                return model
+            }
+        }
+        return nil;
+
+    }
+  }
 

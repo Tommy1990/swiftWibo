@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import YYText
 //MARKE: 完成图片类的加载
 class EPMHomeStatueViewModel: NSObject {
 //MARKE: 生成HomeModel的属性
@@ -15,6 +16,10 @@ class EPMHomeStatueViewModel: NSObject {
             MbrankImg = self.dealMbrankImage(mbrank: (homeModel?.user?.mbrank ?? 0))
             verifiedImg = self.dealVerifiedImage(verified: homeModel?.user?.verified ?? 0)
             sourceText = self.getWeiBoSource(source: homeModel?.source ?? "")
+            //展示富文本
+            oringinalContext = self.dealContentAttributedString(text: homeModel?.text)
+            retweetContext = self.dealContentAttributedString(text: homeModel?.retweeted_status?.text)
+            
         }
     }
     
@@ -27,6 +32,9 @@ class EPMHomeStatueViewModel: NSObject {
     var timeText: String? {
         return getFormateDate(Creatdate: homeModel?.created_at)
     }
+    var oringinalContext:NSAttributedString?
+    var retweetContext:NSAttributedString?
+    
 }
 //MARKE: 加载会员等级图片
 extension EPMHomeStatueViewModel{
@@ -117,6 +125,56 @@ extension EPMHomeStatueViewModel{
     }
     
 }
-
+//MARKE:
+extension EPMHomeStatueViewModel{
+   //获取文字
+    fileprivate func dealContentAttributedString(text:String?) -> NSAttributedString?{
+        guard let t = text else {
+            return nil
+        }
+        let allAttribute = NSMutableAttributedString(string: t)
+        let  reasult = try! NSRegularExpression(pattern: "\\[\\w+\\]", options: []).matches(in: t, options: [], range: NSRange(location: 0, length: t.characters.count))
+        for match in reasult.reversed() {
+            let res = (t as NSString).substring(with: match.range)
+            let model = EPMEmotionTool.sheardTool.getEmoticonModelWithEmoticons(chs: res)
+            let allPath = model?.allPath ?? ""
+            
+            guard let img = UIImage(named: allPath, in: EPMEmotionTool.sheardTool.emotionBundle, compatibleWith: nil) else{
+                continue
+            }
+            
+            let attr = NSMutableAttributedString.yy_attachmentString(withEmojiImage: img, fontSize: FONTSIZEOFNORMAL)!
+            allAttribute.replaceCharacters(in: match.range, with: attr)
+            
+        }
+        //匹配用户
+        setTextHighlight(pattern: "@[a-zA-Z0-9\\u4e00-\\u9fa5_\\-]+", allAttributedString: allAttribute)
+        // //匹配话题：#[^#]+#
+        setTextHighlight(pattern: "#[^#]+#", allAttributedString: allAttribute)
+         // 设置富文本字体大小
+        allAttribute.addAttribute(NSFontAttributeName, value: UIFont.systemFont(ofSize: FONTSIZEOFNORMAL), range: NSRange(location: 0, length: allAttribute.string.characters.count))
+        
+        return allAttribute;
+    }
+    
+    
+    //MARKE: 文字高亮处理
+    fileprivate func  setTextHighlight(pattern: String, allAttributedString: NSMutableAttributedString){
+        let matchReasult = try! NSRegularExpression(pattern: pattern, options: []).matches(in: allAttributedString.string, options: [], range:NSRange(location:0, length: allAttributedString.string.characters.count))
+        
+        let border = YYTextBorder(fill: UIColor.gray, cornerRadius: 3)
+        border.insets = UIEdgeInsetsMake(1, 0, 0, 0)
+        let highLight = YYTextHighlight()
+        highLight.setColor(UIColor.white)
+        highLight.setBackgroundBorder(border)
+        
+        for match in matchReasult {
+            allAttributedString.addAttribute(NSForegroundColorAttributeName, value: UIColor.red, range: match.range)
+            allAttributedString.yy_setTextHighlight(highLight, range: match.range)
+        }
+    
+    }
+    
+}
 
 

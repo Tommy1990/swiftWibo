@@ -8,6 +8,7 @@
 
 import UIKit
 import SnapKit
+import YYText
 
 class EPMOrignialView: UIView {
 
@@ -25,7 +26,7 @@ class EPMOrignialView: UIView {
             imgHead.EPM_setImage(urlString: statueModel?.homeModel?.user?.profile_image_url, placeholderImgName:"avatar_default")
             labuserName.text = statueModel?.homeModel?.user?.name
             imgMemberShip.image = statueModel?.MbrankImg
-            labContent.text = statueModel?.homeModel?.text
+            labContent.attributedText = statueModel?.oringinalContext
             imgVarif.image = statueModel?.verifiedImg
             labSource.text = statueModel?.sourceText
             labCreatTime.text = statueModel?.timeText
@@ -113,7 +114,15 @@ class EPMOrignialView: UIView {
     private lazy var labCreatTime = UILabel(title: "微博时间", textColor: ThemeColor, fontSize: FONTSIZEOFSMALL)
     private lazy var labSource = UILabel(title: "微博来源", textColor: UIColor.darkGray, fontSize: FONTSIZEOFSMALL)
      private lazy var imgVarif = UIImageView(imgName: "avatar_vgirl")
-    private lazy var labContent = UILabel(title: "微博正文微博正文微博正文微博正文微博正文微博正文微博正文微博正文微博正文微博正文微博正文微博正文微博正文微博正文微博正文微博正文微博正文微博正文微博正文微博正文微博正文微博正文微博正文微博正文微博正文微博正文", textColor: UIColor.black, fontSize: FONTSIZEOFNORMAL)
+
+    private lazy var labContent:YYLabel = {
+        let lab = YYLabel()
+        lab.textColor = UIColor.darkGray
+        lab.font = UIFont.systemFont(ofSize: FONTSIZEOFNORMAL)
+        lab.preferredMaxLayoutWidth = screenWidth - 20
+        lab.numberOfLines = 0;
+        return lab
+    }()
     private lazy var photoView:EPMPictureView = EPMPictureView()
        
     
